@@ -1,8 +1,11 @@
+import Preview from "@/components/homepage/Preview";
+
 export default function Home() {
   return (
     <>
-
-      <main></main>
+      <main>
+        <Preview />
+      </main>
     </>
   );
 }

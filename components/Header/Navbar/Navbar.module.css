@@ -1,12 +1,14 @@
 .nav {
   height: 0;
   overflow: hidden;
-  transition: all 0.45s cubic-bezier(0.29, 0.63, 0.44, 1);
+  transition: height 0.45s cubic-bezier(0.29, 0.63, 0.44, 1);
 }
 
 .active {
   height: 306px;
 }
+
+
 
 .nav ul li button {
   padding: 15px 30px;
