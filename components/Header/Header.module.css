@@ -25,12 +25,24 @@ header .logoContainer {
   margin-right: 13px;
 }
 
-.tools svg {
-  height: 20px;
-  width: 20px;
+.burgerContainer {
+  display: flex;
+  background: none;
+  color: inherit;
+  border: none;
+  padding: 10px 11px;
+  font: inherit;
+  cursor: pointer;
+  outline: inherit;
 }
 
-.tools path {
+.burgerContainer svg {
+  height: 20px;
+  width: 20px;
+  margin: 0;
+}
+
+.burgerContainer path {
   width: 17px;
 }
 

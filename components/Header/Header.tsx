@@ -1,11 +1,21 @@
-import { JSX } from "react";
+import { JSX, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+
+import BurgerMenuOpen from "./BurgerClosed";
+import BurgerMenuClosed from "./BurgerOpened";
+
 import styles from "./Header.module.css";
 
 interface HeaderProps {}
 
 const Header = ({}: HeaderProps): JSX.Element => {
+  const [mobileMenuStatus, setMobileMenuStatus] = useState(false);
+
+  const menuChangeHandler = () => {
+    setMobileMenuStatus((prev) => !prev);
+  };
+
   return (
     <header className={styles.header}>
       <div className={styles.logoContainer}>
@@ -40,11 +50,9 @@ const Header = ({}: HeaderProps): JSX.Element => {
             </Link>
           </li>
         </ul>
-        <Link href="">
-          <svg viewBox="0 0 37 40">
-            <path d="M33.5 25h-30c-1.1 0-2-.9-2-2s.9-2 2-2h30c1.1 0 2 .9 2 2s-.9 2-2 2zm0-11.5h-30c-1.1 0-2-.9-2-2s.9-2 2-2h30c1.1 0 2 .9 2 2s-.9 2-2 2zm0 23h-30c-1.1 0-2-.9-2-2s.9-2 2-2h30c1.1 0 2 .9 2 2s-.9 2-2 2z"></path>
-          </svg>
-        </Link>
+        <button className={styles.burgerContainer} onClick={menuChangeHandler}>
+          {mobileMenuStatus ? <BurgerMenuOpen /> : <BurgerMenuClosed />}
+        </button>
       </div>
     </header>
   );
