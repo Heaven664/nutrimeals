@@ -1,11 +1,11 @@
 import { JSX } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import styles from "./Navbar.module.css";
+import styles from "./Header.module.css";
 
-interface NavbarProps {}
+interface HeaderProps {}
 
-const Navbar = ({}: NavbarProps): JSX.Element => {
+const Header = ({}: HeaderProps): JSX.Element => {
   return (
     <header className={styles.header}>
       <div className={styles.logoContainer}>
@@ -50,4 +50,4 @@ const Navbar = ({}: NavbarProps): JSX.Element => {
   );
 };
 
-export default Navbar;
+export default Header;
