@@ -1,0 +1,10 @@
+.videoContainer {
+  width: 100vw;
+}
+
+.videoContainer iframe {
+  position: absolute;
+  margin-top: 50px;
+  width: 100%;
+  height: 400px;
+}
