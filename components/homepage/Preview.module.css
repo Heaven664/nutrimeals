@@ -2,6 +2,7 @@
   position: relative;
   z-index: 1;
   overflow: hidden;
+  margin-top: 75px;
 }
 
 .secDiv {
@@ -10,7 +11,7 @@
 
 .videoContainer {
   height: 550px;
-  width: 800px;
+  width: 850px;
   position: absolute;
   pointer-events: none;
   top: 50%;
@@ -36,7 +37,14 @@
   }
 }
 
-@media (min-width: 1127px) {
+@media (min-width: 1127px) and (max-width: 1940px) {
+  .videoContainer {
+    width: 2000px;
+    height: 1100px;
+  }
+}
+
+@media (min-width: 1941) {
   .menuContainer {
     width: 100vw;
     height: 400px;
