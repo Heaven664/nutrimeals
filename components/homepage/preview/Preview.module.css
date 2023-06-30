@@ -116,9 +116,11 @@
     width: 2000px;
     height: 1100px;
   }
-
   .videoContainer {
     min-height: 450px;
+  }
+  .menuContainer {
+    margin-top: 55px;
   }
 }
 
@@ -126,6 +128,7 @@
   .menuContainer {
     width: 100vw;
     height: 467px;
+    margin-top: 55px;
     overflow: hidden;
     display: flex;
     align-items: center;
