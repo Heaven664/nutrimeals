@@ -5,11 +5,44 @@
   margin-top: 75px;
 }
 
-.secDiv {
-  min-height: 400px;
+.videoOverlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(255, 255, 255, 0.5);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: "Mulish";
+}
+
+.videoOverlay h1 {
+  text-align: center;
+  margin-bottom: 5px;
+  font-size: 30px;
+  font-weight: 600;
+  color: rgb(63, 63, 63);
+}
+
+.videoOverlay h2 {
+  text-align: center;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+  font-size: 22px;
+  font-weight: 500;
+  color: rgb(63, 63, 63);
+}
+
+.videoOverlay .buttonContainer {
+  margin-bottom: 20px;
 }
 
 .videoContainer {
+  min-height: 400px;
+}
+
+.video {
   height: 550px;
   width: 850px;
   position: absolute;
@@ -19,50 +52,94 @@
   -webkit-transform: translateX(-50%) translateY(-50%);
 }
 
-.videoContainer iframe {
+.video iframe {
   width: 100% !important;
   height: 100%;
 }
 
+.buttonContainer button {
+  text-transform: uppercase;
+  background-color: rgb(0, 64, 75);
+  color: white;
+  font-family: "Mulish";
+  letter-spacing: 1px;
+  font-size: 15px;
+  font-weight: 300;
+  padding: 0.6em 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.buttonContainer button:hover {
+  background-color: rgb(16, 177, 221);
+}
+
 @media (min-width: 707px) and (max-width: 906px) {
-  .videoContainer {
+  .video {
     width: 906px;
+  }
+  .videoContainer {
+    min-height: 440px;
   }
 }
 
 @media (min-width: 907px) and (max-width: 1126px) {
-  .videoContainer {
+  .video {
     width: 1200px;
     height: 650px;
+  }
+  .videoContainer {
+    min-height: 467px;
+  }
+}
+
+@media (min-width: 990px) {
+  .videoOverlay h1 {
+    font-size: 60px;
+  }
+
+  .videoOverlay h2 {
+    font-size: 30px;
+  }
+
+  .buttonContainer button {
+    padding: 0.8rem 1.3rem;
+    font-size: 18px;
   }
 }
 
 @media (min-width: 1127px) and (max-width: 1940px) {
-  .videoContainer {
+  .video {
     width: 2000px;
     height: 1100px;
   }
+
+  .videoContainer {
+    min-height: 490px;
+  }
 }
 
-@media (min-width: 1941) {
+@media (min-width: 1941px) {
   .menuContainer {
     width: 100vw;
-    height: 400px;
+    height: 467px;
     overflow: hidden;
     display: flex;
     align-items: center;
   }
 
-  .secDiv {
+  .videoContainer {
     width: 100vw;
-    height: 400px;
+    height: 467px;
     overflow: hidden;
     display: flex;
     align-items: center;
     justify-content: center;
   }
 
-  .videoContainer {
+  .video {
     position: relative;
     width: 100%;
     height: 0;
@@ -70,7 +147,7 @@
     pointer-events: none;
   }
 
-  .videoContainer iframe {
+  .video iframe {
     position: absolute;
     top: 25%;
     left: 0;
