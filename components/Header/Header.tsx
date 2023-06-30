@@ -1,5 +1,6 @@
 import { JSX, useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 import BurgerMenuOpen from "./BurgerClosed";
 import BurgerMenuClosed from "./BurgerOpened";
@@ -20,14 +21,16 @@ const Header = ({}: HeaderProps): JSX.Element => {
   return (
     <header>
       <div className={styles.headerContainer}>
-        <div className={styles.logoContainer}>
-          <Image
-            src={"/images/nutrimeals-logo.webp"}
-            alt="nutrimeals-logo"
-            width={200}
-            height={200}
-          />
-        </div>
+        <Link href="">
+          <div className={styles.logoContainer}>
+            <Image
+              src={"/images/nutrimeals-logo.webp"}
+              alt="nutrimeals-logo"
+              width={200}
+              height={200}
+            />
+          </div>
+        </Link>
         <div className={styles.tools}>
           <UserToolsList />
           <button
