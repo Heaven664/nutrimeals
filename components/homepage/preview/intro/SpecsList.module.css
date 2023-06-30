@@ -1,0 +1,29 @@
+.specsList {
+  margin-bottom: 30px;
+}
+
+.specsList li {
+  display: flex;
+  align-items: center;
+  margin-bottom: 18px;
+}
+
+.specImage {
+  width: 45px;
+}
+
+.specImage img {
+  width: 35px;
+  height: auto;
+}
+
+.specText {
+  padding-left: 5px;
+  width: 100%;
+}
+
+.specText p {
+  font-size: 15px;
+  font-weight: 400;
+  color: rgb(63, 63, 63);
+}

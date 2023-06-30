@@ -98,11 +98,11 @@
 
 @media (min-width: 990px) {
   .videoOverlay h1 {
-    font-size: 60px;
+    font-size: 55px;
   }
 
   .videoOverlay h2 {
-    font-size: 30px;
+    font-size: 27px;
   }
 
   .buttonContainer button {
@@ -118,7 +118,7 @@
   }
 
   .videoContainer {
-    min-height: 490px;
+    min-height: 450px;
   }
 }
 

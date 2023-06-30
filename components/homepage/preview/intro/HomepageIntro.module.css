@@ -1,0 +1,60 @@
+.introContainer {
+  display: flex;
+  flex-direction: column;
+  height: 2000px;
+  margin: 0.5rem 2rem;
+}
+
+.introTextContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
+.introTitleContainer {
+  width: 85%;
+  text-align: center;
+  padding-bottom: 10px;
+}
+.introTitleContainer h2 {
+  text-transform: uppercase;
+  font-size: 22px;
+  color: rgb(0, 64, 75);
+  font-weight: 700;
+}
+
+.likesContainer li {
+  display: inline;
+  margin: 0 1px;
+}
+
+.likesContainer li svg {
+  width: 24px;
+}
+
+.infoFooterContainer p {
+  color: rgb(63, 63, 63);
+  text-align: center;
+  font-size: 15px;
+  font-weight: 400;
+}
+
+.introImageContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.introImage {
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: center;
+  padding: 0 15px;
+}
+
+.introImageContainer img {
+  width: 100%;
+  height: auto;
+}
