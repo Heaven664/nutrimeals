@@ -1,20 +1,27 @@
+.introLayout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .introContainer {
   display: flex;
   flex-direction: column;
-  height: 2000px;
   margin: 0.5rem 2rem;
+  max-width: 1200px;
 }
 
 .introTextContainer {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: start;
   align-items: center;
   width: 100%;
-  margin-bottom: 10px;
+  margin: 0 10px;
+  padding-top: 32px;
 }
 .introTitleContainer {
-  width: 85%;
+  width: 95%;
   text-align: center;
   padding-bottom: 10px;
 }
@@ -54,7 +61,43 @@
   padding: 0 15px;
 }
 
+.introSpecsContainer {
+  width: 100%;
+}
+
 .introImageContainer img {
   width: 100%;
-  height: auto;
+  height: fit-content;
+}
+
+@media (min-width: 768px) {
+  .introContainer {
+    flex-direction: row;
+  }
+
+  .introImageContainer {
+    width: 100%;
+  }
+
+  .introTextContainer {
+    padding-right: 20px;
+  }
+  .introImage {
+    padding: 0;
+  }
+}
+
+@media (min-width: 990px) {
+  .introTitleContainer h2 {
+    font-size: 28px;
+  }
+
+  .infoFooterContainer p {
+    font-size: 18px;
+  }
+
+  .introTitleContainer {
+    margin-bottom: 30px;
+  }
+
 }
