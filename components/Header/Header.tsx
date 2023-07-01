@@ -24,7 +24,7 @@ const Header = ({}: HeaderProps): JSX.Element => {
         <Link href="">
           <div className={styles.logoContainer}>
             <Image
-              src={"/images/nutrimeals-logo.webp"}
+              src="/images/nutrimeals-logo.webp"
               alt="nutrimeals-logo"
               width={200}
               height={200}

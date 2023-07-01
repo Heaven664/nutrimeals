@@ -84,6 +84,9 @@
   .videoContainer {
     min-height: 440px;
   }
+  .menuContainer {
+    margin-top: 55px;
+  }
 }
 
 @media (min-width: 907px) and (max-width: 1126px) {
@@ -93,6 +96,9 @@
   }
   .videoContainer {
     min-height: 467px;
+  }
+  .menuContainer {
+    margin-top: 55px;
   }
 }
 
@@ -109,6 +115,9 @@
     padding: 0.8rem 1.3rem;
     font-size: 18px;
   }
+  .menuContainer {
+    margin-top: 55px;
+  }
 }
 
 @media (min-width: 1127px) and (max-width: 1940px) {
@@ -119,16 +128,12 @@
   .videoContainer {
     min-height: 450px;
   }
-  .menuContainer {
-    margin-top: 55px;
-  }
 }
 
 @media (min-width: 1941px) {
   .menuContainer {
     width: 100vw;
     height: 467px;
-    margin-top: 55px;
     overflow: hidden;
     display: flex;
     align-items: center;

@@ -1,0 +1,101 @@
+.stepsLayout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.allSteps {
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px 0;
+  max-width: 1270px;
+}
+
+.allSteps ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6%;
+  flex-wrap: wrap;
+  row-gap: 1.5rem;
+}
+
+.allSteps li {
+  /* display: inline; */
+  width: 47%;
+}
+
+.stepContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0 0.5rem;
+}
+
+.stepTextContainer {
+  text-align: center;
+}
+
+.stepTextContainer h3 {
+  padding-top: 14px;
+}
+
+.stepTextContainer p {
+  padding-top: 7px;
+  color: rgb(87, 87, 87);
+  font-weight: 300;
+}
+
+.image img {
+  width: 75px;
+  height: fit-content;
+}
+
+@media (min-width: 768px) {
+  .allSteps li {
+    /* display: inline; */
+    width: 20%;
+  }
+}
+
+@media (min-width: 990px) {
+  .allSteps ul {
+    gap: 4%;
+  }
+
+  .stepContainer {
+    /* flex-direction: row; */
+  }
+
+  .allSteps li {
+    width: 22%;
+  }
+
+  .stepTextContainer h3 {
+    font-size: 22px;
+  }
+
+  .stepTextContainer p {
+    font-size: 17px;
+  }
+}
+
+@media (min-width: 1270px) {
+  .allSteps ul {
+    gap: 2%;
+  }
+  .allSteps li {
+    width: 23%;
+  }
+  .stepContainer {
+    flex-direction: row;
+  }
+  .stepTextContainer {
+    text-align: start;
+    margin-left: 20px;
+  }
+}
