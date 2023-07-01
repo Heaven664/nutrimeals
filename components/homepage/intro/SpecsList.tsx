@@ -9,7 +9,7 @@ const SpecsList = (): JSX.Element => {
       <li>
         <div className={styles.specImage}>
           <Image
-            src="/images/specs/spec1.png"
+            src="/images/homepage/specs/spec1.png"
             width={100}
             height={100}
             alt="spec1"
@@ -24,7 +24,7 @@ const SpecsList = (): JSX.Element => {
       <li>
         <div className={styles.specImage}>
           <Image
-            src="/images/specs/spec2.png"
+            src="/images/homepage/specs/spec2.png"
             width={100}
             height={100}
             alt="spec2"
@@ -37,7 +37,7 @@ const SpecsList = (): JSX.Element => {
       <li>
         <div className={styles.specImage}>
           <Image
-            src="/images/specs/spec3.png"
+            src="/images/homepage/specs/spec3.png"
             width={100}
             height={100}
             alt="spec3"
@@ -50,7 +50,7 @@ const SpecsList = (): JSX.Element => {
       <li>
         <div className={styles.specImage}>
           <Image
-            src="/images/specs/spec4.png"
+            src="/images/homepage/specs/spec4.png"
             width={100}
             height={100}
             alt="spec4"
@@ -65,7 +65,7 @@ const SpecsList = (): JSX.Element => {
       <li>
         <div className={styles.specImage}>
           <Image
-            src="/images/specs/spec5.png"
+            src="/images/homepage/specs/spec5.png"
             width={100}
             height={100}
             alt="spec5"
