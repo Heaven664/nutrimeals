@@ -1,0 +1,49 @@
+.feedbackLayout {
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px 45px;
+}
+
+.feedbackTitleContainer h3 {
+  text-transform: capitalize;
+  font-size: 22.5px;
+  color: rgb(93, 93, 93);
+  font-weight: 700;
+}
+
+.feedbackBodyContainer {
+  text-align: center;
+}
+
+.feedbackBodyContainer p {
+  color: rgb(93, 93, 93);
+  font-size: 15px;
+}
+
+.feedbackButton button {
+  text-transform: uppercase;
+  background-color: rgb(0, 64, 75);
+  color: white;
+  font-family: "Mulish";
+  letter-spacing: 1px;
+  font-size: 15px;
+  font-weight: 300;
+  padding: 0.6em 1rem;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.feedbackButton button:hover {
+  background-color: rgb(16, 177, 221);
+}
+
+@media (min-width: 990px) {
+  .feedbackButton button {
+    padding: 0.8rem 1.3rem;
+    font-size: 18px;
+  }
+}
