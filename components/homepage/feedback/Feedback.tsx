@@ -1,6 +1,6 @@
 import { JSX } from "react";
 
-import styles from "./FeedbackCarousel.module.css";
+import styles from "./Feedback.module.css";
 
 const FeedbackCarousel = (): JSX.Element => {
   return (
@@ -22,3 +22,5 @@ const FeedbackCarousel = (): JSX.Element => {
 };
 
 export default FeedbackCarousel;
+
+
