@@ -91,7 +91,12 @@
     font-size: 18px;
   }
 
-  .arrow {
+  .feedbackCarousel .arrow {
+    display: block;
+    opacity: 0;
+  }
+
+  .feedbackCarousel:hover .arrow {
     cursor: pointer;
     background-color: rgb(234, 234, 234);
     width: 55px;
@@ -100,9 +105,10 @@
     justify-content: center;
     align-items: center;
     transition: 0.25s;
+    opacity: 1;
   }
 
-  .arrow:hover {
+  .feedbackCarousel:hover .arrow:hover {
     background-color: white;
   }
 
