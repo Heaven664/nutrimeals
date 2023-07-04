@@ -14,10 +14,8 @@ const CarouselElement = ({
 }: CarouselElementProps): JSX.Element => {
   return (
     <div className={styles.elementContainer}>
-      <div className={styles.feedbackContainer}>
-        <p className={styles.feedbackText}>
-          {`"${feedback}" - ${clientName}(${orders} orders)`}
-        </p>
+      <div className={styles.feedbackTextContainer}>
+        <p>{`"${feedback}" - ${clientName}(${orders} orders)`}</p>
       </div>
     </div>
   );

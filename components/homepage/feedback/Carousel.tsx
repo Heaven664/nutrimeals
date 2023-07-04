@@ -1,9 +1,13 @@
 import { JSX } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Pagination } from "swiper";
 
 // Import Swiper styles
 import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+
 import CarouselElement from "./CarouselElement";
 
 const DummyFeedback = [
@@ -30,17 +34,26 @@ const DummyFeedback = [
 const Carousel = (): JSX.Element => {
   return (
     <Swiper
+      modules={[Navigation, Pagination]}
       spaceBetween={50}
-      slidesPerView={2}
+      slidesPerView={1}
+      pagination={{ clickable: true }}
+      navigation
+      loop={true}
       onSlideChange={() => console.log("slide change")}
       onSwiper={(swiper) => console.log(swiper)}
     >
       <SwiperSlide>
         <CarouselElement {...DummyFeedback[0]} />
       </SwiperSlide>
+      <SwiperSlide>
+        <CarouselElement {...DummyFeedback[1]} />
+      </SwiperSlide>
+      <SwiperSlide>
+        <CarouselElement {...DummyFeedback[2]} />
+      </SwiperSlide>
     </Swiper>
   );
 };
 
 export default Carousel;
- 
