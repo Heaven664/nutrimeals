@@ -8,3 +8,7 @@
 body {
   min-width: 320px;
 }
+
+.swiper-pagination-bullet-active {
+  background-color: #6b7172 !important;
+}

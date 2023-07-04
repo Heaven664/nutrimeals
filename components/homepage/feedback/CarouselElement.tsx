@@ -15,7 +15,12 @@ const CarouselElement = ({
   return (
     <div className={styles.elementContainer}>
       <div className={styles.feedbackTextContainer}>
-        <p>{`"${feedback}" - ${clientName}(${orders} orders)`}</p>
+        <p>
+          {`"${feedback}"`}{" "}
+          <span
+            className={styles.clientDetail}
+          >{`- ${clientName} (${orders} orders)`}</span>
+        </p>
       </div>
     </div>
   );

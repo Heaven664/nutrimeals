@@ -8,14 +8,16 @@
 
 .feedbackContainer {
   width: 100vw;
+  max-width: 1200px;
 }
 
 .feedbackTitleContainer h3 {
   text-align: center;
   text-transform: capitalize;
   font-size: 22.5px;
-  color: rgb(93, 93, 93);
   font-weight: 700;
+  color: rgb(63, 63, 63);
+  opacity: 1;
 }
 
 .feedbackBodyContainer {
@@ -25,6 +27,7 @@
 .feedbackBodyContainer p {
   color: rgb(93, 93, 93);
   font-size: 15px;
+  margin-bottom: 5px;
 }
 .feedbackContainer .feedbackCarousel button {
   background-color: rgb(234, 234, 234);
@@ -48,24 +51,11 @@
 }
 
 .arrow {
-  cursor: pointer;
-  background-color: rgb(234, 234, 234);
-  width: 55px;
-  height: 55px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transition: 0.25s;
+  display: none;
 }
-
-.arrow:hover {
-  background-color: white;
-}
-
-
 
 .feedbackCarousel {
-  width: 70%;
+  width: 80%;
   margin: 0 auto;
   position: relative;
 }
@@ -73,6 +63,7 @@
 .feedbackButton {
   display: flex;
   justify-content: center;
+  margin-top: 5px;
 }
 
 .feedbackContainer button {
@@ -83,7 +74,7 @@
   letter-spacing: 1px;
   font-size: 15px;
   font-weight: 300;
-  padding: 0.6em 1rem;
+  padding: 0.6em 4rem !important;
   border: none;
   border-radius: 10px;
   cursor: pointer;
@@ -98,5 +89,28 @@
   .feedbackButton button {
     padding: 0.8rem 1.3rem;
     font-size: 18px;
+  }
+
+  .arrow {
+    cursor: pointer;
+    background-color: rgb(234, 234, 234);
+    width: 55px;
+    height: 55px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.25s;
+  }
+
+  .arrow:hover {
+    background-color: white;
+  }
+
+  .feedbackTitleContainer h3 {
+    font-size: 27.5px;
+  }
+
+  .feedbackBodyContainer p {
+    font-size: 17px;
   }
 }
