@@ -104,12 +104,13 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    transition: 0.25s;
+    transition: opacity 0.25s, background-color 0.5s;
     opacity: 1;
   }
 
   .feedbackCarousel:hover .arrow:hover {
     background-color: white;
+    transition: background-color 0.7s;
   }
 
   .feedbackTitleContainer h3 {
