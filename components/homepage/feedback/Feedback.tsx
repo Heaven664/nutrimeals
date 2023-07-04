@@ -1,6 +1,7 @@
 import { JSX } from "react";
 
 import styles from "./Feedback.module.css";
+import Carousel from "./Carousel";
 
 const FeedbackCarousel = (): JSX.Element => {
   return (
@@ -12,7 +13,9 @@ const FeedbackCarousel = (): JSX.Element => {
         <div className={styles.feedbackBodyContainer}>
           <p>Read what our customers have to say</p>
         </div>
-        <div className={styles.feedbackCarouser}>Carousel</div>
+        <div className={styles.feedbackCarouser}>
+          <Carousel />
+        </div>
         <div className={styles.feedbackButton}>
           <button>Perfect, I want it</button>
         </div>
@@ -22,5 +25,3 @@ const FeedbackCarousel = (): JSX.Element => {
 };
 
 export default FeedbackCarousel;
-
-
