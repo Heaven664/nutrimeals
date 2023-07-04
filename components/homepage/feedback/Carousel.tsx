@@ -1,14 +1,13 @@
 import { JSX } from "react";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation, Pagination } from "swiper";
+import { Pagination, Autoplay } from "swiper";
+import CarouselElement from "./CarouselElement";
 
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/pagination";
-
-import CarouselElement from "./CarouselElement";
+import "swiper/css/autoplay";
 
 const DummyFeedback = [
   {
@@ -33,26 +32,27 @@ const DummyFeedback = [
 
 const Carousel = (): JSX.Element => {
   return (
-    <Swiper
-      modules={[Navigation, Pagination]}
-      spaceBetween={50}
-      slidesPerView={1}
-      pagination={{ clickable: true }}
-      navigation
-      loop={true}
-      onSlideChange={() => console.log("slide change")}
-      onSwiper={(swiper) => console.log(swiper)}
-    >
-      <SwiperSlide>
-        <CarouselElement {...DummyFeedback[0]} />
-      </SwiperSlide>
-      <SwiperSlide>
-        <CarouselElement {...DummyFeedback[1]} />
-      </SwiperSlide>
-      <SwiperSlide>
-        <CarouselElement {...DummyFeedback[2]} />
-      </SwiperSlide>
-    </Swiper>
+      <Swiper
+        modules={[Pagination, Autoplay]}
+        spaceBetween={5}
+        slidesPerView={1}
+        speed={1200}
+        pagination={{ clickable: true }}
+        autoplay
+        loop={true}
+        onSlideChange={() => console.log("slide change")}
+        onSwiper={(swiper) => console.log(swiper)}
+      >
+        <SwiperSlide>
+          <CarouselElement {...DummyFeedback[0]} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <CarouselElement {...DummyFeedback[1]} />
+        </SwiperSlide>
+        <SwiperSlide>
+          <CarouselElement {...DummyFeedback[2]} />
+        </SwiperSlide>
+      </Swiper>
   );
 };
 

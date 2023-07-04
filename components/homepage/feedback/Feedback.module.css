@@ -26,13 +26,48 @@
   color: rgb(93, 93, 93);
   font-size: 15px;
 }
+.feedbackContainer .feedbackCarousel button {
+  background-color: rgb(234, 234, 234);
+  color: black;
+}
 
-.feedbackCarouser {
-  width: 70%;
-  margin: 0 auto;
+.prevSlide {
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.nextSlide {
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 1;
+}
+
+.arrow {
+  cursor: pointer;
+  background-color: rgb(234, 234, 234);
+  width: 55px;
+  height: 55px;
   display: flex;
   justify-content: center;
   align-items: center;
+  transition: 0.25s;
+}
+
+.arrow:hover {
+  background-color: white;
+}
+
+
+
+.feedbackCarousel {
+  width: 70%;
+  margin: 0 auto;
+  position: relative;
 }
 
 .feedbackButton {
@@ -40,7 +75,7 @@
   justify-content: center;
 }
 
-.feedbackButton button {
+.feedbackContainer button {
   text-transform: uppercase;
   background-color: rgb(0, 64, 75);
   color: white;
