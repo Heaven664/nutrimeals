@@ -1,3 +1,4 @@
+import LocationInfo from "./LocationInfo";
 import MenuInfo from "./MenuInfo";
 import SubscriptionInfo from "./SubsriptionInfo";
 import WasteInfo from "./WasteInfo";
@@ -8,6 +9,7 @@ const Info = () => {
       <MenuInfo />
       <SubscriptionInfo />
       <WasteInfo />
+      <LocationInfo />
     </>
   );
 };

@@ -40,6 +40,7 @@
   text-transform: uppercase;
   margin-bottom: 5px;
   font-size: 23px;
+  text-align: center;
 }
 
 .textContainer p {
@@ -77,6 +78,10 @@
     flex-direction: row;
   }
 
+  .textContainer {
+    text-align: start;
+  }
+
   .textContainer button {
     font-size: 18px;
   }
@@ -99,8 +104,8 @@
 
   .textContainer p {
     font-size: 18px;
-    font-weight: 300;
-    color: #575656;
+    font-weight: 400;
+    color: #363535;
   }
 
   .imageContainer img {
