@@ -13,6 +13,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  margin-bottom: 30px;
 }
 
 .imageContainer {
@@ -26,6 +27,7 @@
 
 .textContainer {
   width: 90%;
+  margin-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -73,6 +75,7 @@
 @media (min-width: 770px) {
   .infoContainer {
     flex-direction: row;
+    margin-bottom: 0;
   }
 
   .textContainer button {
