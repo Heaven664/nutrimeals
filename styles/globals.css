@@ -12,3 +12,8 @@ body {
 .swiper-pagination-bullet-active {
   background-color: #6b7172 !important;
 }
+
+.google-map-container {
+  width: 570px;
+  height: 400px;
+}

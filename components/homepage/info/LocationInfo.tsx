@@ -1,4 +1,4 @@
-import Image from "next/image";
+import MapComponent from "./MapComponent";
 
 import styles from "./LocationInfo.module.css";
 
@@ -7,12 +7,9 @@ const LocationInfo = () => {
     <div className={styles.infoLayout}>
       <div className={styles.infoContainer}>
         <div className={styles.imageContainer}>
-          <Image
-            src="/images/homepage/waste-info.png"
-            width={750}
-            height={750}
-            alt="waste-info"
-          />
+          <div className="google-map-container">
+          <MapComponent />
+          </div>
         </div>
         <div className={styles.textContainer}>
           <div className={styles.textTitle}>

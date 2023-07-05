@@ -55,7 +55,6 @@ const FeedbackCarousel = (): JSX.Element => {
             pagination={{ clickable: true }}
             autoplay
             loop={true}
-            onSlideChange={() => console.log("slide change")}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
           >
             <SwiperSlide>
