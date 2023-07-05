@@ -1,10 +1,11 @@
 import React, { useMemo } from "react";
-import { useLoadScript, GoogleMap, Marker } from "@react-google-maps/api";
+import { useLoadScript, GoogleMap, MarkerF } from "@react-google-maps/api";
 
 const MapComponent: React.FC = () => {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.NEXT_PUBLIC_MAPS_API_KEY!,
   });
+  const center = useMemo(() => ({ lat: 50.992579, lng: -114.0504 }), []);
 
   if (!isLoaded) {
     return <div>Loading</div>;
@@ -12,11 +13,14 @@ const MapComponent: React.FC = () => {
 
   return (
     <GoogleMap
-      zoom={15}
-      center={{ lat: 50.992579, lng: -114.0504 }}
+      zoom={14}
+      center={center}
       mapContainerClassName="google-map-container"
     >
-      <Marker position={{ lat: 50.992579, lng: -114.0504 }} />
+      <MarkerF
+        position={{ lat: 50.992579, lng: -114.0504 }}
+      />
+      <div style={{zIndex: 100}}><p>fsadfsadfsdsf</p></div>
     </GoogleMap>
   );
 };
