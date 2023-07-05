@@ -24,13 +24,13 @@ const DummyFeedback = [
     clientName: "Paula",
     feedback:
       "Good portion of food and good quality clean meals. Selection is great too. Customer service has also been awesome.",
-    orders: 12,
+    orders: 32,
   },
   {
-    clientName: "Fillip",
+    clientName: "Robyn",
     feedback:
-      "Convenience - having dinner available without buying groceries, prepping and cooking.",
-    orders: 31,
+      "A wide variety of balanced meals that are perfect for my busy schedule. The free delivery is always professional and superior to most other delivery services.",
+    orders: 24,
   },
 ];
 
