@@ -1,10 +1,22 @@
 .faqLayout {
   width: 100vw;
   display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.faqContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   flex-direction: column;
   max-width: 1200px;
   padding: 0 17px;
   margin-top: 40px;
+}
+
+.faqDataContainer {
+  width: 100%;
 }
 
 .faqTitle {
@@ -27,6 +39,39 @@
   text-align: center;
   font-weight: 400;
   font-size: 14.5px;
+}
+
+.faqQuestionsContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.faqQuestionElement {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid black;
+  padding: 15px 0 15px 40px;
+}
+
+.arrowContainer {
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.faqQuestionElement svg {
+  width: 25px;
+  height: 25px;
+}
+
+.faqQuestionElement path {
+  width: 20px;
+}
+
+.hiddenAnswer {
+  height: 0px;
+  overflow: hidden;
 }
 
 .faqFooter {
