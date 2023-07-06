@@ -70,8 +70,21 @@
 }
 
 .hiddenAnswer {
-  height: 0px;
-  overflow: hidden;
+  height: auto;
+  max-height: 200px;
+  overflow: scroll;
+  transition: all 0.5s ease-in;
+}
+
+.hiddenAnswer p {
+  padding: 5px 10px;
+  width: 100%;
+  border-bottom: 1px solid black;
+}
+
+.hiddenAnswer.active {
+  max-height: 0;
+  transition: all 0.5s ease-out;
 }
 
 .faqFooter {

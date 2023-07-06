@@ -1,8 +1,19 @@
+import { useState } from "react";
 import Image from "next/image";
 
 import styles from "./Faq.module.css";
 
 const Faq: React.FC = () => {
+  const [activeQuestion, setActiveQuestion] = useState(0);
+
+  const handleFaqChange = (faqNumber: number) => {
+    if (activeQuestion === faqNumber) {
+      return setActiveQuestion(0);
+    }
+    setActiveQuestion(0);
+    setActiveQuestion(faqNumber);
+  };
+
   return (
     <div className={styles.faqLayout}>
       <div className={styles.faqContainer}>
@@ -14,50 +25,113 @@ const Faq: React.FC = () => {
             <p>information hub</p>
           </div>
           <div className={styles.faqQuestionsContainer}>
-            <div className={styles.faqQuestionElement}>
+            <div
+              className={styles.faqQuestionElement}
+              onClick={() => handleFaqChange(1)}
+            >
               <p>When will my healthy meal prep be delivered?</p>
               <div className={styles.arrowContainer}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="1em"
-                  viewBox="0 0 448 512"
-                >
-                  <path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
-                </svg>
+                {activeQuestion === 1 ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="1em"
+                    viewBox="0 0 448 512"
+                  >
+                    <path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z" />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="1em"
+                    viewBox="0 0 448 512"
+                  >
+                    <path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+                  </svg>
+                )}
               </div>
             </div>
-            <div className={styles.hiddenAnswer}>
-              <p>Hidden Answer</p>
+            <div
+              className={`${styles.hiddenAnswer} ${
+                activeQuestion === 1 ? "" : styles.active
+              }`}
+            >
+              <p>
+                You will pick a date for your delivery before you get to the
+                checkout. We will only deliver on the day that has been selected
+                on the calendar.
+              </p>
             </div>
-            <div className={styles.faqQuestionElement}>
+            <div
+              className={styles.faqQuestionElement}
+              onClick={() => handleFaqChange(2)}
+            >
               <p>When will my healthy meal prep be delivered?</p>
               <div className={styles.arrowContainer}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="1em"
-                  viewBox="0 0 448 512"
-                >
-                  <path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
-                </svg>
+                {activeQuestion === 2 ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="1em"
+                    viewBox="0 0 448 512"
+                  >
+                    <path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z" />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="1em"
+                    viewBox="0 0 448 512"
+                  >
+                    <path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+                  </svg>
+                )}
               </div>
             </div>
-            <div className={styles.hiddenAnswer}>
-              <p>Hidden Answer</p>
+            <div
+              className={`${styles.hiddenAnswer} ${
+                activeQuestion === 2 ? "" : styles.active
+              }`}
+            >
+              <p>
+                You will pick a date for your delivery before you get to the
+                checkout. We will only deliver on the day that has been selected
+                on the calendar.
+              </p>
             </div>
-            <div className={styles.faqQuestionElement}>
+            <div
+              className={styles.faqQuestionElement}
+              onClick={() => handleFaqChange(3)}
+            >
               <p>When will my healthy meal prep be delivered?</p>
               <div className={styles.arrowContainer}>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  height="1em"
-                  viewBox="0 0 448 512"
-                >
-                  <path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
-                </svg>
+                {activeQuestion === 3 ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="1em"
+                    viewBox="0 0 448 512"
+                  >
+                    <path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z" />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="1em"
+                    viewBox="0 0 448 512"
+                  >
+                    <path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+                  </svg>
+                )}
               </div>
             </div>
-            <div className={styles.hiddenAnswer}>
-              <p>Hidden Answer</p>
+            <div
+              className={`${styles.hiddenAnswer} ${
+                activeQuestion === 3 ? "" : styles.active
+              }`}
+            >
+              <p>
+                You will pick a date for your delivery before you get to the
+                checkout. We will only deliver on the day that has been selected
+                on the calendar.
+              </p>
             </div>
           </div>
           <div className={styles.faqFooter}>
