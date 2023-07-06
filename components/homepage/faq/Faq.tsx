@@ -52,20 +52,24 @@ const Faq: React.FC = () => {
             </div>
             <div
               className={`${styles.hiddenAnswer} ${
-                activeQuestion === 1 ? "" : styles.active
+                activeQuestion === 1 ? "" : styles.hidden
               }`}
             >
               <p>
                 You will pick a date for your delivery before you get to the
                 checkout. We will only deliver on the day that has been selected
-                on the calendar.
+                on the calendar. <br />
+                <strong>Calgary meal prep delivery</strong> <br />
+                Sunday, Monday, Tuesday & Thursday: 2pm-7pm <br />
+                <strong>Alberta meal prep delivery</strong> <br />
+                Tuesday, Wednesday & Friday: 9am-5pm
               </p>
             </div>
             <div
               className={styles.faqQuestionElement}
               onClick={() => handleFaqChange(2)}
             >
-              <p>When will my healthy meal prep be delivered?</p>
+              <p>Where do I find the nutrition and meal info?</p>
               <div className={styles.arrowContainer}>
                 {activeQuestion === 2 ? (
                   <svg
@@ -88,20 +92,23 @@ const Faq: React.FC = () => {
             </div>
             <div
               className={`${styles.hiddenAnswer} ${
-                activeQuestion === 2 ? "" : styles.active
+                activeQuestion === 2 ? "" : styles.hidden
               }`}
             >
               <p>
-                You will pick a date for your delivery before you get to the
-                checkout. We will only deliver on the day that has been selected
-                on the calendar.
+                Each meal has a sticker with your name, the meal name and a full
+                table of nutrition facts. If you misplace the sticker, you can
+                find the nutritional information and ingredient list on the
+                second photo of each product. All of our meals do not have salt
+                added so that you can adjust to your own preference. Please
+                season your meals as you feel is needed.
               </p>
             </div>
             <div
               className={styles.faqQuestionElement}
               onClick={() => handleFaqChange(3)}
             >
-              <p>When will my healthy meal prep be delivered?</p>
+              <p>I signed up for a subscription? When does it get delivered?</p>
               <div className={styles.arrowContainer}>
                 {activeQuestion === 3 ? (
                   <svg
@@ -124,13 +131,57 @@ const Faq: React.FC = () => {
             </div>
             <div
               className={`${styles.hiddenAnswer} ${
-                activeQuestion === 3 ? "" : styles.active
+                activeQuestion === 3 ? "" : styles.hidden
               }`}
             >
               <p>
-                You will pick a date for your delivery before you get to the
-                checkout. We will only deliver on the day that has been selected
-                on the calendar.
+                This will depend on the delivery day you chose and how
+                frequently you want the delivery to happen. For example, if you
+                chose your <strong>first box</strong> to be delivered on a
+                Monday, and you chose your frequency of deliveries to be every
+                two weeks, your box of meals will arrive every other Monday.
+                <br />
+                If you purchased a 21 meal box, you will have 2 delivery days
+                per week. Your first delivery day will be the week day you
+                select, and your second delivery will occur 4-5 days after your
+                first delivery so that you have fresh meals that will last you
+                the entire week.
+              </p>
+            </div>
+            <div
+              className={styles.faqQuestionElement}
+              onClick={() => handleFaqChange(4)}
+            >
+              <p>Are your meals fresh or frozen?</p>
+              <div className={styles.arrowContainer}>
+                {activeQuestion === 3 ? (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="1em"
+                    viewBox="0 0 448 512"
+                  >
+                    <path d="M201.4 137.4c12.5-12.5 32.8-12.5 45.3 0l160 160c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L224 205.3 86.6 342.6c-12.5 12.5-32.8 12.5-45.3 0s-12.5-32.8 0-45.3l160-160z" />
+                  </svg>
+                ) : (
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    height="1em"
+                    viewBox="0 0 448 512"
+                  >
+                    <path d="M201.4 342.6c12.5 12.5 32.8 12.5 45.3 0l160-160c12.5-12.5 12.5-32.8 0-45.3s-32.8-12.5-45.3 0L224 274.7 86.6 137.4c-12.5-12.5-32.8-12.5-45.3 0s-12.5 32.8 0 45.3l160 160z" />
+                  </svg>
+                )}
+              </div>
+            </div>
+            <div
+              className={`${styles.hiddenAnswer} ${
+                activeQuestion === 4 ? "" : styles.hidden
+              }`}
+            >
+              <p>
+                All of our meals are delivered fresh and ready for you to put in
+                the fridge! Each meal will last up to 5 days in your fridge once
+                it's been delivered.
               </p>
             </div>
           </div>
