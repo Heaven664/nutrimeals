@@ -1,5 +1,6 @@
 import React, { ReactNode, JSX } from "react";
 import Header from "../header/Header";
+import Footer from "../footer/footer";
 
 interface LayoutProps {
   children: ReactNode;
@@ -10,6 +11,7 @@ const Layout = ({ children }: LayoutProps): JSX.Element => {
     <>
       <Header />
       <main>{children}</main>
+      <Footer />
     </>
   );
 };
