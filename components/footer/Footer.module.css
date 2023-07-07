@@ -1,0 +1,90 @@
+.footerLayout {
+  background-color: rgb(246, 246, 246);
+  margin-top: 155px;
+  padding-top: 45px;
+  padding-bottom: 55px;
+}
+
+.footerContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.upperFooterContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 0 22px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgb(221, 221, 221);
+}
+
+.footerLinksContainer {
+  padding: 0 18px;
+  margin-bottom: 55px;
+}
+
+.footerLinksList {
+  list-style: none;
+}
+
+.footerLinksContainer p {
+  color: rgb(51, 50, 50);
+  font-size: 15px;
+  font-weight: 700;
+}
+
+.footerLinksList li {
+  padding-top: 30px;
+  color: rgb(51, 50, 50);
+  font-size: 15px;
+}
+
+.footerSubscribeContainer {
+  padding: 0 18px;
+}
+
+.footerSubscribeContainer p {
+  text-transform: uppercase;
+  font-size: 15px;
+  font-weight: 700;
+  color: rgb(51, 50, 50);
+  margin-bottom: 12.5px;
+}
+
+.footerSubscribeInput {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.footerSubscribeInput input {
+  padding: 10px 15px;
+  border: 1px solid rgb(179, 179, 179);
+  align-self: stretch;
+  font-size: 16px;
+}
+
+.footerSubscribeInput input::placeholder {
+  font-size: 16.3px;
+}
+
+.footerSubscribeInput button {
+  align-self: stretch;
+  text-transform: uppercase;
+  background-color: rgb(6, 64, 75);
+  color: rgb(235, 235, 235);
+  letter-spacing: 0.5px;
+  font-size: 13px;
+  font-weight: 600;
+  padding: 12px 15px;
+  border: none;
+  cursor: pointer;
+  margin-top: 5px;
+  transition: 0.15s;
+  box-shadow: 4px 0 15px #b1b1b1 !important;
+}
+
+.footerSubscribeInput button:hover {
+  background-color: rgb(16, 177, 221);
+}
