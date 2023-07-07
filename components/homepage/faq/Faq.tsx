@@ -154,7 +154,7 @@ const Faq: React.FC = () => {
             >
               <p>Are your meals fresh or frozen?</p>
               <div className={styles.arrowContainer}>
-                {activeQuestion === 3 ? (
+                {activeQuestion === 4 ? (
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     height="1em"
