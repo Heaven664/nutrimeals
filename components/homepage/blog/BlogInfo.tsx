@@ -57,7 +57,7 @@ const BlogInfo: React.FC = () => {
                 alt="blog-image-3"
                 width={300}
                 height={300}
-                src="/images/homepage/blog/blog-3.webp"
+                src="/images/homepage/blog/blog-2.webp"
               />
             </div>
             <div className={styles.blogTextContainer}>
