@@ -1,13 +1,27 @@
 .footerLayout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   background-color: rgb(246, 246, 246);
   margin-top: 155px;
   padding-top: 45px;
   padding-bottom: 55px;
 }
 
+.upperLayout {
+  width: 100%;
+  border-bottom: 1px solid rgb(221, 221, 221);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .footerContainer {
   display: flex;
   flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .upperFooterContainer {
@@ -15,7 +29,7 @@
   flex-direction: column;
   padding: 0 22px;
   padding-bottom: 30px;
-  border-bottom: 1px solid rgb(221, 221, 221);
+  max-width: 1200px;
 }
 
 .footerLinksContainer {
@@ -36,7 +50,7 @@
 .footerLinksList li {
   padding-top: 30px;
   color: rgb(51, 50, 50);
-  font-size: 15px;
+  font-size: 14.5px;
 }
 
 .footerSubscribeContainer {
@@ -59,7 +73,7 @@
 }
 
 .footerSubscribeInput input {
-  padding: 10px 15px;
+  padding: 12px 15px;
   border: 1px solid rgb(179, 179, 179);
   align-self: stretch;
   font-size: 16px;
@@ -67,6 +81,7 @@
 
 .footerSubscribeInput input::placeholder {
   font-size: 16.3px;
+  font-weight: 300;
 }
 
 .footerSubscribeInput button {
@@ -86,5 +101,199 @@
 }
 
 .footerSubscribeInput button:hover {
-  background-color: rgb(16, 177, 221);
+  background-color: rgb(12, 124, 146)
+}
+
+.lowerFooterLayout {
+  max-width: 1200px;
+  padding-top: 30px;
+  width: 100%;
+}
+
+.lowerFooterContainer {
+  padding: 0 22px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.currencyContainer {
+  margin-bottom: 15px;
+}
+
+.currencyContainer p {
+  border: 1px solid rgb(221, 221, 221);
+  font-size: 15px;
+  padding: 8px 12px;
+  font-weight: 400;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 160px;
+}
+
+.paymentsContainer {
+  padding-bottom: 30px;
+  margin: 15px 0;
+}
+
+.paymentsContainer ul {
+  list-style-type: none;
+}
+
+.rightsContainer p {
+  color: rgb(51, 50, 50);
+  font-size: 12px;
+}
+
+.paymentImageContainer {
+  width: 35px;
+  height: 25px;
+  object-fit: cover;
+}
+
+.paymentsContainer ul {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.paymentsContainer li {
+  margin: 0 3px;
+}
+
+.paymentImageContainer img {
+  width: 100%;
+  height: 100%;
+}
+
+@media (min-width: 400px) {
+  .footerLayout {
+    padding-bottom: 35px;
+    margin-top: 55px;
+  }
+
+  .footerSubscribeInput {
+    flex-direction: row;
+  }
+
+  .footerSubscribeInput input {
+    width: 100%;
+  }
+
+  .footerSubscribeInput button {
+    margin-top: 0;
+    align-self: stretch;
+  }
+
+  .paymentsContainer {
+    padding-bottom: 0;
+    margin-top: 5px;
+  }
+}
+
+@media (min-width: 750px) {
+  .upperFooterContainer {
+    flex-direction: row;
+    align-items: start;
+  }
+
+  .footerLinksContainer {
+    flex: 1;
+    padding: 0 25px;
+  }
+
+  .footerLinksList {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    row-gap: 5px;
+  }
+
+  .footerSubscribeContainer {
+    flex: 1;
+  }
+
+  .footerSubscribeInput {
+    flex-direction: column;
+  }
+
+  .footerSubscribeContainer p {
+    margin-bottom: 25px;
+  }
+
+  .footerSubscribeInput button {
+    margin-top: 5px;
+  }
+
+  .footerLinksContainer p {
+    margin-left: 5px;
+  }
+
+  .footerLinksList li {
+    padding-top: 5px;
+    padding-right: 15px;
+    padding-left: 5px;
+    color: rgb(25, 25, 25);
+  }
+
+  .lowerFooterContainer {
+    flex-direction: row;
+    justify-content: start;
+    align-items: start;
+    flex-wrap: wrap;
+  }
+
+  .currencyContainer {
+    order: 1;
+    flex: 48%;
+    margin-left: 2%;
+  }
+
+  .paymentsContainer {
+    order: 3;
+    flex: 98%;
+    margin-left: 2%;
+  }
+
+  .rightsContainer {
+    order: 2;
+    flex: 48%;
+    margin-right: 2%;
+  }
+
+  .rightsContainer p {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+}
+
+@media (min-width: 870px) {
+  .footerSubscribeInput {
+    flex-direction: row;
+  }
+
+  .footerSubscribeInput button {
+    margin-top: 0px;
+  }
+
+  .footerLinksContainer p {
+    margin-bottom: 25px;
+  }
+}
+
+@media (min-width: 990px) {
+  .footerLinksContainer p {
+    font-size: 17px;
+  }
+
+  .footerSubscribeContainer {
+    margin-top: 5px;
+  }
+
+  .footerSubscribeContainer p {
+    font-size: 17px;
+  }
 }
