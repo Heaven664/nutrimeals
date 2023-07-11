@@ -33,7 +33,6 @@ const Footer: React.FC = () => {
             </div>
           </div>
         </div>
-
         <div className={styles.lowerFooterLayout}>
           <div className={styles.lowerFooterContainer}>
             <div className={styles.currencyContainer}>
