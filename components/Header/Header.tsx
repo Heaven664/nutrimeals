@@ -8,6 +8,7 @@ import BurgerMenuClosed from "./BurgerOpened";
 import styles from "./Header.module.css";
 import UserToolsList from "./UserToolsList";
 import Navbar from "./Navbar/Navbar";
+import DesktopTools from "./DesktopTools";
 
 interface HeaderProps {}
 
@@ -31,6 +32,9 @@ const Header = ({}: HeaderProps): JSX.Element => {
             />
           </div>
         </Link>
+        <div className={styles.desktopToolsContainer}>
+          <DesktopTools />
+        </div>
         <div className={styles.tools}>
           <UserToolsList />
           <button
