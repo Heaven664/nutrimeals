@@ -1,0 +1,54 @@
+.toolsList {
+  list-style: none;
+  width: 40vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  max-height: 100px;
+  margin: 25px 0;
+  min-width: 400px;
+}
+
+.toolsList li {
+  padding: 3px 10px;
+  padding-right: 20px;
+  font-size: 14px;
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 4px;
+  margin-left: 2px;
+}
+
+.toolsList li p {
+  border-bottom: 1px solid transparent;
+}
+
+.toolsList li:hover p {
+  border-bottom: 1px solid rgb(74, 73, 73);
+  color: rgb(74, 73, 73);
+}
+
+.toolExtend svg {
+  width: 10px;
+  height: 10px;
+}
+
+.toolExtend {
+  position: absolute;
+  top: 4.5px;
+  right: 5.5px;
+}
+
+@media (min-width: 990px) {
+  .toolsList {
+    width: 45vw;
+  }
+
+  .toolsList li {
+    font-size: 15px;
+  }
+}
