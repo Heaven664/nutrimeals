@@ -80,19 +80,19 @@ const DesktopTools: React.FC = () => {
             <div className={styles.extendedTools}>
               <ul>
                 <li>
-                  <p>Lunch & Dinner</p>
+                  <p>Breakfast & Lunch Box</p>
                 </li>
                 <li>
-                  <p>Breakfast</p>
+                  <p>Breakfast, Lunch, & Dinner Box</p>
                 </li>
                 <li>
-                  <p>Build Your Own Meal</p>
+                  <p>Lunch & Dinner Box</p>
                 </li>
                 <li>
-                  <p>Beverages</p>
+                  <p>Lunch & Dinner Box</p>
                 </li>
                 <li>
-                  <p>Snacks</p>
+                  <p>Dairy Free Box</p>
                 </li>
               </ul>
             </div>
@@ -117,19 +117,10 @@ const DesktopTools: React.FC = () => {
             <div className={styles.extendedTools}>
               <ul>
                 <li>
-                  <p>Lunch & Dinner</p>
+                  <p>Information</p>
                 </li>
                 <li>
-                  <p>Breakfast</p>
-                </li>
-                <li>
-                  <p>Build Your Own Meal</p>
-                </li>
-                <li>
-                  <p>Beverages</p>
-                </li>
-                <li>
-                  <p>Snacks</p>
+                  <p>Dietitian consultation </p>
                 </li>
               </ul>
             </div>
@@ -154,19 +145,16 @@ const DesktopTools: React.FC = () => {
             <div className={styles.extendedTools}>
               <ul>
                 <li>
-                  <p>Lunch & Dinner</p>
+                  <p>Protein</p>
                 </li>
                 <li>
-                  <p>Breakfast</p>
+                  <p>Carbohydrates</p>
                 </li>
                 <li>
-                  <p>Build Your Own Meal</p>
+                  <p>Vegetables</p>
                 </li>
                 <li>
-                  <p>Beverages</p>
-                </li>
-                <li>
-                  <p>Snacks</p>
+                  <p>Bulk Beverages</p>
                 </li>
               </ul>
             </div>
