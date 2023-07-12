@@ -1,21 +1,33 @@
-import { useState } from "react";
+import { useRef, useState, useEffect } from "react";
 import styles from "./DesktopTools.module.css";
 
 const DesktopTools: React.FC = () => {
   const [openTools, setOpenTools] = useState(0);
+  const toolsRef = useRef<HTMLUListElement>(null);
 
-  const handleExtendedTools = (toolNumber: number) => {
-    console.log(toolNumber);
-    console.log(openTools);
+  const handleClickInside = (toolNumber: number) => {
     if (openTools === toolNumber) {
       return setOpenTools(0);
     }
     setOpenTools(toolNumber);
   };
 
+  const handleClickOutside = (event: MouseEvent) => {
+    if (toolsRef.current && !toolsRef.current.contains(event.target as Node)) {
+      setOpenTools(0);
+    }
+  };
+
+  useEffect(() => {
+    document.body.addEventListener("click", handleClickOutside);
+    return () => {
+      document.body.removeEventListener("click", handleClickOutside);
+    };
+  }, []);
+
   return (
-    <ul className={styles.toolsList}>
-      <li onClick={() => handleExtendedTools(1)}>
+    <ul className={styles.toolsList} ref={toolsRef}>
+      <li onClick={() => handleClickInside(1)}>
         <div className={styles.toolContainer}>
           <p>Individual Meals</p>
           <div className={styles.toolExtend}>
@@ -52,7 +64,7 @@ const DesktopTools: React.FC = () => {
           )}
         </div>
       </li>
-      <li onClick={() => handleExtendedTools(2)}>
+      <li onClick={() => handleClickInside(2)}>
         <div className={styles.toolContainer}>
           <p>Subscription Boxes</p>
           <div className={styles.toolExtend}>
@@ -89,7 +101,7 @@ const DesktopTools: React.FC = () => {
           )}
         </div>
       </li>
-      <li onClick={() => handleExtendedTools(3)}>
+      <li onClick={() => handleClickInside(3)}>
         <div className={styles.toolContainer}>
           <p>Meal Plans</p>
           <div className={styles.toolExtend}>
@@ -126,7 +138,7 @@ const DesktopTools: React.FC = () => {
           )}
         </div>
       </li>
-      <li onClick={() => handleExtendedTools(4)}>
+      <li onClick={() => handleClickInside(4)}>
         <div className={styles.toolContainer}>
           <p>Bulk Menu</p>
           <div className={styles.toolExtend}>
