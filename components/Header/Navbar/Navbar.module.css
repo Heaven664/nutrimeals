@@ -10,6 +10,7 @@
   height: auto;
   max-height: 306px;
 }
+
 .nav ul {
   list-style: none;
   overflow: hidden;
@@ -24,15 +25,16 @@
   width: 100px;
   transition: width 0.5s ease-out, max-height 0.5s ease-out;
   width: 0;
-  max-height: 0;
 }
 
 .utilityClosed {
   width: 0;
+  transition: width 0.5s ease-in;
 }
 
 .utilityOpened {
   width: 100%;
+  transition: width 0.5s ease-out;
 }
 
 .nav ul li button {
@@ -64,6 +66,8 @@
 
 .nav ul li {
   border-bottom: 1px solid rgba(128, 128, 128, 0.2);
+  border-right: 1px solid rgba(128, 128, 128, 0.2);
+  border-left: 1px solid rgba(128, 128, 128, 0.2);
 }
 
 .nav li button span {
