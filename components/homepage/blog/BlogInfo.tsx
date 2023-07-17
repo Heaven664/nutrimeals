@@ -19,7 +19,7 @@ const BlogInfo: React.FC = () => {
                 alt="blog-image-1"
                 width={300}
                 height={300}
-                src="/images/homepage/blog/blog-1.webp"
+                src="/images/homepage/blog/blog-new-1.avif"
               />
             </div>
             <div className={styles.blogTextContainer}>
@@ -40,7 +40,7 @@ const BlogInfo: React.FC = () => {
                 alt="blog-image-2"
                 width={300}
                 height={300}
-                src="/images/homepage/blog/blog-4.webp"
+                src="/images/homepage/blog/blog-new-2.avif"
               />
             </div>
             <div className={styles.blogTextContainer}>
@@ -57,7 +57,7 @@ const BlogInfo: React.FC = () => {
                 alt="blog-image-3"
                 width={300}
                 height={300}
-                src="/images/homepage/blog/blog-2.webp"
+                src="/images/homepage/blog/blog-new-3.webp"
               />
             </div>
             <div className={styles.blogTextContainer}>
