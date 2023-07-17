@@ -1,6 +1,10 @@
 import { JSX, useState } from "react";
 
 import styles from "./Navbar.module.css";
+import IndividualMeals from "./extendedMobileNavs/IndividualMeals";
+import SubscriptionBoxes from "./extendedMobileNavs/SubscriptionBoxes";
+import MealPlans from "./extendedMobileNavs/MealPlans";
+import BulkMenu from "./extendedMobileNavs/BulkMenu";
 
 interface NavbarStatus {
   navbarActive: boolean;
@@ -31,7 +35,7 @@ const Navbar = ({ navbarActive }: NavbarStatus): JSX.Element => {
         `}
       >
         <li>
-          <button onClick={(e) => extendNavbarHandler(1)}>
+          <button onClick={() => extendNavbarHandler(1)}>
             <span>Individual Meals</span>
             <div className={styles.extend}>
               <svg
@@ -46,7 +50,7 @@ const Navbar = ({ navbarActive }: NavbarStatus): JSX.Element => {
           </button>
         </li>
         <li>
-          <button>
+          <button onClick={() => extendNavbarHandler(2)}>
             <span>Subscription Boxes</span>
             <div className={styles.extend}>
               <svg
@@ -61,8 +65,23 @@ const Navbar = ({ navbarActive }: NavbarStatus): JSX.Element => {
           </button>
         </li>
         <li>
-          <button>
+          <button onClick={() => extendNavbarHandler(3)}>
             <span>Meal Plans</span>
+            <div className={styles.extend}>
+              <svg
+                aria-hidden="true"
+                focusable="false"
+                role="presentation"
+                viewBox="0 0 14 14"
+              >
+                <path d="M3.871.604c.44-.439 1.152-.439 1.591 0l5.515 5.515s-.049-.049.003.004l.082.08c.439.44.44 1.153 0 1.592l-5.6 5.6a1.125 1.125 0 0 1-1.59-1.59L8.675 7 3.87 2.195a1.125 1.125 0 0 1 0-1.59z"></path>
+              </svg>
+            </div>
+          </button>
+        </li>
+        <li>
+          <button onClick={() => extendNavbarHandler(4)}>
+            <span>Bulk Menu</span>
             <div className={styles.extend}>
               <svg
                 aria-hidden="true"
@@ -78,16 +97,6 @@ const Navbar = ({ navbarActive }: NavbarStatus): JSX.Element => {
         <li>
           <button>
             <span>Merchandise</span>
-            <div className={styles.extend}>
-              <svg
-                aria-hidden="true"
-                focusable="false"
-                role="presentation"
-                viewBox="0 0 14 14"
-              >
-                <path d="M3.871.604c.44-.439 1.152-.439 1.591 0l5.515 5.515s-.049-.049.003.004l.082.08c.439.44.44 1.153 0 1.592l-5.6 5.6a1.125 1.125 0 0 1-1.59-1.59L8.675 7 3.87 2.195a1.125 1.125 0 0 1 0-1.59z"></path>
-              </svg>
-            </div>
           </button>
         </li>
         <li>
@@ -101,34 +110,22 @@ const Navbar = ({ navbarActive }: NavbarStatus): JSX.Element => {
           </button>
         </li>
       </ul>
-      <ul
-        className={`${styles.utilityNavbar} ${
-          extendedNavbar !== 0
-            ? `${styles.utilityOpened}`
-            : `${styles.utilityClosed}`
-        }`}
-      >
-        <li>
-          <button onClick={(e) => extendNavbarHandler(1)}>
-            <span>1Individual Meals</span>
-          </button>
-        </li>
-        <li>
-          <button>
-            <span>2Subscription Boxes</span>
-          </button>
-        </li>
-        <li>
-          <button>
-            <span>3Meal Plans</span>
-          </button>
-        </li>
-        <li>
-          <button>
-            <span>4Merchandise</span>
-          </button>
-        </li>
-      </ul>
+      <IndividualMeals
+        extendedNavbar={extendedNavbar}
+        extendNavbarHandler={extendNavbarHandler}
+      />
+      <SubscriptionBoxes
+        extendedNavbar={extendedNavbar}
+        extendNavbarHandler={extendNavbarHandler}
+      />
+      <MealPlans
+        extendedNavbar={extendedNavbar}
+        extendNavbarHandler={extendNavbarHandler}
+      />
+      <BulkMenu
+        extendedNavbar={extendedNavbar}
+        extendNavbarHandler={extendNavbarHandler}
+      />
     </nav>
   );
 };
