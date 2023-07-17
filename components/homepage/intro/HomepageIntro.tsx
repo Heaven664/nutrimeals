@@ -3,10 +3,10 @@ import { faHeart } from "@fortawesome/free-solid-svg-icons";
 import { JSX } from "react";
 import Image from "next/image";
 
-import OrderSteps from "../preview/orderSteps";
+import OrderSteps from "../preview/OrderSteps";
 
-import styles from "./homepageIntro.module.css";
-import SpecsList from "./specsList";
+import styles from "./HomepageIntro.module.css";
+import SpecsList from "./SpecsList";
 
 const HomepageIntro = (): JSX.Element => {
   return (

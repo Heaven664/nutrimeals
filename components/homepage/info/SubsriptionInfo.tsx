@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import styles from "./subscriptionInfo.module.css";
+import styles from "./SubscriptionInfo.module.css";
 
 const SubscriptionInfo = () => {
   return (

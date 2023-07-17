@@ -4,9 +4,9 @@ import { Swiper as SwiperType } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, Navigation } from "swiper";
 
-import CarouselElement from "./carouselElement";
+import CarouselElement from "./CarouselElement";
 
-import styles from "./feedback.module.css";
+import styles from "./Feedback.module.css";
 
 import "swiper/css";
 import "swiper/css/pagination";

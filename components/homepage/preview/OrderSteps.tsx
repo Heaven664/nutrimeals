@@ -1,7 +1,7 @@
 import { JSX } from "react";
 import Image from "next/image";
 
-import styles from "./orderSteps.module.css";
+import styles from "./OrderSteps.module.css";
 
 const OrderSteps = (): JSX.Element => {
   return (
