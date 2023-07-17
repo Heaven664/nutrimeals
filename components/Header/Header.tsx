@@ -2,8 +2,8 @@ import { JSX, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import BurgerMenuOpen from "./burgerClosed";
-import BurgerMenuClosed from "./burgerOpened";
+import BurgerMenuOpen from "./burgerOpened";
+import BurgerMenuClosed from "./burgerClosed";
 
 import styles from "./header.module.css";
 import UserToolsList from "./userToolsList";
