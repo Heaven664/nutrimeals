@@ -2,15 +2,38 @@
   height: auto;
   max-height: 0;
   overflow: hidden;
-  transition: all 0.5s ease-out;
+  transition: max-height 0.5s ease-out;
+  display: flex;
 }
 
 .active {
   height: auto;
   max-height: 306px;
-  transition: all 0.5s ease-in;
+}
+.nav ul {
+  list-style: none;
+  overflow: hidden;
 }
 
+.mainNavbar {
+  width: 100%;
+  transition: width 0.5s ease-in, max-height 0.5s ease-in;
+}
+
+.hiddenMainNavbar {
+  width: 100px;
+  transition: width 0.5s ease-out, max-height 0.5s ease-out;
+  width: 0;
+  max-height: 0;
+}
+
+.utilityClosed {
+  width: 0;
+}
+
+.utilityOpened {
+  width: 100%;
+}
 
 .nav ul li button {
   padding: 15px 30px;
@@ -24,6 +47,10 @@
   outline: inherit;
 }
 
+.nav ul li button span {
+  white-space: nowrap;
+}
+
 .nav .extend {
   position: absolute;
   display: flex;
@@ -32,6 +59,7 @@
   top: 0;
   bottom: 0;
   padding: 0 15px;
+  background-color: white;
 }
 
 .nav ul li {

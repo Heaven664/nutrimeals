@@ -1,4 +1,4 @@
-import { JSX } from "react";
+import { JSX, useState } from "react";
 
 import styles from "./Navbar.module.css";
 
@@ -7,11 +7,31 @@ interface NavbarStatus {
 }
 
 const Navbar = ({ navbarActive }: NavbarStatus): JSX.Element => {
+  const [extendedNavbar, setExtendedNavbar] = useState(0);
+
+  const extendNavbarHandler = (id: number) => {
+    if (extendedNavbar === id) {
+      return setExtendedNavbar(0);
+    }
+    setExtendedNavbar(id);
+  };
+
   return (
-    <nav className={`${styles.nav} ${navbarActive ? `${styles.active}` : ""}`}>
-      <ul>
+    <nav
+      className={`
+      ${styles.nav} 
+      ${navbarActive ? `${styles.active}` : ""}
+      `}
+    >
+      <ul
+        className={`${styles.mainNavbar} ${
+          extendedNavbar !== 0 ? `${styles.hiddenMenu}` : ""
+        }
+        ${extendedNavbar !== 0 ? `${styles.hiddenMainNavbar}` : ""}
+        `}
+      >
         <li>
-          <button>
+          <button onClick={(e) => extendNavbarHandler(1)}>
             <span>Individual Meals</span>
             <div className={styles.extend}>
               <svg
@@ -78,6 +98,34 @@ const Navbar = ({ navbarActive }: NavbarStatus): JSX.Element => {
         <li>
           <button>
             <span>Automated Kiosks</span>
+          </button>
+        </li>
+      </ul>
+      <ul
+        className={`${styles.utilityNavbar} ${
+          extendedNavbar !== 0
+            ? `${styles.utilityOpened}`
+            : `${styles.utilityClosed}`
+        }`}
+      >
+        <li>
+          <button onClick={(e) => extendNavbarHandler(1)}>
+            <span>1Individual Meals</span>
+          </button>
+        </li>
+        <li>
+          <button>
+            <span>2Subscription Boxes</span>
+          </button>
+        </li>
+        <li>
+          <button>
+            <span>3Meal Plans</span>
+          </button>
+        </li>
+        <li>
+          <button>
+            <span>4Merchandise</span>
           </button>
         </li>
       </ul>
