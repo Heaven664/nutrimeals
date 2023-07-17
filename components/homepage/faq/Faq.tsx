@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Image from "next/image";
 
-import styles from "./Faq.module.css";
+import styles from "./faq.module.css";
 
 const Faq: React.FC = () => {
   const [activeQuestion, setActiveQuestion] = useState(0);

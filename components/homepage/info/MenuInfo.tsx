@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import styles from "./MenuInfo.module.css";
+import styles from "./menuInfo.module.css";
 
 const MenuInfo = () => {
   return (

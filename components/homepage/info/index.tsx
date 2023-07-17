@@ -1,7 +1,7 @@
-import LocationInfo from "./LocationInfo";
-import MenuInfo from "./MenuInfo";
-import SubscriptionInfo from "./SubsriptionInfo";
-import WasteInfo from "./WasteInfo";
+import LocationInfo from "./locationInfo";
+import MenuInfo from "./menuInfo";
+import SubscriptionInfo from "./subsriptionInfo";
+import WasteInfo from "./wasteInfo";
 
 const Info = () => {
   return (

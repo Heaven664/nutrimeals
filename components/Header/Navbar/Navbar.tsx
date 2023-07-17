@@ -1,10 +1,10 @@
 import { JSX, useState } from "react";
 
-import styles from "./Navbar.module.css";
-import IndividualMeals from "./extendedMobileNavs/IndividualMeals";
-import SubscriptionBoxes from "./extendedMobileNavs/SubscriptionBoxes";
-import MealPlans from "./extendedMobileNavs/MealPlans";
-import BulkMenu from "./extendedMobileNavs/BulkMenu";
+import styles from "./navbar.module.css";
+import IndividualMeals from "./extendedMobileNavs/individualMeals";
+import SubscriptionBoxes from "./extendedMobileNavs/subscriptionBoxes";
+import MealPlans from "./extendedMobileNavs/mealPlans";
+import BulkMenu from "./extendedMobileNavs/bulkMenu";
 
 interface NavbarStatus {
   navbarActive: boolean;

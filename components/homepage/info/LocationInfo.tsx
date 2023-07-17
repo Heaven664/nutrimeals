@@ -1,6 +1,6 @@
-import MapComponent from "./MapComponent";
+import MapComponent from "./mapComponent";
 
-import styles from "./LocationInfo.module.css";
+import styles from "./locationInfo.module.css";
 
 const LocationInfo = () => {
   return (

@@ -2,13 +2,13 @@ import { JSX, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 
-import BurgerMenuOpen from "./BurgerClosed";
-import BurgerMenuClosed from "./BurgerOpened";
+import BurgerMenuOpen from "./burgerClosed";
+import BurgerMenuClosed from "./burgerOpened";
 
-import styles from "./Header.module.css";
-import UserToolsList from "./UserToolsList";
-import Navbar from "./Navbar/Navbar";
-import DesktopTools from "./DesktopTools";
+import styles from "./header.module.css";
+import UserToolsList from "./userToolsList";
+import Navbar from "./Navbar/navbar";
+import DesktopTools from "./desktopTools";
 
 interface HeaderProps {}
 

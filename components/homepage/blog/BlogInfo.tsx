@@ -1,7 +1,7 @@
 import React from "react";
 import Image from "next/image";
 
-import styles from "./BlogInfo.module.css";
+import styles from "./blogInfo.module.css";
 
 const BlogInfo: React.FC = () => {
   return (

@@ -1,6 +1,6 @@
 import Image from "next/image";
 
-import styles from "./WasteInfo.module.css";
+import styles from "./wasteInfo.module.css";
 
 const WasteInfo = () => {
   return (

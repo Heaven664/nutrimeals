@@ -1,5 +1,5 @@
 import { JSX } from "react";
-import styles from "../Navbar.module.css";
+import styles from "../navbar.module.css";
 
 interface ExtendedProps {
   extendedNavbar: number;

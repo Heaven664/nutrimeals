@@ -1,7 +1,7 @@
 import { JSX } from "react";
 import Image from "next/image";
 
-import styles from "./SpecsList.module.css";
+import styles from "./specsList.module.css";
 
 const SpecsList = (): JSX.Element => {
   return (

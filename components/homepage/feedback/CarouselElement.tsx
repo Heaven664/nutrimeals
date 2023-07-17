@@ -1,5 +1,5 @@
 import { JSX } from "react";
-import styles from "./CarouselElement.module.css";
+import styles from "./carouselElement.module.css";
 
 interface CarouselElementProps {
   clientName: string;

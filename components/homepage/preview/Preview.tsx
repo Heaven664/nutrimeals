@@ -1,7 +1,7 @@
 import { JSX } from "react";
 import Link from "next/link";
 
-import styles from "./Preview.module.css";
+import styles from "./preview.module.css";
 
 const Preview = (): JSX.Element => {
   return (

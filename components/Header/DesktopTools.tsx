@@ -1,5 +1,5 @@
 import { useRef, useState, useEffect } from "react";
-import styles from "./DesktopTools.module.css";
+import styles from "./desktopTools.module.css";
 
 const DesktopTools: React.FC = () => {
   const [openTools, setOpenTools] = useState(0);
