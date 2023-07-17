@@ -1,13 +1,15 @@
 .nav {
-  height: 0;
+  height: auto;
+  max-height: 0;
   overflow: hidden;
-  transition: height 0.45s cubic-bezier(0.29, 0.63, 0.44, 1);
+  transition: all 0.5s ease-out;
 }
 
 .active {
-  height: 306px;
+  height: auto;
+  max-height: 306px;
+  transition: all 0.5s ease-in;
 }
-
 
 
 .nav ul li button {
