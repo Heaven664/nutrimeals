@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { JSX } from "react";
 import styles from "../Navbar.module.css";
 
@@ -36,7 +37,9 @@ const IndividualMeals = ({
       </li>
       <li>
         <button>
-          <span>Lunch & Dinner</span>
+          <Link href="/collections/lunch-and-dinner">
+            <span>Lunch & Dinner</span>
+          </Link>
         </button>
       </li>
       <li>

@@ -22,7 +22,7 @@ const Header = ({}: HeaderProps): JSX.Element => {
   return (
     <header>
       <div className={styles.headerContainer}>
-        <Link href="">
+        <Link href="/">
           <div className={styles.logoContainer}>
             <Image
               src="/images/nutrimeals-logo.webp"

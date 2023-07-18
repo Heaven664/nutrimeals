@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useRef, useState, useEffect } from "react";
 import styles from "./DesktopTools.module.css";
 
@@ -43,7 +44,9 @@ const DesktopTools: React.FC = () => {
             <div className={styles.extendedTools}>
               <ul>
                 <li>
-                  <p>Lunch & Dinner</p>
+                  <Link href="/collections/lunch-and-dinner">
+                    <p>Lunch & Dinner</p>
+                  </Link>
                 </li>
                 <li>
                   <p>Breakfast</p>

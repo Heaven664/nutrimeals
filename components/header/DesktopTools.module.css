@@ -15,12 +15,12 @@
   padding-right: 20px;
   font-size: 14px;
   position: relative;
-  cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
   margin-bottom: 4px;
   margin-left: 2px;
+  cursor: pointer;
 }
 
 .toolsList li p {
@@ -58,9 +58,16 @@
   justify-content: flex-start;
 }
 
-.extendedTools li:hover > p {
+.toolsList li a {
+  text-decoration: inherit;
+  color: inherit;
+  padding: 0;
+}
+
+.toolsList li a:hover {
   border-bottom: 1px solid rgb(74, 73, 73);
   color: rgb(74, 73, 73);
+  margin-bottom: -1px;
 }
 
 @media (min-width: 990px) {

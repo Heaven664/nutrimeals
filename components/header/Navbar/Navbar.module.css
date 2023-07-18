@@ -103,6 +103,16 @@
   cursor: pointer;
 }
 
+.utilityNavbar li a {
+  text-decoration: inherit;
+  color: inherit;
+  padding: 0;
+}
+
+.utilityNavbar li a:hover {
+  border-bottom: 1px solid rgb(74, 73, 73);
+}
+
 @media (min-width: 750px) {
   .active {
     max-height: 0;
