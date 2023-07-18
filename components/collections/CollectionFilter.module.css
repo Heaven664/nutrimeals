@@ -65,6 +65,8 @@
   appearance: none;
   -moz-appearance: none;
   -webkit-appearance: none;
+  background-color: inherit;
+  color: black;
   border: none;
   display: flex;
   justify-content: flex-start;
