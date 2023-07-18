@@ -6,6 +6,21 @@
   align-items: center;
 }
 
+.salesAlert {
+  text-align: center;
+  background-color: rgb(6, 64, 75);
+  padding: 0 22px;
+  padding-top: 13px;
+  padding-bottom: 13px;
+  color: white;
+}
+
+.salesAlert p {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+
 .headerContainer .logoContainer {
   width: 80px;
   margin: 15px 0;
@@ -78,9 +93,6 @@
 
   .desktopToolsContainer {
     display: block;
-  }
-
-  .desktopToolsContainer {
   }
 
   .tools {

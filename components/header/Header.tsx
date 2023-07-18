@@ -21,6 +21,12 @@ const Header = ({}: HeaderProps): JSX.Element => {
 
   return (
     <header>
+      <div className={styles.salesAlert}>
+        <p>
+          Free delivery with 8+ meals in Calgary & 10+ meals outside of Calgary.
+          Phone: 587-834-0231
+        </p>
+      </div>
       <div className={styles.headerContainer}>
         <Link href="/">
           <div className={styles.logoContainer}>
