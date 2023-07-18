@@ -1,4 +1,4 @@
-import Image from "next/image";
+import CollectionListItem from "./CollectionsListItem";
 
 interface CollectionItem {
   title: string;
@@ -12,16 +12,11 @@ interface CollectionType {
 
 const CollectionsList = ({ collections }: CollectionType) => {
   const collectionItems = collections.map((collection) => (
-    <li>
-      <h1>{collection.title}</h1>
-      <h2>{collection.price}</h2>
-      <Image
-        src={collection.image}
-        alt={collection.title}
-        width={300}
-        height={300}
-      />
-    </li>
+    <CollectionListItem
+      title={collection.title}
+      price={collection.price}
+      image={collection.image}
+    />
   ));
 
   return <ul>{collectionItems}</ul>;
