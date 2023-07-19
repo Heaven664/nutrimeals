@@ -1,0 +1,88 @@
+.itemContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+
+.itemContent:hover h1 {
+  border-bottom: 1px solid black;
+  margin-bottom: -1px;
+}
+
+.itemContent:hover .imageContainer {
+  opacity: 0.8;
+}
+
+.itemContent h1 {
+  font-size: 14px;
+  align-self: flex-start;
+  margin-left: 5%;
+  margin-top: 10px;
+  padding-bottom: 1px;
+}
+
+.itemContent h2 {
+  font-size: 13.5px;
+  font-weight: 600;
+  align-self: flex-start;
+  margin-left: 5%;
+  margin-top: 5px;
+}
+
+.imageContainer {
+  width: 90%;
+  overflow: hidden;
+  transition: opacity 0.25s;
+}
+
+.imageContainer img {
+  width: 100%;
+  border-radius: 5%;
+  height: auto;
+}
+
+.controllerContainer {
+  margin-left: 5%;
+  margin-top: 10px;
+  align-self: flex-start;
+  display: flex;
+  width: 90%;
+}
+
+.controllerContainer button {
+  flex: 1;
+  background-color: rgb(0, 64, 75);
+  color: white;
+  letter-spacing: 0.2px;
+  font-size: 16px;
+  font-weight: 200;
+  padding: 0.45rem 1.6rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.15s;
+}
+
+.controllerContainer button:hover {
+  background-color: rgb(29, 193, 238);
+}
+
+.controllerContainer input {
+  background-color: rgb(0, 64, 75);
+  color: white;
+  font-size: 15px;
+  font-weight: 400;
+  border: none;
+  width: 40px;
+  padding: 0.45rem 0;
+  border-radius: 5px;
+  margin-left: 5px;
+  text-align: center;
+}
+
+.controllerContainer input[type="number"]::-webkit-inner-spin-button,
+.controllerContainer input[type="number"]::-webkit-outer-spin-button {
+  opacity: 1;
+}
