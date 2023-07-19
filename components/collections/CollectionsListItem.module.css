@@ -45,7 +45,7 @@
   margin-top: 10px;
   align-self: flex-start;
   display: flex;
-  width: 95%;
+  width: 100%;
 }
 
 .controllerContainer button {
@@ -87,6 +87,14 @@
 @media (min-width: 835px) {
   .itemContent:hover .imageContainer {
     opacity: 0.8;
+  }
+
+  .itemContent h1 {
+    font-size: 16.5px;
+  }
+
+  .itemContent h2 {
+    font-size: 15.5px;
   }
 
   .itemContent:hover h1 {
