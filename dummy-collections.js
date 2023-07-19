@@ -30,23 +30,13 @@ const DUMMY_COLLECTIONS = [
     price: 16.99,
   },
   {
-    title: "Blackened Cod",
-    image: "/images/collections/blackened-cod.webp",
+    title: "Butter Masala",
+    image: "/images/collections/butter-masala.webp",
     price: 16.99,
   },
   {
-    title: "Burger Bowl",
-    image: "/images/collections/burger-bowl.webp",
-    price: 16.99,
-  },
-  {
-    title: "Blackened Cod",
-    image: "/images/collections/blackened-cod.webp",
-    price: 16.99,
-  },
-  {
-    title: "Burger Bowl",
-    image: "/images/collections/burger-bowl.webp",
+    title: "Cabbage Roll Bowl",
+    image: "/images/collections/cabbage-roll-bowl.webp",
     price: 16.99,
   },
 ];
