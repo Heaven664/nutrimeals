@@ -1,16 +1,18 @@
 import CollectionListItem from "./CollectionsListItem";
 
+import styles from "./CollectionsList.module.css";
+
 interface CollectionItem {
   title: string;
   image: string;
   price: number;
 }
 
-interface CollectionType {
+interface P {
   collections: CollectionItem[];
 }
 
-const CollectionsList = ({ collections }: CollectionType) => {
+const CollectionsList = ({ collections }: P) => {
   const collectionItems = collections.map((collection) => (
     <CollectionListItem
       title={collection.title}
@@ -19,7 +21,11 @@ const CollectionsList = ({ collections }: CollectionType) => {
     />
   ));
 
-  return <ul>{collectionItems}</ul>;
+  return (
+    <div className={styles.collectionLayout}>
+      <ul className={styles.collectionContainer}>{collectionItems}</ul>
+    </div>
+  );
 };
 
 export default CollectionsList;
