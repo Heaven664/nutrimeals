@@ -22,7 +22,9 @@ const CollectionListItem = ({ title, image, price }: CollectionItem) => {
         <div className={styles.imageContainer}>
           <Image src={image} alt={title} width={300} height={300} />
         </div>
-        <h1>{title}</h1>
+        <div className={styles.titleContainer}>
+          <h1>{title}</h1>
+        </div>
         <h2>${price}</h2>
         <div className={styles.controllerContainer}>
           <button>Add to cart</button>

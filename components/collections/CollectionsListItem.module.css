@@ -7,18 +7,28 @@
 }
 
 .itemContent:hover h1 {
-  border-bottom: 1px solid black;
-  margin-bottom: -1px;
+  text-decoration: underline;
 }
 
 .itemContent:hover .imageContainer {
   opacity: 0.8;
 }
 
+.titleContainer {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+}
+
 .itemContent h1 {
+  display: flex;
+  align-items: center;
+  width: 100%;
   font-size: 14px;
+  padding-left: 5%;
+
+  min-height: 37px;
   align-self: flex-start;
-  margin-left: 5%;
   margin-top: 10px;
   padding-bottom: 1px;
 }
@@ -28,11 +38,10 @@
   font-weight: 600;
   align-self: flex-start;
   margin-left: 5%;
-  margin-top: 5px;
 }
 
 .imageContainer {
-  width: 90%;
+  width: 100%;
   overflow: hidden;
   transition: opacity 0.25s;
 }
