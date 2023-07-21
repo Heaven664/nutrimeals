@@ -1,3 +1,5 @@
+import { useState } from "react";
+
 import CollectionFilter from "@/components/collections/CollectionFilter";
 import CollectionTitle from "@/components/collections/CollectionTitle";
 import CollectionsList from "@/components/collections/CollectionsList";
@@ -9,10 +11,12 @@ interface P {
 }
 
 const LunchAndDinnerCollection = ({ meals }: P) => {
+  const [mealsNumber, setMealsNumber] = useState(meals.length);
+
   return (
     <>
       <CollectionTitle title="Lunch and Dinner" />
-      <CollectionFilter productsNumber={20} />
+      <CollectionFilter productsNumber={mealsNumber} />
       <CollectionsList collections={meals} />
     </>
   );

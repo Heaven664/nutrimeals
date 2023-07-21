@@ -16,8 +16,13 @@
 }
 
 @media (min-width: 835px) {
+  .collectionLayout {
+    margin-top: 10px;
+  }
+
   .collectionContainer {
-    grid-template-columns: 22.75% 22.75% 22.75% 22.75%;
-    column-gap: 3%;
+    grid-template-columns: 21% 21% 21% 21%;
+    column-gap: 30px;
+    justify-content: center;
   }
 }
