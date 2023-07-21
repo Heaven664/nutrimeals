@@ -96,6 +96,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    text-align: end;
+  }
+  .productsNumberContainer p {
+    width: 100%;
   }
 
   .productsNumberContainer p {
@@ -118,3 +122,4 @@
     margin-top: 0;
   }
 }
+

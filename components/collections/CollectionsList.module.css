@@ -23,6 +23,7 @@
   .collectionContainer {
     grid-template-columns: 21% 21% 21% 21%;
     column-gap: 30px;
+    row-gap: 40px;
     justify-content: center;
   }
 }

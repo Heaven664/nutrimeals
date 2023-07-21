@@ -91,12 +91,12 @@
 
   .itemContent h1 {
     font-size: 16.5px;
-    min-height: 45px;
+    margin-top: -2px;
   }
 
   .itemContent h2 {
-    font-size: 15.5px;
-    margin-top: 5px;
+    font-size: 14.5px;
+    margin-bottom: 10px;
   }
 
   .itemContent:hover h1 {
