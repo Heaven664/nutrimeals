@@ -1,4 +1,5 @@
 export interface MealData {
+  _id?: string,
   id: string;
   title: string;
   price: number;

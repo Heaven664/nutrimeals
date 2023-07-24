@@ -1,4 +1,5 @@
 import { MongoClient } from "mongodb";
+import { MealData } from "./interfaces";
 
 const ConnectDatabase = async () => {
   const databaseName = process.env.DATABASE_NAME;
@@ -12,16 +13,18 @@ const ConnectDatabase = async () => {
 export async function getAllDinnerAndLunchMeals() {
   const client: MongoClient = await ConnectDatabase();
 
-  let meals;
+  let meals: MealData[];
 
   try {
-    const collection = client.db("nutrimeals").collection("meals");
-    const cursor = collection.find();
+    const cursor = client.db("nutrimeals").collection("meals").find();
     const allMeals = await cursor.toArray();
-    meals = allMeals.map((meal) => ({
-      ...meal,
-      _id: meal._id.toString(),
-    }));
+    meals = allMeals.map(
+      (meal) =>
+        ({
+          ...meal,
+          _id: meal._id.toString(),
+        } as MealData)
+    );
   } catch (err) {
     throw err;
   } finally {
