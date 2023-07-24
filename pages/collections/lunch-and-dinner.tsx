@@ -13,17 +13,17 @@ interface P {
 
 const LunchAndDinnerCollection = ({ meals }: P) => {
   const MealsCtx = useContext(MealsContext);
-  const { changeAllDinnerLunchMeals: changeAllMeals, activeDinnerLunchMeals: activeMeals, changeActiveDinnerLunchMeals: changeActiveMeals } = MealsCtx;
+  const { changeAllDinnerLunchMeals, activeDinnerLunchMeals, changeActiveDinnerLunchMeals } = MealsCtx;
   const [currentMeals, setCurrentMeals] = useState<MealData[]>(meals);
 
   useEffect(() => {
-    changeActiveMeals(meals);
-    changeAllMeals(meals);
+    changeActiveDinnerLunchMeals(meals);
+    changeAllDinnerLunchMeals(meals);
   }, []);
 
   useEffect(() => {
-    setCurrentMeals(activeMeals);
-  }, [activeMeals]);
+    setCurrentMeals(activeDinnerLunchMeals);
+  }, [activeDinnerLunchMeals]);
 
   return (
     <>

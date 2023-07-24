@@ -10,7 +10,12 @@ const MealsContext = createContext<MealsContextType>({
   activeDinnerLunchMeals: [],
   changeActiveDinnerLunchMeals() {},
   changeAllDinnerLunchMeals() {},
+  getAllDinnerLunchMeals() {},
   getDairyFreeDinnerLunchMeals() {},
+  getEggFreeDinnerLunchMeals() {},
+  getGlutenFreeDinnerLunchMeals() {},
+  getPeanutFreeDinnerLunchMeals() {},
+  getVegetarianDinnerLunchMeals() {},
 });
 
 const MealsContextProvider = ({ children }: P) => {
@@ -29,9 +34,39 @@ const MealsContextProvider = ({ children }: P) => {
     setAllDinnerLunchMeals(meals);
   };
 
+  const getAllDinnerLunchMeals = () => {
+    setActiveDinnerLunchMeals(allDinnerLunchMeals);
+  };
+
   const getDairyFreeDinnerLunchMeals = () => {
     const dairyFreeMeals = allDinnerLunchMeals.filter((meal) => meal.dairyFree);
     setActiveDinnerLunchMeals(dairyFreeMeals);
+  };
+
+  const getEggFreeDinnerLunchMeals = () => {
+    const eggFreeMeals = allDinnerLunchMeals.filter((meal) => meal.eggFree);
+    setActiveDinnerLunchMeals(eggFreeMeals);
+  };
+
+  const getGlutenFreeDinnerLunchMeals = () => {
+    const glutenFreeMeals = allDinnerLunchMeals.filter(
+      (meal) => meal.glutenFree
+    );
+    setActiveDinnerLunchMeals(glutenFreeMeals);
+  };
+
+  const getPeanutFreeDinnerLunchMeals = () => {
+    const peanutFreeMeals = allDinnerLunchMeals.filter(
+      (meal) => meal.peanutFree
+    );
+    setActiveDinnerLunchMeals(peanutFreeMeals);
+  };
+
+  const getVegetarianDinnerLunchMeals = () => {
+    const vegetarianMeals = allDinnerLunchMeals.filter(
+      (meal) => meal.vegetarian
+    );
+    setActiveDinnerLunchMeals(vegetarianMeals);
   };
 
   const context: MealsContextType = {
@@ -39,7 +74,12 @@ const MealsContextProvider = ({ children }: P) => {
     activeDinnerLunchMeals: activeDinnerLunchMeals,
     changeActiveDinnerLunchMeals: changeActiveDinnerLunchMeals,
     changeAllDinnerLunchMeals: changeAllDinnerLunchMeals,
+    getAllDinnerLunchMeals: getAllDinnerLunchMeals,
     getDairyFreeDinnerLunchMeals: getDairyFreeDinnerLunchMeals,
+    getEggFreeDinnerLunchMeals: getEggFreeDinnerLunchMeals,
+    getGlutenFreeDinnerLunchMeals: getGlutenFreeDinnerLunchMeals,
+    getPeanutFreeDinnerLunchMeals: getPeanutFreeDinnerLunchMeals,
+    getVegetarianDinnerLunchMeals: getVegetarianDinnerLunchMeals,
   };
 
   return (

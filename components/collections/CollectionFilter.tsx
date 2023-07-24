@@ -8,13 +8,40 @@ interface filterProps {
 
 const CollectionFilter = ({ productsNumber }: filterProps) => {
   const MealsCtx = useContext(MealsContext);
-  const { getDairyFreeDinnerLunchMeals: getDairyFreeMeals } = MealsCtx;
+  const {
+    getAllDinnerLunchMeals,
+    getDairyFreeDinnerLunchMeals,
+    getEggFreeDinnerLunchMeals,
+    getGlutenFreeDinnerLunchMeals,
+    getPeanutFreeDinnerLunchMeals,
+    getVegetarianDinnerLunchMeals,
+  } = MealsCtx;
 
   const filterByHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedOption = e.target.value;
 
+    if (selectedOption === "all-products") {
+      getAllDinnerLunchMeals();
+    }
+
     if (selectedOption === "dairy-free") {
-      getDairyFreeMeals();
+      getDairyFreeDinnerLunchMeals();
+    }
+
+    if (selectedOption === "egg-free") {
+      getEggFreeDinnerLunchMeals();
+    }
+
+    if (selectedOption === "gluten-free") {
+      getGlutenFreeDinnerLunchMeals();
+    }
+
+    if (selectedOption === "peanut-free") {
+      getPeanutFreeDinnerLunchMeals();
+    }
+
+    if (selectedOption === "vegetarian") {
+      getVegetarianDinnerLunchMeals();
     }
   };
   return (
