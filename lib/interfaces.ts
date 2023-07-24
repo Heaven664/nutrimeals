@@ -18,8 +18,12 @@ export interface MealsContextType {
   changeAllDinnerLunchMeals: (meals: MealData[]) => void;
   getAllDinnerLunchMeals: () => void;
   getDairyFreeDinnerLunchMeals: () => void;
-  getEggFreeDinnerLunchMeals:() => void;
-  getGlutenFreeDinnerLunchMeals:() => void;
-  getPeanutFreeDinnerLunchMeals:() => void;
-  getVegetarianDinnerLunchMeals:() => void;
+  getEggFreeDinnerLunchMeals: () => void;
+  getGlutenFreeDinnerLunchMeals: () => void;
+  getPeanutFreeDinnerLunchMeals: () => void;
+  getVegetarianDinnerLunchMeals: () => void;
+  sortDinnerLunchAlphabetically: () => void;
+  sortDinnerLunchAlphabeticallyReversed: () => void;
+  sortDinnerLunchByPriceAsc: () => void;
+  sortDinnerLunchByPriceDesc: () => void;
 }

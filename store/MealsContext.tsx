@@ -16,12 +16,17 @@ const MealsContext = createContext<MealsContextType>({
   getGlutenFreeDinnerLunchMeals() {},
   getPeanutFreeDinnerLunchMeals() {},
   getVegetarianDinnerLunchMeals() {},
+  sortDinnerLunchAlphabetically() {},
+  sortDinnerLunchAlphabeticallyReversed() {},
+  sortDinnerLunchByPriceAsc() {},
+  sortDinnerLunchByPriceDesc() {},
 });
 
 const MealsContextProvider = ({ children }: P) => {
   const [allDinnerLunchMeals, setAllDinnerLunchMeals] = useState<MealData[]>(
     []
   );
+
   const [activeDinnerLunchMeals, setActiveDinnerLunchMeals] = useState<
     MealData[]
   >([]);
@@ -69,6 +74,34 @@ const MealsContextProvider = ({ children }: P) => {
     setActiveDinnerLunchMeals(vegetarianMeals);
   };
 
+  const sortDinnerLunchAlphabetically = () => {
+    const sortedMeals = [...activeDinnerLunchMeals].sort(
+      (a: MealData, b: MealData) => a.title.localeCompare(b.title)
+    );
+    setActiveDinnerLunchMeals(sortedMeals);
+  };
+
+  const sortDinnerLunchAlphabeticallyReversed = () => {
+    const sortedMeals = [...activeDinnerLunchMeals].sort(
+      (a: MealData, b: MealData) => b.title.localeCompare(a.title)
+    );
+    setActiveDinnerLunchMeals(sortedMeals);
+  };
+
+  const sortDinnerLunchByPriceAsc = () => {
+    const sortedMeals = [...activeDinnerLunchMeals].sort(
+      (a: MealData, b: MealData) => a.price - b.price
+    );
+    setActiveDinnerLunchMeals(sortedMeals);
+  };
+
+  const sortDinnerLunchByPriceDesc = () => {
+    const sortedMeals = [...activeDinnerLunchMeals].sort(
+      (a: MealData, b: MealData) => b.price - a.price
+    );
+    setActiveDinnerLunchMeals(sortedMeals);
+  };
+
   const context: MealsContextType = {
     allDinnerLunchMeals: allDinnerLunchMeals,
     activeDinnerLunchMeals: activeDinnerLunchMeals,
@@ -80,6 +113,11 @@ const MealsContextProvider = ({ children }: P) => {
     getGlutenFreeDinnerLunchMeals: getGlutenFreeDinnerLunchMeals,
     getPeanutFreeDinnerLunchMeals: getPeanutFreeDinnerLunchMeals,
     getVegetarianDinnerLunchMeals: getVegetarianDinnerLunchMeals,
+    sortDinnerLunchAlphabetically: sortDinnerLunchAlphabetically,
+    sortDinnerLunchAlphabeticallyReversed:
+      sortDinnerLunchAlphabeticallyReversed,
+    sortDinnerLunchByPriceAsc: sortDinnerLunchByPriceAsc,
+    sortDinnerLunchByPriceDesc: sortDinnerLunchByPriceDesc,
   };
 
   return (

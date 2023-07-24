@@ -15,6 +15,10 @@ const CollectionFilter = ({ productsNumber }: filterProps) => {
     getGlutenFreeDinnerLunchMeals,
     getPeanutFreeDinnerLunchMeals,
     getVegetarianDinnerLunchMeals,
+    sortDinnerLunchAlphabetically,
+    sortDinnerLunchAlphabeticallyReversed,
+    sortDinnerLunchByPriceAsc,
+    sortDinnerLunchByPriceDesc,
   } = MealsCtx;
 
   const filterByHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -44,6 +48,24 @@ const CollectionFilter = ({ productsNumber }: filterProps) => {
       getVegetarianDinnerLunchMeals();
     }
   };
+
+  const sortByHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedOption = e.target.value;
+
+    if (selectedOption === "alphabetically-a-to-z") {
+      sortDinnerLunchAlphabetically();
+    }
+    if (selectedOption === "alphabetically-z-to-a") {
+      sortDinnerLunchAlphabeticallyReversed();
+    }
+    if (selectedOption === "price-low-to-hight") {
+      sortDinnerLunchByPriceAsc();
+    }
+    if (selectedOption === "price-high-to-low") {
+      sortDinnerLunchByPriceDesc();
+    }
+  };
+
   return (
     <div className={styles.collectionLayoutContainer}>
       <div className={styles.collectionLayout}>
@@ -73,7 +95,7 @@ const CollectionFilter = ({ productsNumber }: filterProps) => {
           <div className={styles.filterByContainer}>
             <label htmlFor="sortBy">sort by</label>
             <div className={styles.selectContainer}>
-              <select name="sortBy" id="sortBy">
+              <select name="sortBy" id="sortBy" onChange={sortByHandler}>
                 <option value="alphabetically-a-to-z">
                   Alphabetically, A-Z
                 </option>
