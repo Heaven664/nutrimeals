@@ -1,4 +1,4 @@
-import { useState, useContext } from "react";
+import { useState, useContext, useEffect } from "react";
 
 import CollectionFilter from "@/components/collections/CollectionFilter";
 import CollectionTitle from "@/components/collections/CollectionTitle";
@@ -13,12 +13,23 @@ interface P {
 
 const LunchAndDinnerCollection = ({ meals }: P) => {
   const MealsCtx = useContext(MealsContext);
+  const { changeAllMeals, activeMeals, changeActiveMeals } = MealsCtx;
+  const [currentMeals, setCurrentMeals] = useState<MealData[]>(meals);
+
+  useEffect(() => {
+    changeActiveMeals(meals);
+    changeAllMeals(meals);
+  }, []);
+
+  useEffect(() => {
+    setCurrentMeals(activeMeals);
+  }, [activeMeals]);
 
   return (
     <>
       <CollectionTitle title="Lunch and Dinner" />
-      <CollectionFilter productsNumber={meals.length} />
-      <CollectionsList collections={meals} />
+      <CollectionFilter productsNumber={currentMeals.length} />
+      <CollectionsList collections={currentMeals} />
     </>
   );
 };

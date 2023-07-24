@@ -1,10 +1,22 @@
 import styles from "./CollectionFilter.module.css";
+import { useContext } from "react";
+import MealsContext from "@/store/MealsContext";
 
 interface filterProps {
   productsNumber: number;
 }
 
 const CollectionFilter = ({ productsNumber }: filterProps) => {
+  const MealsCtx = useContext(MealsContext);
+  const { getDairyFreeMeals } = MealsCtx;
+
+  const filterByHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const selectedOption = e.target.value;
+
+    if (selectedOption === "dairy-free") {
+      getDairyFreeMeals();
+    }
+  };
   return (
     <div className={styles.collectionLayoutContainer}>
       <div className={styles.collectionLayout}>
@@ -12,7 +24,7 @@ const CollectionFilter = ({ productsNumber }: filterProps) => {
           <div className={styles.filterByContainer}>
             <label htmlFor="filterBy">filter by</label>
             <div className={styles.selectContainer}>
-              <select name="filterBy" id="filterBy">
+              <select name="filterBy" id="filterBy" onChange={filterByHandler}>
                 <option value="all-products">All Products</option>
                 <option value="dairy-free">Dairy Free</option>
                 <option value="egg-free">Egg Free</option>

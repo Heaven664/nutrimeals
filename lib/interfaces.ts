@@ -1,5 +1,5 @@
 export interface MealData {
-  _id?: string,
+  _id?: string;
   id: string;
   title: string;
   price: number;
@@ -16,5 +16,5 @@ export interface MealsContextType {
   activeMeals: MealData[];
   changeActiveMeals: (meals: MealData[]) => void;
   changeAllMeals: (meals: MealData[]) => void;
-  getDairyFreeMeals: (meals: MealData[]) => void;
+  getDairyFreeMeals: () => void;
 }
