@@ -20,6 +20,8 @@ const MealsContext = createContext<MealsContextType>({
   sortDinnerLunchAlphabeticallyReversed() {},
   sortDinnerLunchByPriceAsc() {},
   sortDinnerLunchByPriceDesc() {},
+  sortDinnerLunchByDateAsc() {},
+  sortDinnerLunchByDateDesc() {},
 });
 
 const MealsContextProvider = ({ children }: P) => {
@@ -102,6 +104,20 @@ const MealsContextProvider = ({ children }: P) => {
     setActiveDinnerLunchMeals(sortedMeals);
   };
 
+  const sortDinnerLunchByDateAsc = () => {
+    const sortedMeals = [...activeDinnerLunchMeals].sort(
+      (a: MealData, b: MealData) => a.date.localeCompare(b.date)
+    );
+    setActiveDinnerLunchMeals(sortedMeals);
+  };
+
+  const sortDinnerLunchByDateDesc = () => {
+    const sortedMeals = [...activeDinnerLunchMeals].sort(
+      (a: MealData, b: MealData) => b.date.localeCompare(a.date)
+    );
+    setActiveDinnerLunchMeals(sortedMeals);
+  };
+
   const context: MealsContextType = {
     allDinnerLunchMeals: allDinnerLunchMeals,
     activeDinnerLunchMeals: activeDinnerLunchMeals,
@@ -118,6 +134,8 @@ const MealsContextProvider = ({ children }: P) => {
       sortDinnerLunchAlphabeticallyReversed,
     sortDinnerLunchByPriceAsc: sortDinnerLunchByPriceAsc,
     sortDinnerLunchByPriceDesc: sortDinnerLunchByPriceDesc,
+    sortDinnerLunchByDateAsc: sortDinnerLunchByDateAsc,
+    sortDinnerLunchByDateDesc: sortDinnerLunchByDateDesc,
   };
 
   return (

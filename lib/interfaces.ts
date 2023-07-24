@@ -1,5 +1,5 @@
 export interface MealData {
-  _id?: string;
+  _id: string;
   id: string;
   title: string;
   price: number;
@@ -9,6 +9,7 @@ export interface MealData {
   glutenFree: boolean;
   peanutFree: boolean;
   vegetarian: boolean;
+  date: string;
 }
 
 export interface MealsContextType {
@@ -26,4 +27,6 @@ export interface MealsContextType {
   sortDinnerLunchAlphabeticallyReversed: () => void;
   sortDinnerLunchByPriceAsc: () => void;
   sortDinnerLunchByPriceDesc: () => void;
+  sortDinnerLunchByDateAsc: () => void;
+  sortDinnerLunchByDateDesc: () => void;
 }

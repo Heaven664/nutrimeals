@@ -23,6 +23,7 @@ export async function getAllDinnerAndLunchMeals() {
         ({
           ...meal,
           _id: meal._id.toString(),
+          date: meal.date.toISOString(),
         } as MealData)
     );
   } catch (err) {
@@ -30,6 +31,5 @@ export async function getAllDinnerAndLunchMeals() {
   } finally {
     await client.close();
   }
-
   return meals;
 }

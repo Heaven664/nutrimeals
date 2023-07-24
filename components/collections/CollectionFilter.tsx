@@ -19,6 +19,8 @@ const CollectionFilter = ({ productsNumber }: filterProps) => {
     sortDinnerLunchAlphabeticallyReversed,
     sortDinnerLunchByPriceAsc,
     sortDinnerLunchByPriceDesc,
+    sortDinnerLunchByDateAsc,
+    sortDinnerLunchByDateDesc,
   } = MealsCtx;
 
   const filterByHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
@@ -63,6 +65,12 @@ const CollectionFilter = ({ productsNumber }: filterProps) => {
     }
     if (selectedOption === "price-high-to-low") {
       sortDinnerLunchByPriceDesc();
+    }
+    if (selectedOption === "date-old-to-new") {
+      sortDinnerLunchByDateAsc();
+    }
+    if (selectedOption === "date-new-to-old") {
+      sortDinnerLunchByDateDesc();
     }
   };
 
