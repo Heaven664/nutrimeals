@@ -12,9 +12,9 @@ export interface MealData {
 }
 
 export interface MealsContextType {
-  allMeals: MealData[];
-  activeMeals: MealData[];
-  changeActiveMeals: (meals: MealData[]) => void;
-  changeAllMeals: (meals: MealData[]) => void;
-  getDairyFreeMeals: () => void;
+  allDinnerLunchMeals: MealData[];
+  activeDinnerLunchMeals: MealData[];
+  changeActiveDinnerLunchMeals: (meals: MealData[]) => void;
+  changeAllDinnerLunchMeals: (meals: MealData[]) => void;
+  getDairyFreeDinnerLunchMeals: () => void;
 }

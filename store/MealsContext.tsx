@@ -6,36 +6,40 @@ interface P {
 }
 
 const MealsContext = createContext<MealsContextType>({
-  allMeals: [],
-  activeMeals: [],
-  changeActiveMeals() {},
-  changeAllMeals() {},
-  getDairyFreeMeals() {},
+  allDinnerLunchMeals: [],
+  activeDinnerLunchMeals: [],
+  changeActiveDinnerLunchMeals() {},
+  changeAllDinnerLunchMeals() {},
+  getDairyFreeDinnerLunchMeals() {},
 });
 
 const MealsContextProvider = ({ children }: P) => {
-  const [allMeals, setAllMeals] = useState<MealData[]>([]);
-  const [activeMeals, setActiveMeals] = useState<MealData[]>([]);
+  const [allDinnerLunchMeals, setAllDinnerLunchMeals] = useState<MealData[]>(
+    []
+  );
+  const [activeDinnerLunchMeals, setActiveDinnerLunchMeals] = useState<
+    MealData[]
+  >([]);
 
-  const changeActiveMeals = (meals: MealData[]) => {
-    setActiveMeals(meals);
+  const changeActiveDinnerLunchMeals = (meals: MealData[]) => {
+    setActiveDinnerLunchMeals(meals);
   };
 
-  const changeAllMeals = (meals: MealData[]) => {
-    setAllMeals(meals);
+  const changeAllDinnerLunchMeals = (meals: MealData[]) => {
+    setAllDinnerLunchMeals(meals);
   };
 
-  const getDairyFreeMeals = () => {
-    const dairyFreeMeals = allMeals.filter((meal) => meal.dairyFree);
-    setActiveMeals(dairyFreeMeals);
+  const getDairyFreeDinnerLunchMeals = () => {
+    const dairyFreeMeals = allDinnerLunchMeals.filter((meal) => meal.dairyFree);
+    setActiveDinnerLunchMeals(dairyFreeMeals);
   };
 
   const context: MealsContextType = {
-    allMeals: allMeals,
-    activeMeals: activeMeals,
-    changeActiveMeals: changeActiveMeals,
-    changeAllMeals: changeAllMeals,
-    getDairyFreeMeals: getDairyFreeMeals,
+    allDinnerLunchMeals: allDinnerLunchMeals,
+    activeDinnerLunchMeals: activeDinnerLunchMeals,
+    changeActiveDinnerLunchMeals: changeActiveDinnerLunchMeals,
+    changeAllDinnerLunchMeals: changeAllDinnerLunchMeals,
+    getDairyFreeDinnerLunchMeals: getDairyFreeDinnerLunchMeals,
   };
 
   return (

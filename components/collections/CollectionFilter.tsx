@@ -8,7 +8,7 @@ interface filterProps {
 
 const CollectionFilter = ({ productsNumber }: filterProps) => {
   const MealsCtx = useContext(MealsContext);
-  const { getDairyFreeMeals } = MealsCtx;
+  const { getDairyFreeDinnerLunchMeals: getDairyFreeMeals } = MealsCtx;
 
   const filterByHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedOption = e.target.value;
