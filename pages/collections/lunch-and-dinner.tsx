@@ -1,22 +1,23 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 
 import CollectionFilter from "@/components/collections/CollectionFilter";
 import CollectionTitle from "@/components/collections/CollectionTitle";
 import CollectionsList from "@/components/collections/CollectionsList";
 import { MealData } from "@/lib/interfaces";
 import { getAllDinnerAndLunchMeals } from "@/lib/mongoDB";
+import MealsContext from "@/store/MealsContext";
 
 interface P {
   meals: MealData[];
 }
 
 const LunchAndDinnerCollection = ({ meals }: P) => {
-  const [mealsNumber, setMealsNumber] = useState(meals.length);
+  const MealsCtx = useContext(MealsContext);
 
   return (
     <>
       <CollectionTitle title="Lunch and Dinner" />
-      <CollectionFilter productsNumber={mealsNumber} />
+      <CollectionFilter productsNumber={meals.length} />
       <CollectionsList collections={meals} />
     </>
   );

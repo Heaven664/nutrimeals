@@ -10,3 +10,11 @@ export interface MealData {
   peanutFree: boolean;
   vegetarian: boolean;
 }
+
+export interface MealsContextType {
+  allMeals: MealData[];
+  activeMeals: MealData[];
+  changeActiveMeals: (meals: MealData[]) => void;
+  changeAllMeals: (meals: MealData[]) => void;
+  getDairyFreeMeals: (meals: MealData[]) => void;
+}
