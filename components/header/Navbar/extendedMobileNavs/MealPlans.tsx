@@ -4,11 +4,13 @@ import styles from "../Navbar.module.css";
 interface ExtendedProps {
   extendedNavbar: number;
   extendNavbarHandler: (arg0: number) => void;
+  hideNavbar: any;
 }
 
 const MealPlans = ({
   extendedNavbar,
   extendNavbarHandler,
+  hideNavbar,
 }: ExtendedProps): JSX.Element => {
   return (
     <ul
@@ -35,12 +37,12 @@ const MealPlans = ({
         </button>
       </li>
       <li>
-        <button>
+        <button onClick={hideNavbar}>
           <span>Information</span>
         </button>
       </li>
       <li>
-        <button>
+        <button onClick={hideNavbar}>
           <span>Dietitian consultation</span>
         </button>
       </li>

@@ -5,11 +5,13 @@ import styles from "../Navbar.module.css";
 interface ExtendedProps {
   extendedNavbar: number;
   extendNavbarHandler: (arg0: number) => void;
+  hideNavbar: any;
 }
 
 const IndividualMeals = ({
   extendedNavbar,
   extendNavbarHandler,
+  hideNavbar,
 }: ExtendedProps): JSX.Element => {
   return (
     <ul
@@ -36,33 +38,33 @@ const IndividualMeals = ({
         </button>
       </li>
       <li>
-        <button>
+        <button onClick={hideNavbar}>
           <Link href="/collections/lunch-and-dinner">
             <span>Lunch & Dinner</span>
           </Link>
         </button>
       </li>
       <li>
-        <button>
+        <button onClick={hideNavbar}>
           <Link href="/collections/breakfast">
             <span>Breakfast</span>
           </Link>
         </button>
       </li>
       <li>
-        <button>
+        <button onClick={hideNavbar}>
           <span>Build Your Own Meal</span>
         </button>
       </li>
       <li>
-        <button>
+        <button onClick={hideNavbar}>
           <span>Beverages</span>
         </button>
       </li>
       <li>
-        <button>
+        <button onClick={hideNavbar}>
           <Link href="/collections/snacks">
-          <span>Snacks</span>
+            <span>Snacks</span>
           </Link>
         </button>
       </li>

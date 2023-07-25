@@ -8,9 +8,10 @@ import BulkMenu from "./extendedMobileNavs/BulkMenu";
 
 interface NavbarStatus {
   navbarActive: boolean;
+  hideNavbar: any;
 }
 
-const Navbar = ({ navbarActive }: NavbarStatus): JSX.Element => {
+const Navbar = ({ navbarActive, hideNavbar }: NavbarStatus): JSX.Element => {
   const [extendedNavbar, setExtendedNavbar] = useState(0);
 
   const extendNavbarHandler = (id: number) => {
@@ -95,17 +96,17 @@ const Navbar = ({ navbarActive }: NavbarStatus): JSX.Element => {
           </button>
         </li>
         <li>
-          <button>
+          <button onClick={hideNavbar}>
             <span>Merchandise</span>
           </button>
         </li>
         <li>
-          <button>
+          <button onClick={hideNavbar}>
             <span>Gift Card</span>
           </button>
         </li>
         <li>
-          <button>
+          <button onClick={hideNavbar}>
             <span>Automated Kiosks</span>
           </button>
         </li>
@@ -113,18 +114,22 @@ const Navbar = ({ navbarActive }: NavbarStatus): JSX.Element => {
       <IndividualMeals
         extendedNavbar={extendedNavbar}
         extendNavbarHandler={extendNavbarHandler}
+        hideNavbar={hideNavbar}
       />
       <SubscriptionBoxes
         extendedNavbar={extendedNavbar}
         extendNavbarHandler={extendNavbarHandler}
+        hideNavbar={hideNavbar}
       />
       <MealPlans
         extendedNavbar={extendedNavbar}
         extendNavbarHandler={extendNavbarHandler}
+        hideNavbar={hideNavbar}
       />
       <BulkMenu
         extendedNavbar={extendedNavbar}
         extendNavbarHandler={extendNavbarHandler}
+        hideNavbar={hideNavbar}
       />
     </nav>
   );

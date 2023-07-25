@@ -2,13 +2,13 @@
   height: auto;
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.5s ease-out;
+  transition: max-height 0.35s ease-out;
   display: flex;
 }
 
 .active {
   height: auto;
-  max-height: 306px;
+  max-height: 360px;
 }
 
 .nav ul {
@@ -18,23 +18,23 @@
 
 .mainNavbar {
   width: 100%;
-  transition: width 0.45s ease-in, max-height 0.45s ease-in;
+  transition: width 0.40s ease-in, max-height 0.35s ease-in;
 }
 
 .hiddenMainNavbar {
   width: 100px;
-  transition: width 0.45s ease-out, max-height 0.45s ease-out;
+  transition: width 0.40s ease-out, max-height 0.35s ease-out;
   width: 0;
 }
 
 .utilityClosed {
   width: 0;
-  transition: width 0.45s ease-in;
+  transition: width 0.40s ease-in;
 }
 
 .utilityOpened {
   width: 100%;
-  transition: width 0.45s ease-out;
+  transition: width 0.40s ease-out;
 }
 
 .nav ul li button {

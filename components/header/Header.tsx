@@ -51,7 +51,7 @@ const Header = ({}: HeaderProps): JSX.Element => {
           </button>
         </div>
       </div>
-      <Navbar navbarActive={mobileMenuStatus} />
+      <Navbar navbarActive={mobileMenuStatus} hideNavbar={() => setMobileMenuStatus(false)}/>
     </header>
   );
 };

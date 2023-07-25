@@ -4,11 +4,13 @@ import styles from "../Navbar.module.css";
 interface ExtendedProps {
   extendedNavbar: number;
   extendNavbarHandler: (arg0: number) => void;
+  hideNavbar: any;
 }
 
 const SubscriptionBoxes = ({
   extendedNavbar,
   extendNavbarHandler,
+  hideNavbar,
 }: ExtendedProps): JSX.Element => {
   return (
     <ul
@@ -35,27 +37,27 @@ const SubscriptionBoxes = ({
         </button>
       </li>
       <li>
-        <button>
+        <button onClick={hideNavbar}>
           <span>Breakfast & Lunch Box</span>
         </button>
       </li>
       <li>
-        <button>
+        <button onClick={hideNavbar}>
           <span>Breakfast, Lunch, & Dinner Box</span>
         </button>
       </li>
       <li>
-        <button>
+        <button onClick={hideNavbar}>
           <span>Lunch & Dinner Box</span>
         </button>
       </li>
       <li>
-        <button>
+        <button onClick={hideNavbar}>
           <span>Gluten Free Box</span>
         </button>
       </li>
       <li>
-        <button>
+        <button onClick={hideNavbar}>
           <span>Dairy Free Box</span>
         </button>
       </li>

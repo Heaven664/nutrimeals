@@ -4,11 +4,13 @@ import styles from "../Navbar.module.css";
 interface ExtendedProps {
   extendedNavbar: number;
   extendNavbarHandler: (arg0: number) => void;
+  hideNavbar: any;
 }
 
 const BulkMenu = ({
   extendedNavbar,
   extendNavbarHandler,
+  hideNavbar,
 }: ExtendedProps): JSX.Element => {
   return (
     <ul
@@ -35,22 +37,22 @@ const BulkMenu = ({
         </button>
       </li>
       <li>
-        <button>
+        <button onClick={hideNavbar}>
           <span>Protein</span>
         </button>
       </li>
       <li>
-        <button>
+        <button onClick={hideNavbar}>
           <span>Carbohydrates</span>
         </button>
       </li>
       <li>
-        <button>
+        <button onClick={hideNavbar}>
           <span>Vegetables</span>
         </button>
       </li>
       <li>
-        <button>
+        <button onClick={hideNavbar}>
           <span>Bulk Beverages</span>
         </button>
       </li>
