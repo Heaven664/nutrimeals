@@ -17,16 +17,16 @@ export interface MealsContextType {
   activeDinnerLunchMeals: MealData[];
   changeActiveDinnerLunchMeals: (meals: MealData[]) => void;
   changeAllDinnerLunchMeals: (meals: MealData[]) => void;
-  getAllDinnerLunchMeals: () => void;
-  getDairyFreeDinnerLunchMeals: () => void;
-  getEggFreeDinnerLunchMeals: () => void;
-  getGlutenFreeDinnerLunchMeals: () => void;
-  getPeanutFreeDinnerLunchMeals: () => void;
-  getVegetarianDinnerLunchMeals: () => void;
-  sortDinnerLunchAlphabetically: () => void;
-  sortDinnerLunchAlphabeticallyReversed: () => void;
-  sortDinnerLunchByPriceAsc: () => void;
-  sortDinnerLunchByPriceDesc: () => void;
-  sortDinnerLunchByDateAsc: () => void;
-  sortDinnerLunchByDateDesc: () => void;
+  getAllDinnerLunchMeals: (meals: MealData[]) => void;
+  getDairyFreeDinnerLunchMeals: (meals: MealData[]) => void;
+  getEggFreeDinnerLunchMeals: (meals: MealData[]) => void;
+  getGlutenFreeDinnerLunchMeals: (meals: MealData[]) => void;
+  getPeanutFreeDinnerLunchMeals: (meals: MealData[]) => void;
+  getVegetarianDinnerLunchMeals: (meals: MealData[]) => void;
+  sortDinnerLunchAlphabetically: (meals: MealData[]) => void;
+  sortDinnerLunchAlphabeticallyReversed: (meals: MealData[]) => void;
+  sortDinnerLunchByPriceAsc: (meals: MealData[]) => void;
+  sortDinnerLunchByPriceDesc: (meals: MealData[]) => void;
+  sortDinnerLunchByDateAsc: (meals: MealData[]) => void;
+  sortDinnerLunchByDateDesc: (meals: MealData[]) => void;
 }

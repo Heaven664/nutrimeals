@@ -4,6 +4,8 @@ import MealsContext from "@/store/MealsContext";
 const useSelectDinnerLunchHandler = () => {
   const MealsCtx = useContext(MealsContext);
 
+  const { activeDinnerLunchMeals } = MealsCtx;
+
   const {
     getAllDinnerLunchMeals,
     getDairyFreeDinnerLunchMeals,
@@ -23,27 +25,27 @@ const useSelectDinnerLunchHandler = () => {
     const selectedOption = e.target.value;
 
     if (selectedOption === "all-products") {
-      getAllDinnerLunchMeals();
+      getAllDinnerLunchMeals(activeDinnerLunchMeals);
     }
 
     if (selectedOption === "dairy-free") {
-      getDairyFreeDinnerLunchMeals();
+      getDairyFreeDinnerLunchMeals(activeDinnerLunchMeals);
     }
 
     if (selectedOption === "egg-free") {
-      getEggFreeDinnerLunchMeals();
+      getEggFreeDinnerLunchMeals(activeDinnerLunchMeals);
     }
 
     if (selectedOption === "gluten-free") {
-      getGlutenFreeDinnerLunchMeals();
+      getGlutenFreeDinnerLunchMeals(activeDinnerLunchMeals);
     }
 
     if (selectedOption === "peanut-free") {
-      getPeanutFreeDinnerLunchMeals();
+      getPeanutFreeDinnerLunchMeals(activeDinnerLunchMeals);
     }
 
     if (selectedOption === "vegetarian") {
-      getVegetarianDinnerLunchMeals();
+      getVegetarianDinnerLunchMeals(activeDinnerLunchMeals);
     }
   };
 
@@ -51,22 +53,22 @@ const useSelectDinnerLunchHandler = () => {
     const selectedOption = e.target.value;
 
     if (selectedOption === "alphabetically-a-to-z") {
-      sortDinnerLunchAlphabetically();
+      sortDinnerLunchAlphabetically(activeDinnerLunchMeals);
     }
     if (selectedOption === "alphabetically-z-to-a") {
-      sortDinnerLunchAlphabeticallyReversed();
+      sortDinnerLunchAlphabeticallyReversed(activeDinnerLunchMeals);
     }
     if (selectedOption === "price-low-to-hight") {
-      sortDinnerLunchByPriceAsc();
+      sortDinnerLunchByPriceAsc(activeDinnerLunchMeals);
     }
     if (selectedOption === "price-high-to-low") {
-      sortDinnerLunchByPriceDesc();
+      sortDinnerLunchByPriceDesc(activeDinnerLunchMeals);
     }
     if (selectedOption === "date-old-to-new") {
-      sortDinnerLunchByDateAsc();
+      sortDinnerLunchByDateAsc(activeDinnerLunchMeals);
     }
     if (selectedOption === "date-new-to-old") {
-      sortDinnerLunchByDateDesc();
+      sortDinnerLunchByDateDesc(activeDinnerLunchMeals);
     }
   };
 
