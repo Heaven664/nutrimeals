@@ -4,7 +4,7 @@ import MealsContext from "@/store/MealsContext";
 const useSelectDinnerLunchHandler = () => {
   const MealsCtx = useContext(MealsContext);
 
-  const { activeDinnerLunchMeals } = MealsCtx;
+  const { activeDinnerLunchMeals, allDinnerLunchMeals } = MealsCtx;
 
   const {
     getAllDinnerLunchMeals,
@@ -25,32 +25,40 @@ const useSelectDinnerLunchHandler = () => {
     const selectedOption = e.target.value;
 
     if (selectedOption === "all-products") {
-      getAllDinnerLunchMeals(activeDinnerLunchMeals);
+      getAllDinnerLunchMeals(allDinnerLunchMeals);
     }
 
     if (selectedOption === "dairy-free") {
-      getDairyFreeDinnerLunchMeals(activeDinnerLunchMeals);
+      getDairyFreeDinnerLunchMeals(allDinnerLunchMeals);
     }
 
     if (selectedOption === "egg-free") {
-      getEggFreeDinnerLunchMeals(activeDinnerLunchMeals);
+      getEggFreeDinnerLunchMeals(allDinnerLunchMeals);
     }
 
     if (selectedOption === "gluten-free") {
-      getGlutenFreeDinnerLunchMeals(activeDinnerLunchMeals);
+      getGlutenFreeDinnerLunchMeals(allDinnerLunchMeals);
     }
 
     if (selectedOption === "peanut-free") {
-      getPeanutFreeDinnerLunchMeals(activeDinnerLunchMeals);
+      getPeanutFreeDinnerLunchMeals(allDinnerLunchMeals);
     }
 
     if (selectedOption === "vegetarian") {
-      getVegetarianDinnerLunchMeals(activeDinnerLunchMeals);
+      getVegetarianDinnerLunchMeals(allDinnerLunchMeals);
     }
   };
 
-  const sortByHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    const selectedOption = e.target.value;
+  const sortByHandler = (
+    e?: React.ChangeEvent<HTMLSelectElement> | null,
+    value?: string | null
+  ) => {
+    let selectedOption;
+    if (value) {
+      selectedOption = value;
+    } else if (e) {
+      selectedOption = e.target.value;
+    }
 
     if (selectedOption === "alphabetically-a-to-z") {
       sortDinnerLunchAlphabetically(activeDinnerLunchMeals);

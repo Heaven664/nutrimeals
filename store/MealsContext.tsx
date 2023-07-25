@@ -56,66 +56,62 @@ const MealsContextProvider = ({ children }: P) => {
   };
 
   const getGlutenFreeDinnerLunchMeals = (meals: MealData[]) => {
-    const glutenFreeMeals = meals.filter(
-      (meal) => meal.glutenFree
-    );
+    const glutenFreeMeals = meals.filter((meal) => meal.glutenFree);
     setActiveDinnerLunchMeals(glutenFreeMeals);
   };
 
   const getPeanutFreeDinnerLunchMeals = (meals: MealData[]) => {
-    const peanutFreeMeals = meals.filter(
-      (meal) => meal.peanutFree
-    );
+    const peanutFreeMeals = meals.filter((meal) => meal.peanutFree);
     setActiveDinnerLunchMeals(peanutFreeMeals);
   };
 
   const getVegetarianDinnerLunchMeals = (meals: MealData[]) => {
-    const vegetarianMeals = meals.filter(
-      (meal) => meal.vegetarian
-    );
+    const vegetarianMeals = meals.filter((meal) => meal.vegetarian);
     setActiveDinnerLunchMeals(vegetarianMeals);
   };
 
-  const sortDinnerLunchAlphabetically = (meals: MealData[]) => {
-    const sortedMeals = [...meals].sort(
-      (a: MealData, b: MealData) => a.title.localeCompare(b.title)
-    );
-    setActiveDinnerLunchMeals(sortedMeals);
+  const sortDinnerLunchAlphabetically = () => {
+    setActiveDinnerLunchMeals((prev) => {
+      return [...prev].sort((a: MealData, b: MealData) =>
+        a.title.localeCompare(b.title)
+      );
+    });
   };
 
-  const sortDinnerLunchAlphabeticallyReversed = (meals: MealData[]) => {
-    const sortedMeals = [...meals].sort(
-      (a: MealData, b: MealData) => b.title.localeCompare(a.title)
-    );
-    setActiveDinnerLunchMeals(sortedMeals);
+  const sortDinnerLunchAlphabeticallyReversed = () => {
+    setActiveDinnerLunchMeals((prev) => {
+      return [...prev].sort((a: MealData, b: MealData) =>
+        b.title.localeCompare(a.title)
+      );
+    });
   };
 
-  const sortDinnerLunchByPriceAsc = (meals: MealData[]) => {
-    const sortedMeals = [...meals].sort(
-      (a: MealData, b: MealData) => a.price - b.price
-    );
-    setActiveDinnerLunchMeals(sortedMeals);
+  const sortDinnerLunchByPriceAsc = () => {
+    setActiveDinnerLunchMeals((prev) => {
+      return [...prev].sort((a: MealData, b: MealData) => a.price - b.price);
+    });
   };
 
-  const sortDinnerLunchByPriceDesc = (meals: MealData[]) => {
-    const sortedMeals = [...meals].sort(
-      (a: MealData, b: MealData) => b.price - a.price
-    );
-    setActiveDinnerLunchMeals(sortedMeals);
+  const sortDinnerLunchByPriceDesc = () => {
+    setActiveDinnerLunchMeals((prev) => {
+      return [...prev].sort((a: MealData, b: MealData) => b.price - a.price);
+    });
   };
 
-  const sortDinnerLunchByDateAsc = (meals: MealData[]) => {
-    const sortedMeals = [...meals].sort(
-      (a: MealData, b: MealData) => a.date.localeCompare(b.date)
-    );
-    setActiveDinnerLunchMeals(sortedMeals);
+  const sortDinnerLunchByDateAsc = () => {
+    setActiveDinnerLunchMeals((prev) => {
+      return [...prev].sort((a: MealData, b: MealData) =>
+        a.date.localeCompare(b.date)
+      );
+    });
   };
 
-  const sortDinnerLunchByDateDesc = (meals: MealData[]) => {
-    const sortedMeals = [...meals].sort(
-      (a: MealData, b: MealData) => b.date.localeCompare(a.date)
-    );
-    setActiveDinnerLunchMeals(sortedMeals);
+  const sortDinnerLunchByDateDesc = () => {
+    setActiveDinnerLunchMeals((prev) => {
+      return [...prev].sort((a: MealData, b: MealData) =>
+        b.date.localeCompare(a.date)
+      );
+    });
   };
 
   const context: MealsContextType = {

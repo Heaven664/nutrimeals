@@ -1,3 +1,5 @@
+import { useRef } from "react";
+
 import styles from "./CollectionFilter.module.css";
 import useSelectDinnerLunchHandler from "@/hooks/useSelectDinnerLunchHandler";
 
@@ -6,7 +8,14 @@ interface filterProps {
 }
 
 const CollectionFilter = ({ productsNumber }: filterProps) => {
-  const { filterByHandler, sortByHandler } = useSelectDinnerLunchHandler();
+  const { sortByHandler, filterByHandler } = useSelectDinnerLunchHandler();
+  const sortRef = useRef<HTMLSelectElement>(null);
+
+  const filterAndSort = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    filterByHandler(e);
+    const selectedOption = sortRef.current?.value;
+    sortByHandler(null, selectedOption)
+  };
 
   return (
     <div className={styles.collectionLayoutContainer}>
@@ -15,7 +24,7 @@ const CollectionFilter = ({ productsNumber }: filterProps) => {
           <div className={styles.filterByContainer}>
             <label htmlFor="filterBy">filter by</label>
             <div className={styles.selectContainer}>
-              <select name="filterBy" id="filterBy" onChange={filterByHandler}>
+              <select name="filterBy" id="filterBy" onChange={filterAndSort}>
                 <option value="all-products">All Products</option>
                 <option value="dairy-free">Dairy Free</option>
                 <option value="egg-free">Egg Free</option>
@@ -37,7 +46,12 @@ const CollectionFilter = ({ productsNumber }: filterProps) => {
           <div className={styles.filterByContainer}>
             <label htmlFor="sortBy">sort by</label>
             <div className={styles.selectContainer}>
-              <select name="sortBy" id="sortBy" onChange={sortByHandler}>
+              <select
+                name="sortBy"
+                id="sortBy"
+                onChange={sortByHandler}
+                ref={sortRef}
+              >
                 <option value="alphabetically-a-to-z">
                   Alphabetically, A-Z
                 </option>
