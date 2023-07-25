@@ -80,7 +80,16 @@ const useSelectDinnerLunchHandler = () => {
     }
   };
 
-  return { filterByHandler, sortByHandler };
+  const filterAndSort = (
+    e: React.ChangeEvent<HTMLSelectElement>,
+    reference: React.RefObject<HTMLSelectElement>
+  ) => {
+    filterByHandler(e);
+    const selectedOption = reference.current?.value;
+    sortByHandler(null, selectedOption);
+  };
+
+  return { filterAndSort, sortByHandler };
 };
 
 export default useSelectDinnerLunchHandler;

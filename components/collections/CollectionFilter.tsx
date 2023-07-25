@@ -8,13 +8,11 @@ interface filterProps {
 }
 
 const CollectionFilter = ({ productsNumber }: filterProps) => {
-  const { sortByHandler, filterByHandler } = useSelectDinnerLunchHandler();
+  const { sortByHandler, filterAndSort } = useSelectDinnerLunchHandler();
   const sortRef = useRef<HTMLSelectElement>(null);
 
-  const filterAndSort = (e: React.ChangeEvent<HTMLSelectElement>) => {
-    filterByHandler(e);
-    const selectedOption = sortRef.current?.value;
-    sortByHandler(null, selectedOption)
+  const filterHandler = (event: React.ChangeEvent<HTMLSelectElement>) => {
+    filterAndSort(event, sortRef);
   };
 
   return (
@@ -24,7 +22,7 @@ const CollectionFilter = ({ productsNumber }: filterProps) => {
           <div className={styles.filterByContainer}>
             <label htmlFor="filterBy">filter by</label>
             <div className={styles.selectContainer}>
-              <select name="filterBy" id="filterBy" onChange={filterAndSort}>
+              <select name="filterBy" id="filterBy" onChange={filterHandler}>
                 <option value="all-products">All Products</option>
                 <option value="dairy-free">Dairy Free</option>
                 <option value="egg-free">Egg Free</option>
