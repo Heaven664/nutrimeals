@@ -61,7 +61,9 @@ const IndividualMeals = ({
       </li>
       <li>
         <button>
+          <Link href="/collections/snacks">
           <span>Snacks</span>
+          </Link>
         </button>
       </li>
     </ul>

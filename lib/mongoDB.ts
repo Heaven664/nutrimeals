@@ -57,3 +57,27 @@ export async function getAllBreakfastMeals() {
   }
   return meals;
 }
+
+export async function getAllSnackMeals() {
+  const client: MongoClient = await ConnectDatabase();
+
+  let meals: MealData[];
+
+  try {
+    const cursor = client.db("nutrimeals").collection("snacks").find();
+    const allMeals = await cursor.toArray();
+    meals = allMeals.map(
+      (meal) =>
+        ({
+          ...meal,
+          _id: meal._id.toString(),
+          date: meal.date.toISOString(),
+        } as MealData)
+    );
+  } catch (err) {
+    throw err;
+  } finally {
+    await client.close();
+  }
+  return meals;
+}
