@@ -7,10 +7,9 @@ interface CollectionItem {
   title: string;
   image: string;
   price: number;
-  key: number;
 }
 
-const CollectionListItem = ({ title, image, price, key }: CollectionItem) => {
+const CollectionListItem = ({ title, image, price}: CollectionItem) => {
   const [itemNumber, setItemNumber] = useState(1);
 
   const amountChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
@@ -21,7 +20,7 @@ const CollectionListItem = ({ title, image, price, key }: CollectionItem) => {
     <li className={styles.itemContainer}>
       <div className={styles.itemContent}>
         <div className={styles.imageContainer}>
-          <Image src={image} alt={title} width={300} height={300} key={key}/>
+          <Image src={image} alt={title} width={300} height={300} key={title}/>
         </div>
         <div className={styles.titleContainer}>
           <h1>{title}</h1>
