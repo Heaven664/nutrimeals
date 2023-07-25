@@ -17,10 +17,10 @@ const CollectionListItem = ({ title, image, price}: CollectionItem) => {
   };
 
   return (
-    <li className={styles.itemContainer}>
+    <li className={styles.itemContainer} key={title}>
       <div className={styles.itemContent}>
         <div className={styles.imageContainer}>
-          <Image src={image} alt={title} width={300} height={300} key={title}/>
+          <Image src={image} alt={title} width={300} height={300}/>
         </div>
         <div className={styles.titleContainer}>
           <h1>{title}</h1>
