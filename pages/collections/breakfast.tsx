@@ -1,17 +1,17 @@
 import { useContext, useEffect } from "react";
 
-import CollectionFilter from "@/components/collections/CollectionFilter";
 import CollectionTitle from "@/components/collections/CollectionTitle";
+import CollectionFilter from "@/components/collections/CollectionFilter";
 import CollectionsList from "@/components/collections/CollectionsList";
+import { getAllBreakfastMeals } from "@/lib/mongoDB";
 import { MealData } from "@/lib/interfaces";
-import { getAllDinnerAndLunchMeals } from "@/lib/mongoDB";
 import MealsContext from "@/store/MealsContext";
 
 interface P {
   meals: MealData[];
 }
 
-const LunchAndDinnerCollection = ({ meals }: P) => {
+const BreakfastMeals = ({ meals }: P) => {
   const MealsCtx = useContext(MealsContext);
 
   const {
@@ -27,7 +27,7 @@ const LunchAndDinnerCollection = ({ meals }: P) => {
 
   return (
     <>
-      <CollectionTitle title="Lunch and Dinner" />
+      <CollectionTitle title="Breakfast" />
       <CollectionFilter productsNumber={activeDinnerLunchMeals.length} />
       <CollectionsList collections={activeDinnerLunchMeals} />
     </>
@@ -38,7 +38,7 @@ export async function getStaticProps() {
   let meals: MealData[];
 
   try {
-    meals = await getAllDinnerAndLunchMeals();
+    meals = await getAllBreakfastMeals();
   } catch (err) {
     meals = [];
     console.log(err);
@@ -49,4 +49,4 @@ export async function getStaticProps() {
   };
 }
 
-export default LunchAndDinnerCollection;
+export default BreakfastMeals;
