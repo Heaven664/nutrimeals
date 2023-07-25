@@ -13,12 +13,12 @@ interface P {
 }
 
 const CollectionsList = ({ collections }: P) => {
-  const collectionItems = collections.map((collection, index) => (
+  const collectionItems = collections.map((collection) => (
     <CollectionListItem
       title={collection.title}
       price={collection.price}
       image={collection.image}
-      key={index}
+      key={collection.title}
     />
   ));
 
