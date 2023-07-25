@@ -27,7 +27,7 @@ const SnackMeals = ({ meals }: P) => {
 
   return (
     <>
-      <CollectionTitle title="Breakfast" />
+      <CollectionTitle title="Snacks" />
       <CollectionFilter productsNumber={activeDinnerLunchMeals.length} />
       <CollectionsList collections={activeDinnerLunchMeals} />
     </>
