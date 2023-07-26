@@ -27,7 +27,7 @@ const SnackMeals = ({ meals }: P) => {
 
   return (
     <>
-      <CollectionTitle title="Snacks" />
+      <CollectionTitle title="Snacks" description="Available in Alberta only"/>
       <CollectionFilter productsNumber={activeDinnerLunchMeals.length} />
       <CollectionsList collections={activeDinnerLunchMeals} />
     </>

@@ -11,7 +11,6 @@ interface P {
   meals: MealData[];
 }
 
-
 const Beverages = ({ meals }: P) => {
   const MealsCtx = useContext(MealsContext);
 
@@ -28,9 +27,14 @@ const Beverages = ({ meals }: P) => {
 
   return (
     <>
-      <CollectionTitle title="Beverages" />
-      <CollectionBeverageFilter productsNumber={activeDinnerLunchMeals.length} />
-      <CollectionsList collections={activeDinnerLunchMeals} isBeverage={true}/>
+      <CollectionTitle
+        title="Beverages"
+        description="Compliment your meal with a local sourced beverage"
+      />
+      <CollectionBeverageFilter
+        productsNumber={activeDinnerLunchMeals.length}
+      />
+      <CollectionsList collections={activeDinnerLunchMeals} isBeverage={true} />
     </>
   );
 };
@@ -39,7 +43,7 @@ export async function getStaticProps() {
   let meals: MealData[];
 
   try {
-    meals = await getCollection('beverages');
+    meals = await getCollection("beverages");
   } catch (err) {
     meals = [];
     console.log(err);

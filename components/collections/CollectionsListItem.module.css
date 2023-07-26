@@ -29,7 +29,6 @@
   align-self: flex-start;
 }
 
-
 .imageContainer {
   width: 100%;
   overflow: hidden;
@@ -41,7 +40,6 @@
   height: auto;
   border-radius: 5%;
 }
-
 
 .beverageImageContainer {
   display: flex;
@@ -103,7 +101,8 @@
 }
 
 @media (min-width: 835px) {
-  .itemContent:hover .imageContainer {
+  .itemContent:hover .imageContainer,
+  .itemContent:hover .beverageImageContainer {
     opacity: 0.8;
   }
 
