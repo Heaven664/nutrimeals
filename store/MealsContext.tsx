@@ -16,6 +16,8 @@ const MealsContext = createContext<MealsContextType>({
   getGlutenFreeDinnerLunchMeals() {},
   getPeanutFreeDinnerLunchMeals() {},
   getVegetarianDinnerLunchMeals() {},
+  getBeverage() {},
+  getBeverages() {},
   sortDinnerLunchAlphabetically() {},
   sortDinnerLunchAlphabeticallyReversed() {},
   sortDinnerLunchByPriceAsc() {},
@@ -68,6 +70,16 @@ const MealsContextProvider = ({ children }: P) => {
   const getVegetarianDinnerLunchMeals = (meals: MealData[]) => {
     const vegetarianMeals = meals.filter((meal) => meal.vegetarian);
     setActiveDinnerLunchMeals(vegetarianMeals);
+  };
+
+  const getBeverage = (meals: MealData[]) => {
+    const beverage = meals.filter((meal) => meal.beverage);
+    setActiveDinnerLunchMeals(beverage);
+  };
+
+  const getBeverages = (meals: MealData[]) => {
+    const beverages = meals.filter((meal) => meal.beverages);
+    setActiveDinnerLunchMeals(beverages);
   };
 
   const sortDinnerLunchAlphabetically = () => {
@@ -126,6 +138,8 @@ const MealsContextProvider = ({ children }: P) => {
     getPeanutFreeDinnerLunchMeals: getPeanutFreeDinnerLunchMeals,
     getVegetarianDinnerLunchMeals: getVegetarianDinnerLunchMeals,
     sortDinnerLunchAlphabetically: sortDinnerLunchAlphabetically,
+    getBeverage: getBeverage,
+    getBeverages: getBeverages,
     sortDinnerLunchAlphabeticallyReversed:
       sortDinnerLunchAlphabeticallyReversed,
     sortDinnerLunchByPriceAsc: sortDinnerLunchByPriceAsc,

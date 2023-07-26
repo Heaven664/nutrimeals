@@ -4,11 +4,13 @@ export interface MealData {
   title: string;
   price: number;
   image: string;
-  dairyFree: boolean;
-  eggFree: boolean;
-  glutenFree: boolean;
-  peanutFree: boolean;
-  vegetarian: boolean;
+  dairyFree?: boolean;
+  eggFree?: boolean;
+  glutenFree?: boolean;
+  peanutFree?: boolean;
+  vegetarian?: boolean;
+  beverage?: boolean;
+  beverages?: boolean;
   date: string;
 }
 
@@ -23,6 +25,8 @@ export interface MealsContextType {
   getGlutenFreeDinnerLunchMeals: (meals: MealData[]) => void;
   getPeanutFreeDinnerLunchMeals: (meals: MealData[]) => void;
   getVegetarianDinnerLunchMeals: (meals: MealData[]) => void;
+  getBeverage: (meals: MealData[]) => void;
+  getBeverages: (meals: MealData[]) => void;
   sortDinnerLunchAlphabetically: (meals: MealData[]) => void;
   sortDinnerLunchAlphabeticallyReversed: (meals: MealData[]) => void;
   sortDinnerLunchByPriceAsc: (meals: MealData[]) => void;

@@ -10,15 +10,17 @@ interface CollectionItem {
 
 interface P {
   collections: CollectionItem[];
+  isBeverage?: boolean;
 }
 
-const CollectionsList = ({ collections }: P) => {
+const CollectionsList = ({ collections, isBeverage }: P) => {
   const collectionItems = collections.map((collection) => (
     <CollectionListItem
       title={collection.title}
       price={collection.price}
       image={collection.image}
       key={collection.title}
+      isBeverage={isBeverage}
     />
   ));
 

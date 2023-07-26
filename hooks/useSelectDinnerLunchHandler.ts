@@ -13,6 +13,8 @@ const useSelectDinnerLunchHandler = () => {
     getGlutenFreeDinnerLunchMeals,
     getPeanutFreeDinnerLunchMeals,
     getVegetarianDinnerLunchMeals,
+    getBeverage,
+    getBeverages,
     sortDinnerLunchAlphabetically,
     sortDinnerLunchAlphabeticallyReversed,
     sortDinnerLunchByPriceAsc,
@@ -46,6 +48,14 @@ const useSelectDinnerLunchHandler = () => {
 
     if (selectedOption === "vegetarian") {
       getVegetarianDinnerLunchMeals(allDinnerLunchMeals);
+    }
+
+    if (selectedOption === "beverage") {
+      getBeverage(allDinnerLunchMeals);
+    }
+
+    if (selectedOption === "beverages") {
+      getBeverages(allDinnerLunchMeals);
     }
   };
 

@@ -3,7 +3,7 @@ import { useContext, useEffect } from "react";
 import CollectionTitle from "@/components/collections/CollectionTitle";
 import CollectionFilter from "@/components/collections/CollectionFilter";
 import CollectionsList from "@/components/collections/CollectionsList";
-import { getAllSnackMeals } from "@/lib/mongoDB";
+import { getCollection } from "@/lib/mongoDB";
 import { MealData } from "@/lib/interfaces";
 import MealsContext from "@/store/MealsContext";
 
@@ -38,7 +38,7 @@ export async function getStaticProps() {
   let meals: MealData[];
 
   try {
-    meals = await getAllSnackMeals();
+    meals = await getCollection('snacks');
   } catch (err) {
     meals = [];
     console.log(err);

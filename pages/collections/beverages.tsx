@@ -1,8 +1,8 @@
 import { useContext, useEffect } from "react";
 
 import CollectionTitle from "@/components/collections/CollectionTitle";
-import CollectionFilter from "@/components/collections/CollectionFilter";
 import CollectionsList from "@/components/collections/CollectionsList";
+import CollectionBeverageFilter from "@/components/collections/CollectionBeverageFilter";
 import { getCollection } from "@/lib/mongoDB";
 import { MealData } from "@/lib/interfaces";
 import MealsContext from "@/store/MealsContext";
@@ -11,7 +11,8 @@ interface P {
   meals: MealData[];
 }
 
-const BreakfastMeals = ({ meals }: P) => {
+
+const Beverages = ({ meals }: P) => {
   const MealsCtx = useContext(MealsContext);
 
   const {
@@ -27,9 +28,9 @@ const BreakfastMeals = ({ meals }: P) => {
 
   return (
     <>
-      <CollectionTitle title="Breakfast" />
-      <CollectionFilter productsNumber={activeDinnerLunchMeals.length} />
-      <CollectionsList collections={activeDinnerLunchMeals} />
+      <CollectionTitle title="Beverages" />
+      <CollectionBeverageFilter productsNumber={activeDinnerLunchMeals.length} />
+      <CollectionsList collections={activeDinnerLunchMeals} isBeverage={true}/>
     </>
   );
 };
@@ -38,7 +39,7 @@ export async function getStaticProps() {
   let meals: MealData[];
 
   try {
-    meals = await getCollection('breakfast');
+    meals = await getCollection('beverages');
   } catch (err) {
     meals = [];
     console.log(err);
@@ -49,4 +50,4 @@ export async function getStaticProps() {
   };
 }
 
-export default BreakfastMeals;
+export default Beverages;

@@ -57,7 +57,7 @@ const DesktopTools: React.FC = () => {
                   <p>Build Your Own Meal</p>
                 </li>
                 <li>
-                  <Link href="/collection/beverages">
+                  <Link href="/collections/beverages">
                     <p>Beverages</p>
                   </Link>
                 </li>

@@ -29,6 +29,7 @@
   align-self: flex-start;
 }
 
+
 .imageContainer {
   width: 100%;
   overflow: hidden;
@@ -37,8 +38,25 @@
 
 .imageContainer img {
   width: 100%;
-  border-radius: 5%;
   height: auto;
+  border-radius: 5%;
+}
+
+
+.beverageImageContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+  transition: opacity 0.25s;
+}
+
+.beverageImageContainer img {
+  max-width: 100%;
+  border-radius: 5%;
+  width: auto;
+  max-height: 256px;
 }
 
 .controllerContainer {

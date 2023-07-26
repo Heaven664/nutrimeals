@@ -4,7 +4,7 @@ import CollectionFilter from "@/components/collections/CollectionFilter";
 import CollectionTitle from "@/components/collections/CollectionTitle";
 import CollectionsList from "@/components/collections/CollectionsList";
 import { MealData } from "@/lib/interfaces";
-import { getAllDinnerAndLunchMeals } from "@/lib/mongoDB";
+import { getCollection } from "@/lib/mongoDB";
 import MealsContext from "@/store/MealsContext";
 
 interface P {
@@ -38,7 +38,7 @@ export async function getStaticProps() {
   let meals: MealData[];
 
   try {
-    meals = await getAllDinnerAndLunchMeals();
+    meals = await getCollection('meals');
   } catch (err) {
     meals = [];
     console.log(err);
