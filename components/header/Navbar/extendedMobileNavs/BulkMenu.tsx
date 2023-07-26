@@ -53,7 +53,9 @@ const BulkMenu = ({
       </li>
       <li>
         <button onClick={hideNavbar}>
+          <Link href='/collections/bulk-vegetables'>
           <span>Vegetables</span>
+          </Link>
         </button>
       </li>
       <li>
