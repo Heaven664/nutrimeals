@@ -34,7 +34,7 @@ const BulkBeverages = ({ meals }: P) => {
       <CollectionBeverageFilter
         productsNumber={activeDinnerLunchMeals.length}
       />
-      <CollectionsList collections={activeDinnerLunchMeals} isBeverage={true} />
+      <CollectionsList collections={activeDinnerLunchMeals} />
     </>
   );
 };
