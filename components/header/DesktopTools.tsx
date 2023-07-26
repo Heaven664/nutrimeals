@@ -174,7 +174,9 @@ const DesktopTools: React.FC = () => {
       </li>
       <li>
         <div className={styles.toolContainer}>
-          <p>Merchandise</p>
+          <Link href="/collections/merchandise">
+            <p>Merchandise</p>
+          </Link>
         </div>
       </li>
       <li>

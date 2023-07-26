@@ -17,7 +17,7 @@ export async function getCollection(collectionName: string) {
 
   try {
     const cursor = client.db("nutrimeals").collection(collectionName).find();
-    const allMeals = await cursor.toArray();
+    const allMeals = await cursor.sort({ title: 1 }).toArray();
     meals = allMeals.map(
       (meal) =>
         ({

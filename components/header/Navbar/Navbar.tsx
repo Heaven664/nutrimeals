@@ -1,5 +1,6 @@
 import { JSX, useState } from "react";
 
+import Link from "next/link";
 import styles from "./Navbar.module.css";
 import IndividualMeals from "./extendedMobileNavs/IndividualMeals";
 import SubscriptionBoxes from "./extendedMobileNavs/SubscriptionBoxes";
@@ -97,7 +98,9 @@ const Navbar = ({ navbarActive, hideNavbar }: NavbarStatus): JSX.Element => {
         </li>
         <li>
           <button onClick={hideNavbar}>
-            <span>Merchandise</span>
+            <Link href="/collections/merchandise">
+              <span>Merchandise</span>
+            </Link>
           </button>
         </li>
         <li>
