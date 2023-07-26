@@ -181,7 +181,9 @@ const DesktopTools: React.FC = () => {
       </li>
       <li>
         <div className={styles.toolContainer}>
-          <p>Gift Card</p>
+          <Link href="/collections/gift-cards">
+            <p>Gift Card</p>
+          </Link>
         </div>
       </li>
       <li>

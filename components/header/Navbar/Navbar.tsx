@@ -105,7 +105,9 @@ const Navbar = ({ navbarActive, hideNavbar }: NavbarStatus): JSX.Element => {
         </li>
         <li>
           <button onClick={hideNavbar}>
-            <span>Gift Card</span>
+            <Link href="/collections/gift-cards">
+              <span>Gift Card</span>
+            </Link>
           </button>
         </li>
         <li>

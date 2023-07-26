@@ -11,6 +11,7 @@ export interface MealData {
   vegetarian?: boolean;
   beverage?: boolean;
   beverages?: boolean;
+  giftCard?: boolean;
   date: string;
 }
 
@@ -27,6 +28,7 @@ export interface MealsContextType {
   getVegetarianDinnerLunchMeals: (meals: MealData[]) => void;
   getBeverage: (meals: MealData[]) => void;
   getBeverages: (meals: MealData[]) => void;
+  getGiftCards: (meals: MealData[]) => void;
   sortDinnerLunchAlphabetically: (meals: MealData[]) => void;
   sortDinnerLunchAlphabeticallyReversed: (meals: MealData[]) => void;
   sortDinnerLunchByPriceAsc: (meals: MealData[]) => void;

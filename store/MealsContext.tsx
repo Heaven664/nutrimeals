@@ -18,6 +18,7 @@ const MealsContext = createContext<MealsContextType>({
   getVegetarianDinnerLunchMeals() {},
   getBeverage() {},
   getBeverages() {},
+  getGiftCards() {},
   sortDinnerLunchAlphabetically() {},
   sortDinnerLunchAlphabeticallyReversed() {},
   sortDinnerLunchByPriceAsc() {},
@@ -82,6 +83,11 @@ const MealsContextProvider = ({ children }: P) => {
     setActiveDinnerLunchMeals(beverages);
   };
 
+  const getGiftCards = (meals: MealData[]) => {
+    const giftCards = meals.filter((meal) => meal.giftCard);
+    setActiveDinnerLunchMeals(giftCards);
+  };
+
   const sortDinnerLunchAlphabetically = () => {
     setActiveDinnerLunchMeals((prev) => {
       return [...prev].sort((a: MealData, b: MealData) =>
@@ -140,6 +146,7 @@ const MealsContextProvider = ({ children }: P) => {
     sortDinnerLunchAlphabetically: sortDinnerLunchAlphabetically,
     getBeverage: getBeverage,
     getBeverages: getBeverages,
+    getGiftCards: getGiftCards,
     sortDinnerLunchAlphabeticallyReversed:
       sortDinnerLunchAlphabeticallyReversed,
     sortDinnerLunchByPriceAsc: sortDinnerLunchByPriceAsc,

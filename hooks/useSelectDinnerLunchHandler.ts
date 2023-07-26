@@ -15,6 +15,7 @@ const useSelectDinnerLunchHandler = () => {
     getVegetarianDinnerLunchMeals,
     getBeverage,
     getBeverages,
+    getGiftCards,
     sortDinnerLunchAlphabetically,
     sortDinnerLunchAlphabeticallyReversed,
     sortDinnerLunchByPriceAsc,
@@ -56,6 +57,10 @@ const useSelectDinnerLunchHandler = () => {
 
     if (selectedOption === "beverages") {
       getBeverages(allDinnerLunchMeals);
+    }
+
+    if(selectedOption == 'gift-card') {
+      getGiftCards(allDinnerLunchMeals)
     }
   };
 
