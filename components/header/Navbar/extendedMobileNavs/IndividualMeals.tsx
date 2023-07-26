@@ -58,7 +58,9 @@ const IndividualMeals = ({
       </li>
       <li>
         <button onClick={hideNavbar}>
-          <span>Beverages</span>
+          <Link href="/collections/beverages">
+            <span>Beverages</span>
+          </Link>
         </button>
       </li>
       <li>
