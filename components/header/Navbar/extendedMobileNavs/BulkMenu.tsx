@@ -53,14 +53,16 @@ const BulkMenu = ({
       </li>
       <li>
         <button onClick={hideNavbar}>
-          <Link href='/collections/bulk-vegetables'>
-          <span>Vegetables</span>
+          <Link href="/collections/bulk-vegetables">
+            <span>Vegetables</span>
           </Link>
         </button>
       </li>
       <li>
         <button onClick={hideNavbar}>
-          <span>Bulk Beverages</span>
+          <Link href="/collections/bulk-beverages">
+            <span>Bulk Beverages</span>
+          </Link>
         </button>
       </li>
     </ul>

@@ -169,7 +169,9 @@ const DesktopTools: React.FC = () => {
                   </Link>
                 </li>
                 <li>
+                  <Link href='/collections/bulk-beverages'>
                   <p>Bulk Beverages</p>
+                  </Link>
                 </li>
               </ul>
             </div>
