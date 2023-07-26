@@ -14,15 +14,20 @@ interface P {
 }
 
 const CollectionsList = ({ collections, isBeverage }: P) => {
-  const collectionItems = collections.map((collection) => (
-    <CollectionListItem
-      title={collection.title}
-      price={collection.price}
-      image={collection.image}
-      key={collection.title}
-      isBeverage={isBeverage}
-    />
-  ));
+  const collectionItems = collections.map((collection) => {
+    const refString = collection.title.toLocaleLowerCase().replace(/ /g, "-");
+    console.log(refString);
+    return (
+      <CollectionListItem
+        title={collection.title}
+        price={collection.price}
+        image={collection.image}
+        key={collection.title}
+        refString={refString}
+        isBeverage={isBeverage}
+      />
+    );
+  });
 
   return (
     <div className={styles.collectionLayout}>

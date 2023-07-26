@@ -12,6 +12,10 @@
   width: 100%;
 }
 
+.itemContainer a {
+  text-decoration: none;
+}
+
 .itemContent h1 {
   display: flex;
   align-items: center;
@@ -21,12 +25,14 @@
   align-self: flex-start;
   margin-top: 10px;
   padding-bottom: 1px;
+  color: black;
 }
 
 .itemContent h2 {
   font-size: 13.5px;
   font-weight: 600;
   align-self: flex-start;
+  color: black;
 }
 
 .imageContainer {
