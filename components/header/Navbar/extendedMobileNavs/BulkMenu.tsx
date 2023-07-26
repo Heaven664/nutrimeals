@@ -46,7 +46,9 @@ const BulkMenu = ({
       </li>
       <li>
         <button onClick={hideNavbar}>
-          <span>Carbohydrates</span>
+          <Link href="/collections/carbohydrates/">
+            <span>Carbohydrates</span>
+          </Link>
         </button>
       </li>
       <li>

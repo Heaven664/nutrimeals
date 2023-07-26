@@ -1,12 +1,12 @@
 const ong =
 {
-  title: "Bulk Atlantic Salmon",
-  image: "/images/collections/bulk-atlantic-salmon.webp",
-  price: 81.69,
+  title: "White Rice",
+  image: "/images/collections/white-rice.webp",
+  price: 9.49,
   dairyFree: true,
   eggFree: true,
   glutenFree: true,
   peanutFree: true,
-  vegetarian: false,
-  date: '2023-11-06T07:00:00.000+00:00'
+  vegetarian: true,
+  date: '2023-11-12T07:00:00.000+00:00'
 };
