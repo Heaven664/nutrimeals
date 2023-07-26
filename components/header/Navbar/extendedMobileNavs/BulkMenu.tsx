@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { JSX } from "react";
 import styles from "../Navbar.module.css";
 
@@ -38,7 +39,9 @@ const BulkMenu = ({
       </li>
       <li>
         <button onClick={hideNavbar}>
-          <span>Protein</span>
+          <Link href="/collections/bulk-protein">
+            <span>Protein</span>
+          </Link>
         </button>
       </li>
       <li>

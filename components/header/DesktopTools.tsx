@@ -154,7 +154,9 @@ const DesktopTools: React.FC = () => {
             <div className={styles.extendedTools}>
               <ul>
                 <li>
-                  <p>Protein</p>
+                  <Link href="/collections/bulk-protein">
+                    <p>Protein</p>
+                  </Link>
                 </li>
                 <li>
                   <p>Carbohydrates</p>
