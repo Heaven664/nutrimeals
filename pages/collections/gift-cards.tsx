@@ -27,7 +27,10 @@ const BreakfastMeals = ({ meals }: P) => {
 
   return (
     <>
-      <CollectionTitle title="Gift Cards" />
+      <CollectionTitle
+        title="Gift Cards"
+        description="Gift someone a personal chef"
+      />
       <CollectionGiftCardFilter
         productsNumber={activeDinnerLunchMeals.length}
       />
