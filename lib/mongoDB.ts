@@ -33,3 +33,33 @@ export async function getCollection(collectionName: string) {
   }
   return meals;
 }
+
+export async function getRandomMeals(
+  collectionName: string,
+  mealsNumber: number
+) {
+  const client: MongoClient = await ConnectDatabase();
+
+  let meals: MealData[];
+
+  try {
+    const cursor = client
+      .db("nutrimeals")
+      .collection(collectionName)
+      .aggregate([{ $sample: { size: mealsNumber } }]);
+    const allMeals = await cursor.toArray();
+    meals = allMeals.map(
+      (meal) =>
+        ({
+          ...meal,
+          _id: meal._id.toString(),
+          date: meal.date.toISOString(),
+        } as MealData)
+    );
+  } catch (err) {
+    throw err;
+  } finally {
+    await client.close();
+  }
+  return meals;
+}

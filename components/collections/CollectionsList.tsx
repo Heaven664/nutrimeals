@@ -16,7 +16,6 @@ interface P {
 const CollectionsList = ({ collections, isBeverage }: P) => {
   const collectionItems = collections.map((collection) => {
     const refString = collection.title.toLocaleLowerCase().replace(/ /g, "-");
-    console.log(refString);
     return (
       <CollectionListItem
         title={collection.title}
