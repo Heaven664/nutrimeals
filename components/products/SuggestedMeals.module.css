@@ -1,0 +1,17 @@
+.suggestionsContainer {
+  margin: 35px 0;
+}
+
+.suggestionsContainer > h2 {
+  text-transform: uppercase;
+  font-size: 18px;
+  letter-spacing: 1.15px;
+  font-weight: 700;
+  text-align: center;
+}
+
+@media (min-width: 750px) {
+  .suggestionsContainer > h2 {
+    font-size: 20px;
+  }
+}
