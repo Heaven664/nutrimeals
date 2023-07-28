@@ -4,6 +4,38 @@
   flex-direction: column;
 }
 
+.mainImageContainer {
+  padding-top: 22px;
+  width: 100%;
+}
+
+.mainImageContainer img {
+  width: 100%;
+  height: auto;
+  border-radius: 5%;
+}
+
+.imagesPreviewContainer {
+  width: 100%;
+}
+
+.imagesPreviewContainer ul {
+  list-style: none;
+  display: flex;
+  justify-content: center;
+
+}
+
+.imagesPreviewContainer li {
+  flex: 0 0 25%;
+}
+
+.imagesPreviewContainer img {
+  padding: 2px;
+  width: 100%;
+  height: auto;
+}
+
 .productHeader h1 {
   font-size: 32px;
   margin-bottom: 8px;
