@@ -42,6 +42,10 @@
 }
 
 @media (min-width: 750px) {
+  .suggestionsContainer {
+    padding-top: 30px;
+  }
+
   .suggestionsContainer > h2 {
     font-size: 20px;
   }
