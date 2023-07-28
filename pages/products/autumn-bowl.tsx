@@ -9,7 +9,7 @@ interface P {
 const AutumnBowl = ({ meals }: P) => {
   return (
     <>
-      <SuggestedMeals meals={meals} />
+      <SuggestedMeals meals={meals} collectionName="lunch and dinner" />
     </>
   );
 };
