@@ -1,4 +1,4 @@
-import ProductInfo from "@/components/products/ProductInfo";
+import MealProductInfo from "@/components/products/MealProductInfo";
 import SuggestedMeals from "@/components/products/SuggestedMeals";
 import { MealData } from "@/lib/interfaces";
 import { getRandomMeals } from "@/lib/mongoDB";
@@ -7,10 +7,27 @@ interface P {
   meals: MealData[];
 }
 
+const DummyData = {
+  mealData: {
+    title: "Autumn Bowl",
+    price: 16.99,
+    imagePath: "/images/collections/autumn-bowl.webp",
+    recipePath: "/images/collections/autumn-bowl-recipe.webp",
+    description:
+      "Enjoy this delicious ready to eat meal anytime! Oven baked seasoned chicken with roasted sweet potatoes, Brussels sprouts, sautéed apples and onions, and crispy bacon. Take your meal prep to the next level with this delicious protein packed meal!",
+    noModifications: true,
+    beverageImageContainer: false,
+  },
+  images: [
+    "/images/collections/autumn-bowl.webp",
+    "/images/collections/autumn-bowl-recipe.webp",
+  ],
+};
+
 const AutumnBowl = ({ meals }: P) => {
   return (
     <>
-      <ProductInfo />
+      <MealProductInfo productData={DummyData} />
       <SuggestedMeals meals={meals} collectionName="lunch and dinner" />
     </>
   );
