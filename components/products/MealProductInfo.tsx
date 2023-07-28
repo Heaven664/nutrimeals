@@ -26,15 +26,24 @@ const MealProductInfo = ({ productData }: P) => {
   const [quantity, setQuantity] = useState(1);
   const [mainImage, setMainImage] = useState(productData.mealData.imagePath);
   const [recipeContainer, setRecipeContainer] = useState(false);
+  const [selectedPreview, setSelectedPreview] = useState(0);
 
-  const changeImageHandler = (path: string, isRecipe: boolean) => {
+  const changeImageHandler = (
+    path: string,
+    isRecipe: boolean,
+    index: number
+  ) => {
     setMainImage(path);
     setRecipeContainer(isRecipe);
+    setSelectedPreview(index);
   };
 
   const allImages = productData.images.map((image, index) => {
     return (
-      <li onClick={() => changeImageHandler(image.path, image.isRecipe)}>
+      <li
+        onClick={() => changeImageHandler(image.path, image.isRecipe, index)}
+        className={selectedPreview === index ? styles.isSelected : ""}
+      >
         <Image
           src={image.path}
           width={200}
