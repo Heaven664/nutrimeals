@@ -58,6 +58,7 @@
 }
 
 .imagesPreviewContainer li {
+  height: fit-content;
   border: 2px solid white;
   flex: 0 0 25%;
 }
