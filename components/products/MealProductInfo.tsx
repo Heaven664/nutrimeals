@@ -43,6 +43,7 @@ const MealProductInfo = ({ productData }: P) => {
       <li
         onClick={() => changeImageHandler(image.path, image.isRecipe, index)}
         className={selectedPreview === index ? styles.isSelected : ""}
+        key={image.path}
       >
         <Image
           src={image.path}
