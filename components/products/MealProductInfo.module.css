@@ -211,3 +211,9 @@
     height: 44px;
   }
 }
+
+@media (min-width: 751px) and (max-width: 1160px) {
+  .productDetails {
+    padding-left: 20px;
+  }
+}

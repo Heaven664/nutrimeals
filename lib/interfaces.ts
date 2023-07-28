@@ -15,6 +15,25 @@ export interface MealData {
   date: string;
 }
 
+export interface ProductData {
+  _id: string;
+  mealData: {
+    title: string;
+    imagePath: string;
+    recipePath: string;
+    slug: string;
+    price: number;
+    description: string;
+    noModifications: boolean;
+    beverageImageContainer: boolean;
+    date: string;
+  };
+  images: {
+    path: string;
+    isRecipe: boolean;
+  }[];
+}
+
 export interface MealsContextType {
   allDinnerLunchMeals: MealData[];
   activeDinnerLunchMeals: MealData[];

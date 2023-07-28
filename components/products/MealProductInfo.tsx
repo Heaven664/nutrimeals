@@ -1,22 +1,7 @@
 import Image from "next/image";
 import React, { useState } from "react";
 import styles from "./MealProductInfo.module.css";
-
-interface ProductData {
-  mealData: {
-    title: string;
-    price: number;
-    imagePath: string;
-    recipePath: string;
-    description: string;
-    noModifications: boolean;
-    beverageImageContainer: boolean;
-  };
-  images: {
-    path: string;
-    isRecipe: boolean;
-  }[];
-}
+import { ProductData } from "@/lib/interfaces";
 
 interface P {
   productData: ProductData;
@@ -72,8 +57,8 @@ const MealProductInfo = ({ productData }: P) => {
           >
             <Image
               src={mainImage}
-              width={600}
-              height={600}
+              width={800}
+              height={800}
               alt={productData.mealData.title}
             />
           </div>
