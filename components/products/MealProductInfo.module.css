@@ -16,6 +16,7 @@
   width: 100%;
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .mainImageContainer img {
@@ -23,6 +24,22 @@
   max-width: 530px;
   height: auto;
   border-radius: 5%;
+}
+
+.mainImageRecipeContainer {
+  padding-top: 22px;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mainImageRecipeContainer img {
+  max-width: 100%;
+  max-height: 530px;
+  border-radius: 5%;
+  max-width: 530px;
+  width: auto;
 }
 
 .imagesPreviewContainer {
@@ -123,8 +140,11 @@
   }
 
   .mainImageContainer {
-    display: flex;
     justify-content: flex-start;
+    padding-top: 0;
+  }
+
+  .mainImageRecipeContainer {
     padding-top: 0;
   }
 

@@ -12,7 +12,10 @@ interface ProductData {
     noModifications: boolean;
     beverageImageContainer: boolean;
   };
-  images: string[];
+  images: {
+    path: string;
+    isRecipe: boolean;
+  }[];
 }
 
 interface P {
@@ -22,16 +25,18 @@ interface P {
 const MealProductInfo = ({ productData }: P) => {
   const [quantity, setQuantity] = useState(1);
   const [mainImage, setMainImage] = useState(productData.mealData.imagePath);
+  const [recipeContainer, setRecipeContainer] = useState(false);
 
-  const changeImageHandler = (imagePath: string) => {
-    setMainImage(imagePath);
+  const changeImageHandler = (path: string, isRecipe: boolean) => {
+    setMainImage(path);
+    setRecipeContainer(isRecipe);
   };
 
-  const allImages = productData.images.map((imagePath, index) => {
+  const allImages = productData.images.map((image, index) => {
     return (
-      <li onClick={() => changeImageHandler(imagePath)}>
+      <li onClick={() => changeImageHandler(image.path, image.isRecipe)}>
         <Image
-          src={imagePath}
+          src={image.path}
           width={200}
           height={200}
           alt={`${productData.mealData.title} number ${index}`}
@@ -48,7 +53,13 @@ const MealProductInfo = ({ productData }: P) => {
     <div className={styles.productLayout}>
       <div className={styles.productContainer}>
         <div className={styles.productImages}>
-          <div className={styles.mainImageContainer}>
+          <div
+            className={
+              recipeContainer
+                ? styles.mainImageRecipeContainer
+                : styles.mainImageContainer
+            }
+          >
             <Image
               src={mainImage}
               width={600}

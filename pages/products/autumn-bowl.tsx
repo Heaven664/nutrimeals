@@ -19,8 +19,8 @@ const DummyData = {
     beverageImageContainer: false,
   },
   images: [
-    "/images/collections/autumn-bowl.webp",
-    "/images/collections/autumn-bowl-recipe.webp",
+    { path: "/images/collections/autumn-bowl.webp", isRecipe: false },
+    { path: "/images/collections/autumn-bowl-recipe.webp", isRecipe: true },
   ],
 };
 
