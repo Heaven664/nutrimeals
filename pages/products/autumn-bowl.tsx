@@ -1,3 +1,4 @@
+import ProductInfo from "@/components/products/ProductInfo";
 import SuggestedMeals from "@/components/products/SuggestedMeals";
 import { MealData } from "@/lib/interfaces";
 import { getRandomMeals } from "@/lib/mongoDB";
@@ -9,6 +10,7 @@ interface P {
 const AutumnBowl = ({ meals }: P) => {
   return (
     <>
+      <ProductInfo />
       <SuggestedMeals meals={meals} collectionName="lunch and dinner" />
     </>
   );

@@ -1,0 +1,15 @@
+.productContainer {
+  padding: 0 22px;
+  display: flex;
+  flex-direction: column;
+}
+
+.productHeader h1 {
+  font-size: 32px;
+  margin-bottom: 8px;
+}
+
+.productHeader h2 {
+  font-size: 17px;
+  color: rgb(51, 50, 50);
+}
