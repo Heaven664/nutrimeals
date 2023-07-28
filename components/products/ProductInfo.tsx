@@ -27,7 +27,7 @@ const ProductInfo = () => {
             />
             <button>Add to card</button>
           </form>
-          <div>
+          <div className={styles.productDescriptionContainer}>
             <p>
               Enjoy this delicious ready to eat meal anytime! Oven baked
               seasoned chicken with roasted sweet potatoes, Brussels sprouts,

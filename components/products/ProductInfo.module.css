@@ -23,7 +23,7 @@
 
 .productForm label {
   font-size: 13px;
-  font-weight: 500;
+  font-weight: 400;
   margin-bottom: 5px;
 }
 
@@ -50,4 +50,16 @@
   color: white;
   cursor: pointer;
   transition: 0.15s;
+}
+
+.productDescriptionContainer {
+  margin-top: 30px;
+  margin-bottom: 35px;
+}
+
+.productDescriptionContainer p {
+  color: rgb(51, 50, 50);
+  font-size: 13.5px;
+  line-height: 21px;
+  margin-bottom: 19.5px;
 }
