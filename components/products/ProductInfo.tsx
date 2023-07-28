@@ -1,6 +1,12 @@
+import React, { useState } from "react";
 import styles from "./ProductInfo.module.css";
 
 const ProductInfo = () => {
+  const [quantity, setQuantity] = useState(1);
+  const inputHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    setQuantity(parseInt(e.target.value));
+  };
   return (
     <div className={styles.productLayout}>
       <div className={styles.productContainer}>
@@ -10,13 +16,17 @@ const ProductInfo = () => {
             <h1>Autumn Bowl</h1>
             <h2>$16.99</h2>
           </div>
-          <div>
+          <form className={styles.productForm} action="">
             <label htmlFor="quantity-input">Quantity</label>
-            <input id="quantity-input" type="number" />
-          </div>
-          <div>
+            <input
+              id="quantity-input"
+              type="number"
+              min={1}
+              value={quantity}
+              onChange={inputHandler}
+            />
             <button>Add to card</button>
-          </div>
+          </form>
           <div>
             <p>
               Enjoy this delicious ready to eat meal anytime! Oven baked
