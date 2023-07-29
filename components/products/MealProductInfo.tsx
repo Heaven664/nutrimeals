@@ -1,5 +1,5 @@
 import Image from "next/image";
-import React, { useState } from "react";
+import React, { useState, useEffect, useMemo } from "react";
 import styles from "./MealProductInfo.module.css";
 import { ProductData } from "@/lib/interfaces";
 
@@ -12,6 +12,10 @@ const MealProductInfo = ({ productData }: P) => {
   const [mainImage, setMainImage] = useState(productData.mealData.imagePath);
   const [recipeContainer, setRecipeContainer] = useState(false);
   const [selectedPreview, setSelectedPreview] = useState(0);
+
+  useEffect(() => {
+    setMainImage(productData.mealData.imagePath)
+  }, [productData]);
 
   const changeImageHandler = (
     path: string,
@@ -44,6 +48,7 @@ const MealProductInfo = ({ productData }: P) => {
     e.preventDefault();
     setQuantity(parseInt(e.target.value));
   };
+
   return (
     <div className={styles.productLayout}>
       <div className={styles.productContainer}>

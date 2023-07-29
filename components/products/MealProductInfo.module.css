@@ -64,7 +64,7 @@
 }
 
 .imagesPreviewContainer img {
-  padding: 2px;
+  padding: 4px 4px 0px 4px;
   width: 100%;
   height: auto;
   border-radius: 5%;
@@ -164,11 +164,12 @@
   }
 
   .imagesPreviewContainer li {
-    max-height: 142px;
+    max-height: 145px;
     overflow: scroll;
   }
 
   .imagesPreviewContainer img {
+    border-radius: 0;
     cursor: pointer;
     width: 100%;
   }
