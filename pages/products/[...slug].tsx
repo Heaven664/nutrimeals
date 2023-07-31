@@ -6,13 +6,13 @@ import { getRandomMeals, findProductBySlug } from "@/lib/mongoDB";
 
 interface P {
   meals: MealData[];
-  product: ProductData;
+  product: ProductData | null;
   error: boolean;
 }
 
-const AutumnBowl = ({ meals, product, error }: P) => {
-  if (error) {
-    return <div>Error</div>;
+const Meal = ({ meals, product }: P) => {
+  if (!product) {
+    return <div>No Product</div>;
   }
 
   return (
@@ -26,7 +26,7 @@ const AutumnBowl = ({ meals, product, error }: P) => {
 export const getStaticPaths = async () => {
   return {
     paths: [],
-    fallback: true,
+    fallback: 'blocking',
   };
 };
 
@@ -44,9 +44,6 @@ export const getStaticProps = async (
     if (Array.isArray(slug)) {
       product = await findProductBySlug("products-meals", slug[0]);
     }
-    if (!product) {
-      error = true;
-    }
   } catch (err) {
     meals = [];
     error = true;
@@ -58,4 +55,4 @@ export const getStaticProps = async (
   };
 };
 
-export default AutumnBowl;
+export default Meal;

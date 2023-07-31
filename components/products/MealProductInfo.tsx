@@ -68,7 +68,7 @@ const MealProductInfo = ({ productData }: P) => {
             />
           </div>
           <div className={styles.imagesPreviewContainer}>
-            <ul>{allImages}</ul>
+            {productData.images.length > 1 ? <ul>{allImages}</ul> : null}
           </div>
         </div>
         <div className={styles.productDetails}>

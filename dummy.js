@@ -1,19 +1,19 @@
 const ong =
 {
   mealData: {
-    title: "BBQ Chicken and Sweet Potato Fries",
-    slug: "bbq-chicken-and-sweet-potato-fries",
+    title: "Hoisin Glazed Ginger Beef",
+    slug: "hoisin-glazed-ginger-beef",
     price: 16.99,
-    imagePath: "/images/collections/bbq-chicken-and-sweet-potato-fries.webp",
-    recipePath: "/images/collections/bbq-chicken-and-sweet-potato-fries-recipe.webp",
+    imagePath: "/images/collections/hoisin-glazed-ginger-beef.webp",
+    recipePath: "/images/collections/hoisin-glazed-ginger-beef-recipe.webp",
     description:
-      "Enjoy a delicious herb crusted pork with a side of smashed garlic potatoes and a side of steamed green beans. Comes with a side of sweet and tangy maple balsamic glaze",
+      "A healthy and fresh spin on a favourite comfort food dish. Enjoy lean ginger beef meatballs tossed in a hoisin glaze, on a bed of fluffy white rice with a side of carrots and broccoli. Let Nutrimeals take care of your meal prep! ",
     noModifications: true,
     beverageImageContainer: false,
     date: '2023-11-06T07:00:00.000+00:00'
   },
   images: [
-    { path: "/images/collections/bbq-chicken-and-sweet-potato-fries.webp", isRecipe: false },
-    { path: "/images/collections/bbq-chicken-and-sweet-potato-fries-recipe.webp", isRecipe: true },
+    { path: "/images/collections/hoisin-glazed-ginger-beef.webp", isRecipe: false },
+    { path: "/images/collections/hoisin-glazed-ginger-beef-recipe-1.avif", isRecipe: true },
   ]
 };
