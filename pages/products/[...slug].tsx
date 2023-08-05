@@ -26,7 +26,7 @@ const Meal = ({ meals, product }: P) => {
 export const getStaticPaths = async () => {
   return {
     paths: [],
-    fallback: 'blocking',
+    fallback: "blocking",
   };
 };
 
@@ -38,6 +38,7 @@ export const getStaticProps = async (
   let meals: MealData[];
   let product: ProductData | null = null;
   let error = false;
+  console.log("start");
 
   try {
     meals = await getRandomMeals("meals", 4);
@@ -49,6 +50,7 @@ export const getStaticProps = async (
     error = true;
     console.log(err);
   }
+  console.log("end");
 
   return {
     props: { meals, product, error },

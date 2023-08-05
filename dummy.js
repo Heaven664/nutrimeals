@@ -1,19 +1,19 @@
 const ong =
 {
   mealData: {
-    title: "Hoisin Glazed Ginger Beef",
-    slug: "hoisin-glazed-ginger-beef",
+    title: "Teriyaki Stir Fry",
+    slug: "teriyaki-stir-fry",
     price: 16.99,
-    imagePath: "/images/collections/hoisin-glazed-ginger-beef.webp",
-    recipePath: "/images/collections/hoisin-glazed-ginger-beef-recipe.webp",
+    imagePath: "/images/collections/teriyaki-stir-fry.webp",
+    recipePath: "/images/collections/teriyaki-stir-fry-recipe.webp",
     description:
-      "A healthy and fresh spin on a favourite comfort food dish. Enjoy lean ginger beef meatballs tossed in a hoisin glaze, on a bed of fluffy white rice with a side of carrots and broccoli. Let Nutrimeals take care of your meal prep! ",
+      "Enjoy a delicious and refreshing steak salad on a bed of fresh romaine lettuce, with tomatoes, cucumber, pickled onions and mushrooms. Comes with a side house made honey dijon vinaigrette. For optimal freshness, we recommend that you consume this dish within 1-2 days of receiving it. Please see best before date on sticker.",
     noModifications: true,
     beverageImageContainer: false,
-    date: '2023-11-06T07:00:00.000+00:00'
+    date: '2023-11-02T07:00:00.000+00:00'
   },
   images: [
-    { path: "/images/collections/hoisin-glazed-ginger-beef.webp", isRecipe: false },
-    { path: "/images/collections/hoisin-glazed-ginger-beef-recipe-1.avif", isRecipe: true },
+    { path: "/images/collections/teriyaki-stir-fry.webp", isRecipe: false },
+    { path: "/images/collections/teriyaki-stir-fry-recipe.png", isRecipe: true },
   ]
 };
