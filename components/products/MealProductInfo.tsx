@@ -16,6 +16,7 @@ const MealProductInfo = ({ productData }: P) => {
   useEffect(() => {
     setMainImage(productData.mealData.imagePath);
     setSelectedPreview(0);
+    setRecipeContainer(false);
   }, [productData]);
 
   const changeImageHandler = (
