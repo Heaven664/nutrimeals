@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import MealsContext from "@/store/MealsContext";
+import { MealData } from "@/lib/interfaces";
 
 const useSelectDinnerLunchHandler = () => {
   const MealsCtx = useContext(MealsContext);
 
-  const { activeDinnerLunchMeals, allDinnerLunchMeals } = MealsCtx;
+  const { allDinnerLunchMeals } = MealsCtx;
 
   const {
     getAllDinnerLunchMeals,
@@ -24,75 +25,41 @@ const useSelectDinnerLunchHandler = () => {
     sortDinnerLunchByDateDesc,
   } = MealsCtx;
 
+  const filterRouter = new Map<string, (meals: MealData[]) => void>()
+    .set("all-products", getAllDinnerLunchMeals)
+    .set("dairy-free", getDairyFreeDinnerLunchMeals)
+    .set("egg-free", getEggFreeDinnerLunchMeals)
+    .set("gluten-free", getGlutenFreeDinnerLunchMeals)
+    .set("peanut-free", getPeanutFreeDinnerLunchMeals)
+    .set("vegetarian", getVegetarianDinnerLunchMeals)
+    .set("beverage", getBeverage)
+    .set("beverages", getBeverages)
+    .set("gift-card", getGiftCards)
+    .set("alphabetically-a-to-z", sortDinnerLunchAlphabetically)
+    .set("alphabetically-z-to-a", sortDinnerLunchAlphabeticallyReversed)
+    .set("price-low-to-hight", sortDinnerLunchByPriceAsc)
+    .set("price-high-to-low", sortDinnerLunchByPriceDesc)
+    .set("date-old-to-new", sortDinnerLunchByDateAsc)
+    .set("date-new-to-old", sortDinnerLunchByDateDesc);
+
+  const actionHandler = (optionName: string) => {
+    const action = filterRouter.get(optionName);
+    if (action) {
+      action(allDinnerLunchMeals);
+    }
+  };
+
   const filterByHandler = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const selectedOption = e.target.value;
-
-    if (selectedOption === "all-products") {
-      getAllDinnerLunchMeals(allDinnerLunchMeals);
-    }
-
-    if (selectedOption === "dairy-free") {
-      getDairyFreeDinnerLunchMeals(allDinnerLunchMeals);
-    }
-
-    if (selectedOption === "egg-free") {
-      getEggFreeDinnerLunchMeals(allDinnerLunchMeals);
-    }
-
-    if (selectedOption === "gluten-free") {
-      getGlutenFreeDinnerLunchMeals(allDinnerLunchMeals);
-    }
-
-    if (selectedOption === "peanut-free") {
-      getPeanutFreeDinnerLunchMeals(allDinnerLunchMeals);
-    }
-
-    if (selectedOption === "vegetarian") {
-      getVegetarianDinnerLunchMeals(allDinnerLunchMeals);
-    }
-
-    if (selectedOption === "beverage") {
-      getBeverage(allDinnerLunchMeals);
-    }
-
-    if (selectedOption === "beverages") {
-      getBeverages(allDinnerLunchMeals);
-    }
-
-    if(selectedOption == 'gift-card') {
-      getGiftCards(allDinnerLunchMeals)
-    }
+    actionHandler(selectedOption);
   };
 
   const sortByHandler = (
     e?: React.ChangeEvent<HTMLSelectElement> | null,
     value?: string | null
   ) => {
-    let selectedOption;
-    if (value) {
-      selectedOption = value;
-    } else if (e) {
-      selectedOption = e.target.value;
-    }
-
-    if (selectedOption === "alphabetically-a-to-z") {
-      sortDinnerLunchAlphabetically(activeDinnerLunchMeals);
-    }
-    if (selectedOption === "alphabetically-z-to-a") {
-      sortDinnerLunchAlphabeticallyReversed(activeDinnerLunchMeals);
-    }
-    if (selectedOption === "price-low-to-hight") {
-      sortDinnerLunchByPriceAsc(activeDinnerLunchMeals);
-    }
-    if (selectedOption === "price-high-to-low") {
-      sortDinnerLunchByPriceDesc(activeDinnerLunchMeals);
-    }
-    if (selectedOption === "date-old-to-new") {
-      sortDinnerLunchByDateAsc(activeDinnerLunchMeals);
-    }
-    if (selectedOption === "date-new-to-old") {
-      sortDinnerLunchByDateDesc(activeDinnerLunchMeals);
-    }
+    const selectedOption = e ? e.target.value : value;
+    actionHandler(selectedOption!);
   };
 
   const filterAndSort = (
