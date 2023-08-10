@@ -1,25 +1,36 @@
 const ong =
 {
   mealData: {
-    title: "SPEACHLESS Rviita Tea",
-    slug: "speachless-rviita-tea",
-    price: 4.99,
-    imagePath: "/images/collections/speachless-rviita-tea.webp",
+    title: "Chia Seed Pudding",
+    slug: "chia-seed-pudding",
+    price: 8.99,
+    imagePath: "/images/collections/chia-seed-pudding.webp",
     recipePath: "",
     description:
-      "Their most innovative energy tea yet - peach infused green tea, organic honey, and guarana seed extract from Brazil. This light and refreshing boost packing as much caffeine as a medium cup of coffee will definitely leave you speechless.",
+      "Enjoy a delicious and refreshing chia seed pudding, a great snack to fuel your body as you tackle your day! Made with dairy free milk and sweetened with honey, you'll love this light and healthy snack. ",
     noModifications: true,
-    collectionName: 'beverages',
-    beverageImageContainer: true,
-    date: '2023-11-02T07:00:00.000+00:00'
+    collectionName: 'snacks',
+    beverageImageContainer: false,
+    date: '2023-11-03T07:00:00.000+00:00'
   },
   images: [
-    { path: "/images/collections/speachless-rviita-tea.webp", isRecipe: true },
-    { path: "/images/collections/speachless-rviita-tea-2.webp", isRecipe: true },
+    { path: "/images/collections/chia-seed-pudding.webp", isRecipe: false },
+    { path: "/images/collections/chia-seed-pudding-2.webp", isRecipe: false },
   ],
   images: [
-    { path: "/images/collections/cherrity-rviita-tea.webp", isRecipe: false },
-    { path: "/images/collections/cherrity-rviita-tea-recipe.webp", isRecipe: true },
-  ]
+  ],
 
+};
+
+const dsaf = {
+
+  "title": "Chia Seed Pudding",
+  "image": "/images/collections/chia-seed-pudding.webp",
+  "price": 8.99,
+  "dairyFree": true,
+  "eggFree": true,
+  "glutenFree": true,
+  "peanutFree": false,
+  "vegetarian": false,
+  "date": "2023-12-06T07:00:00.000Z"
 };
