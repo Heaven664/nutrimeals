@@ -43,7 +43,7 @@ export async function getStaticProps() {
   let meals: MealData[];
 
   try {
-    meals = await getCollection("bulk-beverages");
+    meals = await getCollection("bulk beverages");
   } catch (err) {
     meals = [];
     console.log(err);
