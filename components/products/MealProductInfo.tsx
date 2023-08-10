@@ -10,13 +10,15 @@ interface P {
 const MealProductInfo = ({ productData }: P) => {
   const [quantity, setQuantity] = useState(1);
   const [mainImage, setMainImage] = useState(productData.mealData.imagePath);
-  const [recipeContainer, setRecipeContainer] = useState(false);
+  const [recipeContainer, setRecipeContainer] = useState(
+    productData.mealData.beverageImageContainer
+  );
   const [selectedPreview, setSelectedPreview] = useState(0);
 
   useEffect(() => {
     setMainImage(productData.mealData.imagePath);
     setSelectedPreview(0);
-    setRecipeContainer(false);
+    setRecipeContainer(productData.mealData.beverageImageContainer);
   }, [productData]);
 
   const changeImageHandler = (

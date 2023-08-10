@@ -27,6 +27,7 @@ export interface ProductData {
     noModifications: boolean;
     beverageImageContainer: boolean;
     date: string;
+    collectionName: string;
   };
   images: {
     path: string;

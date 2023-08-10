@@ -47,13 +47,17 @@
   border-radius: 5%;
 }
 
-.beverageImageContainer {
+.itemContainer .beverageImageContainer {
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   overflow: hidden;
   transition: opacity 0.25s;
+}
+
+.suggestedBeverageContainer {
+  width: 50%;
 }
 
 .beverageImageContainer img {

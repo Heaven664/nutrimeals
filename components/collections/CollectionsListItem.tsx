@@ -10,6 +10,7 @@ interface CollectionItem {
   price: number;
   refString: string;
   isBeverage?: boolean;
+  suggestedMeals?: boolean;
 }
 
 const CollectionListItem = ({
@@ -18,6 +19,7 @@ const CollectionListItem = ({
   price,
   refString,
   isBeverage,
+  suggestedMeals,
 }: CollectionItem) => {
   const [itemNumber, setItemNumber] = useState(1);
 
@@ -30,9 +32,16 @@ const CollectionListItem = ({
       <Link href={`/products/${refString}`}>
         <div className={styles.itemContent}>
           <div
-            className={
-              isBeverage ? styles.beverageImageContainer : styles.imageContainer
-            }
+            className={`
+              ${
+                isBeverage
+                  ? styles.beverageImageContainer
+                  : styles.imageContainer
+              } ${
+              suggestedMeals && isBeverage
+                ? styles.suggestedBeverageContainer
+                : null
+            }`}
           >
             <Image src={image} alt={title} width={300} height={300} />
           </div>

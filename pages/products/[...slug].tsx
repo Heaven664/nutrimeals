@@ -18,7 +18,11 @@ const Meal = ({ meals, product }: P) => {
   return (
     <>
       <MealProductInfo productData={product} />
-      <SuggestedMeals meals={meals} collectionName="lunch and dinner" />
+      <SuggestedMeals
+        meals={meals}
+        collectionName={product.mealData.collectionName}
+        isBeverage={product.mealData.beverageImageContainer}
+      />
     </>
   );
 };
@@ -40,10 +44,13 @@ export const getStaticProps = async (
   let error = false;
 
   try {
-    meals = await getRandomMeals("meals", 4);
     if (Array.isArray(slug)) {
       product = await findProductBySlug("products-meals", slug[0]);
     }
+    meals = await getRandomMeals(
+      product?.mealData.collectionName || "meals",
+      4
+    );
   } catch (err) {
     meals = [];
     error = true;

@@ -1,6 +1,7 @@
 import CollectionListItem from "./CollectionsListItem";
 
 import styles from "./CollectionsList.module.css";
+import SuggestedMeals from "../products/SuggestedMeals";
 
 interface CollectionItem {
   title: string;
@@ -11,9 +12,10 @@ interface CollectionItem {
 interface P {
   collections: CollectionItem[];
   isBeverage?: boolean;
+  suggestedMeals?: boolean;
 }
 
-const CollectionsList = ({ collections, isBeverage }: P) => {
+const CollectionsList = ({ collections, isBeverage, suggestedMeals }: P) => {
   const collectionItems = collections.map((collection) => {
     const refString = collection.title.toLocaleLowerCase().replace(/ /g, "-");
     return (
@@ -24,6 +26,7 @@ const CollectionsList = ({ collections, isBeverage }: P) => {
         key={collection.title}
         refString={refString}
         isBeverage={isBeverage}
+        suggestedMeals={suggestedMeals}
       />
     );
   });

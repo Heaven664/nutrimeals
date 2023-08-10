@@ -7,15 +7,20 @@ import styles from "./SuggestedMeals.module.css";
 interface P {
   meals: MealData[];
   collectionName: string;
+  isBeverage: boolean;
 }
 
-const SuggestedMeals = ({ meals, collectionName }: P) => {
+const SuggestedMeals = ({ meals, collectionName, isBeverage }: P) => {
   const router = useRouter();
   const collectionURL = collectionToURL(collectionName);
   return (
     <div className={styles.suggestionsContainer}>
       <h2 className={styles.suggestionTitle}>You may also enjoy</h2>
-      <CollectionsList collections={meals} />
+      <CollectionsList
+        collections={meals}
+        suggestedMeals={true}
+        isBeverage={isBeverage}
+      />
       <div className={styles.buttonContainer}>
         <button onClick={() => router.push(collectionURL)}>
           <svg
