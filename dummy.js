@@ -1,22 +1,22 @@
 const ong =
 {
   mealData: {
-    title: "Lemon Dal Rice",
-    slug: "lemon-dal-rice",
-    price: 11.99,
-    imagePath: "/images/collections/lemon-dal-rice.webp",
+    title: "Vegetable Mix",
+    slug: "vegetable-mix",
+    price: 14.99,
+    imagePath: "/images/collections/vegetable-mix.webp",
     recipePath: "",
     description:
-      "White rice cooked with dal, sweet chilis, onions and other seasonings and a splash of lemon to create irresistible flavour. You might recognize this rice as it makes an appearance in our South Indian Roasted Fish. ",
+      "This option is great if you want to meal prep on your own (we won't tell!) Enjoy cooked vegetables as a side to your lunch or dinner.",
     noModifications: true,
-    collectionName: 'carbohydrates',
+    collectionName: 'bulk vegetables',
     beverageImageContainer: false,
-    date: '2023-11-08T07:00:00.000+00:00'
+    date: '2023-11-04T07:00:00.000+00:00'
   },
   images: [],
   images: [
-    { path: "/images/collections/lemon-dal-rice.webp", isRecipe: false },
-    { path: "/images/collections/lemon-dal-rice-recipe.webp", isRecipe: true },
+    { path: "/images/collections/vegetable-mix.webp", isRecipe: false },
+    { path: "/images/collections/vegetable-mix-recipe.webp", isRecipe: true },
   ],
 
 };
