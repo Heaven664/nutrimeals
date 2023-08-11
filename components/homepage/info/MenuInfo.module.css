@@ -16,11 +16,28 @@
   margin-bottom: 30px;
 }
 
+.kiosksInfoContainer {
+  margin-top: 10px;
+  max-width: 1200px;
+  width: 100vw;
+  padding: 0 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
 .imageContainer {
   width: 82%;
 }
 
-.imageContainer img {
+.kioskInfoImageContainer {
+  width: 100%;
+}
+
+.imageContainer img,
+.kioskInfoImageContainer img {
   width: 100%;
   height: fit-content;
 }
@@ -78,6 +95,11 @@
     margin-bottom: 0;
   }
 
+  .kiosksInfoContainer {
+    flex-direction: row;
+    margin-bottom: 0;
+  }
+
   .textContainer button {
     font-size: 18px;
   }
@@ -86,10 +108,6 @@
 @media (min-width: 990px) {
   .textContainer h2 {
     font-size: 27px;
-  }
-
-  .textContainer {
-    padding-left: 60px;
   }
 
   .textContainer {
@@ -109,5 +127,9 @@
 
   .imageContainer {
     max-width: 485px;
+  }
+
+  #kioskTextInfoContainer {
+    margin-top: 110px;
   }
 }
