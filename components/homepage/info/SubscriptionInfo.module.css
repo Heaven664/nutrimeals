@@ -20,6 +20,10 @@
   width: 82%;
 }
 
+#kioskImageContainer {
+  width: 95%;
+}
+
 .imageContainer img {
   width: 100%;
   height: fit-content;

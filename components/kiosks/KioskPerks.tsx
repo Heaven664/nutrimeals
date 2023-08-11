@@ -7,7 +7,7 @@ const KioskPerks = (): JSX.Element => {
   return (
     <div className={styles.stepsLayout}>
       <div className={styles.allSteps} id={styles.allPerks}>
-        <ul>
+        <ul id={styles.kioskPerksList}>
           <li>
             <div className={styles.stepContainer}>
               <div className={styles.stepImageContainer}>

@@ -196,7 +196,7 @@
 @media (min-width: 750px) {
   .upperFooterContainer {
     flex-direction: row;
-    align-items: start;
+    align-items: flex-start;
   }
 
   .footerLinksContainer {
@@ -241,7 +241,7 @@
   .lowerFooterContainer {
     flex-direction: row;
     justify-content: start;
-    align-items: start;
+    align-items: flex-start;
     flex-wrap: wrap;
   }
 
