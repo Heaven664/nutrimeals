@@ -228,6 +228,10 @@
     padding: 20px 30px;
   }
 
+  #kioskDataContainer {
+    bottom: -104px;
+  }
+
   .firstImageContainer img {
     width: 90%;
   }
@@ -278,5 +282,9 @@
     width: 50%;
     height: 45%;
     padding: 15px 30px;
+  }
+
+  #kioskDataContainer {
+    bottom: -110px;
   }
 }
