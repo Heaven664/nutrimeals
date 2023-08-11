@@ -13,6 +13,10 @@
   max-width: 1270px;
 }
 
+#allPerks {
+  max-width: 1200px;
+}
+
 .allSteps ul {
   list-style: none;
   display: flex;
