@@ -169,8 +169,8 @@ const DesktopTools: React.FC = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href='/collections/bulk-beverages'>
-                  <p>Bulk Beverages</p>
+                  <Link href="/collections/bulk-beverages">
+                    <p>Bulk Beverages</p>
                   </Link>
                 </li>
               </ul>
@@ -196,7 +196,9 @@ const DesktopTools: React.FC = () => {
       </li>
       <li>
         <div className={styles.toolContainer}>
-          <p>Automated Kiosks</p>
+          <Link href="pages/automated-kiosks">
+            <p>Automated Kiosks</p>
+          </Link>
         </div>
       </li>
     </ul>

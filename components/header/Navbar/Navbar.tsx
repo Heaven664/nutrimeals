@@ -112,7 +112,9 @@ const Navbar = ({ navbarActive, hideNavbar }: NavbarStatus): JSX.Element => {
         </li>
         <li>
           <button onClick={hideNavbar}>
-            <span>Automated Kiosks</span>
+            <Link href="/pages/automated-kiosks">
+              <span>Automated Kiosks</span>
+            </Link>
           </button>
         </li>
       </ul>
