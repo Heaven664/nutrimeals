@@ -1,7 +1,6 @@
 import CollectionListItem from "./CollectionsListItem";
 
 import styles from "./CollectionsList.module.css";
-import SuggestedMeals from "../products/SuggestedMeals";
 
 interface CollectionItem {
   title: string;

@@ -29,8 +29,8 @@ const CollectionListItem = ({
 
   return (
     <li className={styles.itemContainer}>
-      <Link href={`/products/${refString}`}>
-        <div className={styles.itemContent}>
+      <div className={styles.itemContent}>
+        <Link href={`/products/${refString}`}>
           <div
             className={`
               ${
@@ -49,17 +49,17 @@ const CollectionListItem = ({
             <h1>{title}</h1>
           </div>
           <h2>${price}</h2>
-          <div className={styles.controllerContainer}>
-            <button>Add to cart</button>
-            <input
-              type="number"
-              min={1}
-              value={itemNumber}
-              onChange={amountChangeHandler}
-            />
-          </div>
+        </Link>
+        <div className={styles.controllerContainer}>
+          <button>Add to cart</button>
+          <input
+            type="number"
+            min={1}
+            value={itemNumber}
+            onChange={amountChangeHandler}
+          />
         </div>
-      </Link>
+      </div>
     </li>
   );
 };
