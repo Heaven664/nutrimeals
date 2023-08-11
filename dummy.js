@@ -1,35 +1,35 @@
 const ong =
 {
   mealData: {
-    title: "Bulk Turkey Meatballs",
-    slug: "bulk-turkey-meatballs",
-    price: 37.04,
-    imagePath: "/images/collections/bulk-turkey-meatballs.webp",
-    recipePath: "/images/collections/bulk-turkey-meatballs-recipe.webp",
+    title: "Lemon Dal Rice",
+    slug: "lemon-dal-rice",
+    price: 11.99,
+    imagePath: "/images/collections/lemon-dal-rice.webp",
+    recipePath: "",
     description:
-      "This option is great if you want to meal prep on your own (we won't tell!). Enjoy cooked ground turkey with your choice of seasoning. ",
+      "White rice cooked with dal, sweet chilis, onions and other seasonings and a splash of lemon to create irresistible flavour. You might recognize this rice as it makes an appearance in our South Indian Roasted Fish. ",
     noModifications: true,
-    collectionName: 'bulk protein',
+    collectionName: 'carbohydrates',
     beverageImageContainer: false,
-    date: '2023-11-09T07:00:00.000+00:00'
+    date: '2023-11-08T07:00:00.000+00:00'
   },
-  images: [
-    { path: "/images/collections/bulk-turkey-meatballs.webp", isRecipe: false },
-    { path: "/images/collections/bulk-turkey-meatballs-recipe.webp", isRecipe: true },
-  ],
   images: [],
+  images: [
+    { path: "/images/collections/lemon-dal-rice.webp", isRecipe: false },
+    { path: "/images/collections/lemon-dal-rice-recipe.webp", isRecipe: true },
+  ],
 
 };
 
 const dsaf = {
 
-  "title": "Chia Seed Pudding",
-  "image": "/images/collections/chia-seed-pudding.webp",
-  "price": 8.99,
+  "title": "Lemon Dal Rice",
+  "image": "/images/collections/lemon-dal-rice.webp",
+  "price": 11.99,
   "dairyFree": true,
   "eggFree": true,
   "glutenFree": true,
   "peanutFree": false,
-  "vegetarian": false,
-  "date": "2023-12-06T07:00:00.000Z"
+  "vegetarian": true,
+  "date": "2023-12-03T07:00:00.000Z"
 };
