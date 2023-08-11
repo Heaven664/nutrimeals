@@ -6,15 +6,7 @@ import KioskForm from "./KioskForm";
 const VisitKiosk = () => {
   return (
     <div className={styles.infoLayout}>
-      <div className={styles.infoContainer}>
-        <div className={styles.imageContainer} id={styles.kioskImageContainer}>
-          <Image
-            src="/images/kiosks/visit-kiosk.png"
-            width={750}
-            height={750}
-            alt="subscription-info"
-          />
-        </div>
+      <div className={styles.infoContainer} id={styles.kioskInfoContainer}>
         <div className={styles.textContainer}>
           <div className={styles.textTitle}>
             <h2>COME VISIT OUR MACHINE</h2>
@@ -30,6 +22,14 @@ const VisitKiosk = () => {
             </p>
           </div>
           <KioskForm />
+        </div>
+        <div className={styles.imageContainer} id={styles.kioskImageContainer}>
+          <Image
+            src="/images/kiosks/visit-kiosk.png"
+            width={750}
+            height={750}
+            alt="subscription-info"
+          />
         </div>
       </div>
     </div>

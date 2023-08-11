@@ -26,9 +26,22 @@
 
 .fieldContainer textarea {
   min-height: 100px;
+  resize: vertical;
 }
 
 #submitButton {
   margin-top: 5px;
   box-shadow: none !important;
+}
+
+@media (min-width: 990px) {
+  .fieldContainer label,
+  .fieldContainer input,
+  .fieldContainer textarea {
+    font-size: 16.5px;
+  }
+
+  .fieldContainer {
+    margin-bottom: 5px;
+  }
 }

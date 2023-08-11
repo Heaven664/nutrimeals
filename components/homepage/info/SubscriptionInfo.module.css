@@ -16,6 +16,10 @@
   margin-bottom: 30px;
 }
 
+#kioskInfoContainer {
+  flex-direction: column;
+}
+
 .imageContainer {
   width: 82%;
 }
@@ -80,6 +84,10 @@
   .infoContainer {
     flex-direction: row;
     margin-bottom: 0;
+  }
+
+  #kioskInfoContainer {
+    flex-direction: row;
   }
 
   .textContainer button {
