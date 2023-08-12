@@ -1,22 +1,22 @@
 const ong =
 {
   mealData: {
-    title: "Vegetable Mix",
-    slug: "vegetable-mix",
-    price: 14.99,
-    imagePath: "/images/collections/vegetable-mix.webp",
+    title: "Dietitian Consultation",
+    slug: "dietician-consultation",
+    price: 150.00,
+    imagePath: "/images/collections/dietician-consultation.webp",
     recipePath: "",
     description:
-      "This option is great if you want to meal prep on your own (we won't tell!) Enjoy cooked vegetables as a side to your lunch or dinner.",
-    noModifications: true,
-    collectionName: 'bulk vegetables',
+      "This is a virtual one-on-one consultation with Nutrimeals dietician. The consultation is 1 hour long and you can expect us to walk through what your current diet and eating habits look like, what you want to change and how we can get there together. Depending on your work benefits or insurance plan, this cost could be claimed. Nutrimeals does not direct bill. Upon completion of your purchase, one of our team members will reach out to you via phone or email.",
+    noModifications: false,
+    collectionName: 'breakfast',
     beverageImageContainer: false,
     date: '2023-11-04T07:00:00.000+00:00'
   },
   images: [],
   images: [
-    { path: "/images/collections/vegetable-mix.webp", isRecipe: false },
-    { path: "/images/collections/vegetable-mix-recipe.webp", isRecipe: true },
+    { path: "/images/collections/dietician-consultation.webp", isRecipe: false },
+    { path: "/images/collections/dietician-consultation-recipe.webp", isRecipe: true },
   ],
 
 };

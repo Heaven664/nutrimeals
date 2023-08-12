@@ -1,5 +1,6 @@
 import { JSX } from "react";
 import styles from "../Navbar.module.css";
+import Link from "next/link";
 
 interface ExtendedProps {
   extendedNavbar: number;
@@ -38,12 +39,16 @@ const MealPlans = ({
       </li>
       <li>
         <button onClick={hideNavbar}>
-          <span>Information</span>
+          <Link href="/">
+            <span>Information</span>
+          </Link>
         </button>
       </li>
       <li>
         <button onClick={hideNavbar}>
-          <span>Dietitian consultation</span>
+          <Link href="/products/dietician-consultation">
+            <span>Dietitian consultation</span>
+          </Link>
         </button>
       </li>
     </ul>

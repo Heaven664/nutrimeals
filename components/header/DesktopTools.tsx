@@ -126,10 +126,14 @@ const DesktopTools: React.FC = () => {
             <div className={styles.extendedTools}>
               <ul>
                 <li>
-                  <p>Information</p>
+                  <Link href="/">
+                    <p>Information</p>
+                  </Link>
                 </li>
                 <li>
-                  <p>Dietitian consultation </p>
+                  <Link href="/products/dietician-consultation">
+                    <p>Dietitian consultation </p>
+                  </Link>
                 </li>
               </ul>
             </div>
