@@ -89,16 +89,24 @@ const DesktopTools: React.FC = () => {
             <div className={styles.extendedTools}>
               <ul>
                 <li>
-                  <p>Breakfast & Lunch Box</p>
+                  <Link href="/products/breakfast-&-lunch-box">
+                    <p>Breakfast & Lunch Box</p>
+                  </Link>
                 </li>
                 <li>
-                  <p>Breakfast, Lunch, & Dinner Box</p>
+                  <Link href="/products/breakfast-lunch-&-dinner-box">
+                    <p>Breakfast, Lunch, & Dinner Box</p>
+                  </Link>
                 </li>
                 <li>
-                  <p>Lunch & Dinner Box</p>
+                  <Link href="/products/lunch-&-dinner-box">
+                    <p>Lunch & Dinner Box</p>
+                  </Link>
                 </li>
                 <li>
-                  <p>Lunch & Dinner Box</p>
+                  <Link href="/products/gluten-free-lunch-&-dinner">
+                    <p>Gluten Free Box</p>
+                  </Link>
                 </li>
                 <li>
                   <Link href="/products/dairy-free-lunch-&-dinner">

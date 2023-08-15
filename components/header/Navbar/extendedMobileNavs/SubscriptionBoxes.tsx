@@ -39,22 +39,30 @@ const SubscriptionBoxes = ({
       </li>
       <li>
         <button onClick={hideNavbar}>
-          <span>Breakfast & Lunch Box</span>
+          <Link href="/products/breakfast-&-lunch-box">
+            <span>Breakfast & Lunch Box</span>
+          </Link>
         </button>
       </li>
       <li>
         <button onClick={hideNavbar}>
-          <span>Breakfast, Lunch, & Dinner Box</span>
+          <Link href="/products/breakfast-lunch-&-dinner-box">
+            <span>Breakfast, Lunch, & Dinner Box</span>
+          </Link>
         </button>
       </li>
       <li>
         <button onClick={hideNavbar}>
-          <span>Lunch & Dinner Box</span>
+          <Link href="/products/lunch-&-dinner-box">
+            <span>Lunch & Dinner Box</span>
+          </Link>
         </button>
       </li>
       <li>
         <button onClick={hideNavbar}>
-          <span>Gluten Free Box</span>
+          <Link href="/products/gluten-free-lunch-&-dinner">
+            <span>Gluten Free Box</span>
+          </Link>
         </button>
       </li>
       <li>
