@@ -101,7 +101,9 @@ const DesktopTools: React.FC = () => {
                   <p>Lunch & Dinner Box</p>
                 </li>
                 <li>
-                  <p>Dairy Free Box</p>
+                  <Link href="/products/dairy-free-lunch-&-dinner">
+                    <p>Dairy Free Box</p>
+                  </Link>
                 </li>
               </ul>
             </div>

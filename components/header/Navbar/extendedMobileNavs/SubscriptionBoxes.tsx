@@ -1,4 +1,5 @@
 import { JSX } from "react";
+import Link from "next/link";
 import styles from "../Navbar.module.css";
 
 interface ExtendedProps {
@@ -58,7 +59,9 @@ const SubscriptionBoxes = ({
       </li>
       <li>
         <button onClick={hideNavbar}>
-          <span>Dairy Free Box</span>
+          <Link href="/products/dairy-free-lunch-&-dinner">
+            <span>Dairy Free Box</span>
+          </Link>
         </button>
       </li>
     </ul>
