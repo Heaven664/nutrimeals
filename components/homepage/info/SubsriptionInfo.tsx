@@ -1,8 +1,10 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 import styles from "./SubscriptionInfo.module.css";
 
 const SubscriptionInfo = () => {
+  const router = useRouter();
   return (
     <div className={styles.infoLayout}>
       <div className={styles.infoContainer}>
@@ -25,7 +27,9 @@ const SubscriptionInfo = () => {
             </p>
           </div>
           <div className={styles.textButton}>
-            <button>View Subscriptions</button>
+            <button onClick={() => router.push("/products/lunch-&-dinner-box")}>
+              View Subscriptions
+            </button>
           </div>
         </div>
         <div className={styles.imageContainer}>

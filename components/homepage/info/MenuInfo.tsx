@@ -1,8 +1,10 @@
 import Image from "next/image";
+import { useRouter } from "next/router";
 
 import styles from "./MenuInfo.module.css";
 
 const MenuInfo = () => {
+  const router = useRouter();
   return (
     <div className={styles.infoLayout}>
       <div className={styles.infoContainer}>
@@ -30,7 +32,11 @@ const MenuInfo = () => {
             </p>
           </div>
           <div className={styles.textButton}>
-            <button>Order now</button>
+            <button
+              onClick={() => router.push("/collections/lunch-and-dinner")}
+            >
+              Order now
+            </button>
           </div>
         </div>
       </div>

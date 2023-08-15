@@ -16,7 +16,7 @@ const Preview = (): JSX.Element => {
             The Benefits of Healthy Meal Prep: Save Time and Eat Healthier
           </h2>
           <div className={styles.buttonContainer}>
-            <Link href="">
+            <Link href="/collections/lunch-and-dinner">
               <button>View Menu</button>
             </Link>
           </div>

@@ -2,9 +2,11 @@ import { useState } from "react";
 import Image from "next/image";
 
 import styles from "./Faq.module.css";
+import { useRouter } from "next/router";
 
 const Faq: React.FC = () => {
   const [activeQuestion, setActiveQuestion] = useState(0);
+  const router = useRouter();
 
   const handleFaqChange = (faqNumber: number) => {
     if (activeQuestion === faqNumber) {
@@ -187,7 +189,11 @@ const Faq: React.FC = () => {
           </div>
           <div className={styles.faqFooter}>
             <p>Have a question?</p>
-            <button>View FAQ</button>
+            <button
+              onClick={() => router.push("/products/dietician-consultation")}
+            >
+              View FAQ
+            </button>
           </div>
         </div>
         <div className={styles.faqImagesContainer}>

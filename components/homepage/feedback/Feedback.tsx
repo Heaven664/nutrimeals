@@ -1,5 +1,6 @@
 import React, { JSX, useRef } from "react";
 import { Swiper as SwiperType } from "swiper";
+import { useRouter } from "next/router";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination, Autoplay, Navigation } from "swiper";
@@ -36,6 +37,7 @@ const DummyFeedback = [
 
 const FeedbackCarousel = (): JSX.Element => {
   const swiperRef = useRef<SwiperType | null>(null);
+  const router = useRouter();
 
   return (
     <div className={styles.feedbackLayout}>
@@ -116,7 +118,7 @@ const FeedbackCarousel = (): JSX.Element => {
           </div>
         </div>
         <div className={styles.feedbackButton}>
-          <button>Perfect, I want it</button>
+          <button onClick={() => router.push('/products/lunch-&-dinner-box')} >Perfect, I want it</button>
         </div>
       </div>
     </div>
