@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import styles from "../homepage/info/MenuInfo.module.css";
 
@@ -34,7 +35,12 @@ const KioskInfo = () => {
             </p>
           </div>
           <div className={styles.textButton}>
-            <button>Read Full Article</button>
+            <Link
+              href="https://globalnews.ca/news/6382555/calgary-entrepreneurs-nutrimeals-vending-machines/"
+              target="_blank"
+            >
+              <button>Read Full Article</button>
+            </Link>
           </div>
         </div>
       </div>
