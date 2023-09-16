@@ -1,0 +1,78 @@
+.cartLayout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cartBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 125px 44px;
+  max-width: 1200px;
+  margin-top: 35px;
+}
+
+.cartBody h1 {
+  font-size: 32px;
+  margin-bottom: 17.5px;
+}
+
+.cartBody p {
+  color: rgb(51, 50, 50);
+  font-size: 14px;
+  margin-bottom: 19.5px;
+}
+
+.buttonContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.15s;
+}
+
+.buttonContainer button {
+  padding: 8px 15px;
+  color: rgb(235, 235, 235);
+  border: 1px solid rgb(235, 235, 235);
+  background-color: rgb(6, 64, 75);
+  border-radius: 5px;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 1.2px;
+  text-transform: uppercase;
+  cursor: pointer;
+  line-height: 19.5px;
+  letter-spacing: 1.04px;
+}
+
+.buttonContainer svg {
+  margin-left: 8px;
+  width: 20px;
+  height: 9px;
+}
+
+.buttonContainer path {
+  fill: rgb(235, 235, 235);
+}
+
+@media (min-width: 750px) {
+  .cartBody {
+    padding: 125px 110px;
+    margin-top: 55px;
+  }
+  .cartBody h1 {
+    font-size: 37px;
+  }
+  .cartBody p {
+    font-size: 15px;
+  }
+  .buttonContainer button {
+    padding: 10px 18px;
+  }
+
+  .buttonContainer:hover button {
+    background-color: rgb(12, 124, 146);
+  }
+}
