@@ -1,0 +1,11 @@
+.FullCartLayout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.FullCartBody {
+  margin-top: 35px;
+  padding: 0 22px;
+  max-width: 1200px;
+}

@@ -56,3 +56,11 @@ export interface MealsContextType {
   sortDinnerLunchByDateAsc: (meals: MealData[]) => void;
   sortDinnerLunchByDateDesc: (meals: MealData[]) => void;
 }
+
+export interface CartProductType {
+  title: string;
+  image: string;
+  price: number;
+  quantity: number;
+  beverageContainer: boolean;
+}
