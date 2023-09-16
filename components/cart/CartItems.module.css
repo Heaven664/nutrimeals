@@ -22,6 +22,29 @@
   border-bottom: 1px solid rgb(6, 64, 75);
 }
 
+.productsContainer {
+  width: 100%;
+}
+
+.cartItemsHeaders {
+  display: flex;
+  justify-content: space-between;
+  padding: 27.5px 0;
+  border-bottom: 1px solid rgb(235, 235, 235);
+}
+
+.cartItemsHeaders p {
+  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+.productQuantity,
+.productTotalPrice {
+  display: none;
+}
+
 @media (min-width: 750px) {
   .cartHeader h1 {
     margin-bottom: 27px;
@@ -32,5 +55,27 @@
   }
   .cartHeader p {
     font-size: 15px;
+  }
+  .cartItemsHeaders {
+    flex: 1;
+  }
+  .productPreview {
+    flex: 50%;
+  }
+  .productPrice {
+    flex: 20%;
+    text-align: center;
+  }
+  .productQuantity {
+    flex: 20%;
+    text-align: center;
+  }
+  .productTotalPrice {
+    flex: 10%;
+    text-align: end;
+  }
+  .productQuantity,
+  .productTotalPrice {
+    display: block;
   }
 }
