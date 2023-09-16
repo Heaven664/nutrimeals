@@ -1,8 +1,9 @@
 import EmptyCart from "@/components/cart/EmptyCart";
+import FullCart from "@/components/cart/FullCart";
 
 const Cart = () => {
-  let emptyCart = true;
-  return <>{emptyCart ? <EmptyCart /> : <div>not empty</div>}</>;
+  let emptyCart = false;
+  return <>{emptyCart ? <EmptyCart /> : <FullCart />}</>;
 };
 
 export default Cart;
