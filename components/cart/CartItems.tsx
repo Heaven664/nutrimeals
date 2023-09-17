@@ -128,7 +128,7 @@ const CartItems = ({ products }: P) => {
       <div className={styles.checkoutContainer}>
         <div className={styles.subtotalContainer}>
           <p>
-            Subtotal: <span>{`$${subtotal} CAD`}</span>
+            Subtotal: <span>{`$${subtotal.toFixed(2)} CAD`}</span>
           </p>
         </div>
         <button>Check out</button>
