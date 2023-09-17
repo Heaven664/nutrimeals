@@ -152,53 +152,106 @@
   .cartHeader h1 {
     margin-bottom: 27px;
   }
+
   .cartHeader h1 {
     font-size: 37px;
     margin-bottom: 16px;
   }
+
   .cartHeader p {
     font-size: 15px;
   }
+
   .cartItemsHeaders {
     flex: 1;
   }
+
   .productPreviewColumn {
     flex: 50%;
   }
+
   .productPriceColumn {
     flex: 20%;
     text-align: center;
   }
+
+  .productRightInfo {
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    flex: 1;
+    padding-left: 0;
+  }
+
   .productQuantityColumn {
     flex: 20%;
     text-align: center;
   }
+
   .productTotalPriceColumn {
     flex: 10%;
     text-align: end;
   }
+
   .productQuantityColumn,
   .productTotalPriceColumn {
     display: block;
   }
+
   .productTitleContainer p:hover {
     color: rgb(12, 124, 146);
     border-bottom: 1px solid rgb(12, 124, 146);
   }
+
   .productTitleContainer h4 {
     font-size: 17px;
   }
+
   .productTitleContainer p {
     font-size: 15px;
   }
+
   .productTitleContainer h4:hover {
     text-decoration: underline;
   }
+
   .productQuantity {
     display: none;
   }
+
   .imageContainer:hover,
   .imageBeverageContainer:hover {
     opacity: 0.8;
+  }
+
+  .productPriceContainer {
+    margin-bottom: 0;
+    flex: 40%;
+    text-align: center;
+  }
+
+  .productsContainer ul li {
+    flex: 1;
+  }
+
+  .productLeftInfo {
+    width: 50%;
+  }
+
+  .productQuantityContainer {
+    flex: 40%;
+    text-align: center;
+  }
+  .productQuantityContainer p {
+    text-align: center;
+  }
+
+  .productTotalPriceContainer {
+    text-align: end;
+    display: block;
+    font-size: 14px;
+    color: rgb(51, 50, 50);
+    flex: 20%;
   }
 }
