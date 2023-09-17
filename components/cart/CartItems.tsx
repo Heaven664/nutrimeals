@@ -10,7 +10,9 @@ interface P {
 
 const CartItems = ({ products }: P) => {
   const router = useRouter();
-  const [subtotal, setSubtotal] = useState(0);
+  const [subtotal, setSubtotal] = useState(
+    products.reduce((acc, cur) => acc + cur.price * cur.quantity, 0)
+  );
   const [productQuantities, setProductQuantities] = useState(
     products.map((product) => ({
       id: product.slug,
@@ -24,11 +26,6 @@ const CartItems = ({ products }: P) => {
       totalPrice: product.price * product.quantity,
     }))
   );
-  useEffect(() => {
-    let sum = 0;
-    products.map((product) => (sum += product.price * product.quantity));
-    setSubtotal(sum);
-  }, [products]);
 
   const handleQuantityChange = (productId: string, newQuantity: number) => {
     setProductQuantities((prev) =>
@@ -44,6 +41,12 @@ const CartItems = ({ products }: P) => {
       )
     );
   };
+
+  useEffect(() => {
+    setSubtotal(
+      productsTotalPrices.reduce((acc, cur) => acc + cur.totalPrice, 0)
+    );
+  }, [productsTotalPrices]);
 
   const productItems = products.map((product) => (
     <li key={product.image}>
