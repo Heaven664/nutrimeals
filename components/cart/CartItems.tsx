@@ -17,6 +17,13 @@ const CartItems = ({ products }: P) => {
       quantity: product.quantity,
     }))
   );
+  const [productsTotalPrices, setProductsTotalPrices] = useState(
+    products.map((product) => ({
+      price: product.price,
+      id: product.slug,
+      totalPrice: product.price * product.quantity,
+    }))
+  );
   useEffect(() => {
     let sum = 0;
     products.map((product) => (sum += product.price * product.quantity));
@@ -27,6 +34,13 @@ const CartItems = ({ products }: P) => {
     setProductQuantities((prev) =>
       prev.map((item) =>
         item.id === productId ? { ...item, quantity: newQuantity } : item
+      )
+    );
+    setProductsTotalPrices((prev) =>
+      prev.map((item) =>
+        item.id === productId
+          ? { ...item, totalPrice: newQuantity * item.price }
+          : item
       )
     );
   };
@@ -72,7 +86,12 @@ const CartItems = ({ products }: P) => {
           />
         </div>
         <div className={styles.productTotalPriceContainer}>
-          <p>${product.price * product.quantity}</p>
+          <p>
+            $
+            {productsTotalPrices
+              .find((item) => item.id === product.slug)
+              ?.totalPrice.toFixed(2)}
+          </p>
         </div>
       </div>
     </li>
