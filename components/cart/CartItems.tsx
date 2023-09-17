@@ -1,4 +1,5 @@
 import Link from "next/link";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/router";
 import { CartProductType } from "@/lib/interfaces";
 import styles from "./CartItems.module.css";
@@ -9,6 +10,26 @@ interface P {
 
 const CartItems = ({ products }: P) => {
   const router = useRouter();
+  const [subtotal, setSubtotal] = useState(0);
+  const [productQuantities, setProductQuantities] = useState(
+    products.map((product) => ({
+      id: product.slug,
+      quantity: product.quantity,
+    }))
+  );
+  useEffect(() => {
+    let sum = 0;
+    products.map((product) => (sum += product.price * product.quantity));
+    setSubtotal(sum);
+  }, [products]);
+
+  const handleQuantityChange = (productId: string, newQuantity: number) => {
+    setProductQuantities((prev) =>
+      prev.map((item) =>
+        item.id === productId ? { ...item, quantity: newQuantity } : item
+      )
+    );
+  };
 
   const productItems = products.map((product) => (
     <li key={product.image}>
@@ -38,7 +59,17 @@ const CartItems = ({ products }: P) => {
           <div className={styles.productQuantity}>
             <p>Qty</p>
           </div>
-          <input type="number" value={product.quantity} />
+          <input
+            type="number"
+            value={
+              productQuantities.find((item) => item.id === product.slug)
+                ?.quantity
+            }
+            onChange={(e) =>
+              handleQuantityChange(product.slug, parseInt(e.target.value))
+            }
+            min={1}
+          />
         </div>
         <div className={styles.productTotalPriceContainer}>
           <p>${product.price * product.quantity}</p>
@@ -71,6 +102,14 @@ const CartItems = ({ products }: P) => {
           </div>
         </div>
         <ul>{productItems}</ul>
+      </div>
+      <div className={styles.checkoutContainer}>
+        <div className={styles.subtotalContainer}>
+          <p>
+            Subtotal: <span>{`$${subtotal} CAD`}</span>
+          </p>
+        </div>
+        <button>Check out</button>
       </div>
     </div>
   );
