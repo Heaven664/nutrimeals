@@ -26,6 +26,10 @@
   width: 100%;
 }
 
+.productsContainer ul {
+  list-style: none;
+}
+
 .cartItemsHeaders {
   display: flex;
   justify-content: space-between;
@@ -40,8 +44,107 @@
   letter-spacing: 0.3px;
 }
 
-.productQuantity,
-.productTotalPrice {
+.productQuantityColumn,
+.productTotalPriceColumn {
+  display: none;
+}
+
+.productsContainer ul li {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid rgb(235, 235, 235);
+}
+
+.productLeftInfo {
+  display: flex;
+  padding: 22px 14px 22px 0;
+}
+
+.imageContainer {
+  padding-right: 24px;
+  max-width: 144px;
+  cursor: pointer;
+}
+
+.imageContainer img {
+  width: 100%;
+  max-width: 95px;
+  border-radius: 8px;
+}
+
+.imageBeverageContainer {
+  padding-right: 24px;
+  max-width: 144px;
+  width: 100%;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 119px;
+}
+
+.imageBeverageContainer img {
+  width: 100%;
+  max-width: 37px;
+  height: auto;
+}
+
+.productTitleContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+}
+
+.productTitleContainer h4 {
+  color: rgb(51, 50, 50);
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.productTitleContainer p {
+  display: block;
+  color: rgb(6, 64, 75);
+  font-size: 14px;
+  padding-bottom: 1px;
+  border-bottom: 1px solid rgb(6, 64, 75);
+  cursor: pointer;
+}
+
+.productRightInfo {
+  display: flex;
+  flex-direction: column;
+  padding: 22px 0 22px 14px;
+}
+
+.productQuantityContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.productQuantity p {
+  font-size: 13px;
+  margin-right: 5px;
+  color: rgb(51, 50, 50);
+}
+
+.productPriceContainer {
+  text-align: end;
+  font-size: 14px;
+  color: rgb(51, 50, 50);
+  margin-bottom: 14px;
+}
+
+.productQuantityContainer input {
+  border: 1px solid rgb(204, 204, 204);
+  padding: 8px 5.4px;
+  max-width: 4rem;
+  font-size: 16px;
+  text-align: center;
+  border-radius: 2px;
+}
+
+.productTotalPriceContainer {
   display: none;
 }
 
@@ -59,23 +162,43 @@
   .cartItemsHeaders {
     flex: 1;
   }
-  .productPreview {
+  .productPreviewColumn {
     flex: 50%;
   }
-  .productPrice {
+  .productPriceColumn {
     flex: 20%;
     text-align: center;
   }
-  .productQuantity {
+  .productQuantityColumn {
     flex: 20%;
     text-align: center;
   }
-  .productTotalPrice {
+  .productTotalPriceColumn {
     flex: 10%;
     text-align: end;
   }
-  .productQuantity,
-  .productTotalPrice {
+  .productQuantityColumn,
+  .productTotalPriceColumn {
     display: block;
+  }
+  .productTitleContainer p:hover {
+    color: rgb(12, 124, 146);
+    border-bottom: 1px solid rgb(12, 124, 146);
+  }
+  .productTitleContainer h4 {
+    font-size: 17px;
+  }
+  .productTitleContainer p {
+    font-size: 15px;
+  }
+  .productTitleContainer h4:hover {
+    text-decoration: underline;
+  }
+  .productQuantity {
+    display: none;
+  }
+  .imageContainer:hover,
+  .imageBeverageContainer:hover {
+    opacity: 0.8;
   }
 }

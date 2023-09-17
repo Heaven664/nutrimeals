@@ -59,6 +59,7 @@ export interface MealsContextType {
 
 export interface CartProductType {
   title: string;
+  slug: string;
   image: string;
   price: number;
   quantity: number;

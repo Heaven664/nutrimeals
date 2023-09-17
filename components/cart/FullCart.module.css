@@ -10,3 +10,9 @@
   width: 100%;
   max-width: 1200px;
 }
+
+@media (mix-width: 750px) {
+  .FullCartBody {
+    padding: 55px;
+  }
+}

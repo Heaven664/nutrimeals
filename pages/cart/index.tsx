@@ -7,16 +7,26 @@ const Cart = () => {
     {
       title: "Breakfast Bowl",
       quantity: 1,
+      slug: "breakfast-bowl",
       price: 13.99,
-      image: "/images/aloha-chicken.webp",
+      image: "/images/collections/aloha-chicken.webp",
       beverageContainer: false,
     },
     {
-      title: "Breakfast Bowl",
-      quantity: 1,
+      title: "Blackened Cod",
+      slug: "blackened-cod",
+      quantity: 2,
       price: 13.99,
-      image: "/images/aloha-chicken.webp",
+      image: "/images/collections/blackened-cod.webp",
       beverageContainer: false,
+    },
+    {
+      title: "SPEACHLESS Rviita Tea",
+      slug: "speachless-rviita-tea",
+      quantity: 2,
+      price: 4.99,
+      image: "/images/collections/speachless-rviita-tea.webp",
+      beverageContainer: true,
     },
   ];
   return <>{emptyCart ? <EmptyCart /> : <FullCart products={products} />}</>;
