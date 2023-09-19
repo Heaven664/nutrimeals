@@ -11,6 +11,7 @@ export interface MealData {
   vegetarian?: boolean;
   beverage?: boolean;
   beverages?: boolean;
+  beverageImageContainer?: boolean;
   giftCard?: boolean;
   date: string;
 }
