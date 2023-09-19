@@ -1,41 +1,71 @@
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
 import { useRouter } from "next/router";
+import MealsContext from "@/store/MealsContext";
 import { CartProductType } from "@/lib/interfaces";
 import styles from "./CartItems.module.css";
+import { updateCart } from "@/helpers/helpers";
 
 interface P {
   products: CartProductType[];
 }
 
 const CartItems = ({ products }: P) => {
+  const cartCtx = useContext(MealsContext);
+  const { changeCartItems, cartItems } = cartCtx;
   const router = useRouter();
   const [subtotal, setSubtotal] = useState(
     products.reduce((acc, cur) => acc + cur.price * cur.quantity, 0)
   );
   const [productQuantities, setProductQuantities] = useState(
     products.map((product) => ({
-      id: product.slug,
+      title: product.title,
       quantity: product.quantity,
     }))
   );
   const [productsTotalPrices, setProductsTotalPrices] = useState(
     products.map((product) => ({
       price: product.price,
-      id: product.slug,
+      title: product.title,
       totalPrice: product.price * product.quantity,
     }))
   );
 
-  const handleQuantityChange = (productId: string, newQuantity: number) => {
+  // const handleQuantityChange = (productId: string, newQuantity: number) => {
+  //   setProductQuantities((prev) =>
+  //     prev.map((item) =>
+  //       item.id === productId ? { ...item, quantity: newQuantity } : item
+  //     )
+  //   );
+  //   setProductsTotalPrices((prev) =>
+  //     prev.map((item) =>
+  //       item.id === productId
+  //         ? { ...item, totalPrice: newQuantity * item.price }
+  //         : item
+  //     )
+  //   );
+  // };
+
+  const handleQuantityChange = (productTitle: string, newQuantity: number) => {
+    const newCartItems = cartItems.map((item) =>
+      item.title === productTitle
+        ? {
+            ...item,
+            quantity: newQuantity,
+            totalPrice: newQuantity * item.price,
+          }
+        : item
+    );
+    changeCartItems(newCartItems);
+    updateCart(newCartItems);
     setProductQuantities((prev) =>
       prev.map((item) =>
-        item.id === productId ? { ...item, quantity: newQuantity } : item
+        item.title === productTitle ? { ...item, quantity: newQuantity } : item
       )
     );
     setProductsTotalPrices((prev) =>
       prev.map((item) =>
-        item.id === productId
+        item.title === productTitle
           ? { ...item, totalPrice: newQuantity * item.price }
           : item
       )
@@ -46,7 +76,7 @@ const CartItems = ({ products }: P) => {
     setSubtotal(
       productsTotalPrices.reduce((acc, cur) => acc + cur.totalPrice, 0)
     );
-  }, [productsTotalPrices]);
+  }, [cartItems]);
 
   const productItems = products.map((product) => (
     <li key={product.image}>
@@ -65,7 +95,17 @@ const CartItems = ({ products }: P) => {
           <h4 onClick={() => router.push(`/products/${product.slug}`)}>
             {product.title}
           </h4>
-          <p>Remove</p>
+          <p
+            onClick={() => {
+              let newCart = products.filter(
+                (item) => item.title !== product.title
+              );
+              changeCartItems(newCart);
+              updateCart(newCart);
+            }}
+          >
+            Remove
+          </p>
         </div>
       </div>
       <div className={styles.productRightInfo}>
@@ -79,11 +119,11 @@ const CartItems = ({ products }: P) => {
           <input
             type="number"
             value={
-              productQuantities.find((item) => item.id === product.slug)
+              productQuantities.find((item) => item.title === product.title)
                 ?.quantity
             }
             onChange={(e) =>
-              handleQuantityChange(product.slug, parseInt(e.target.value))
+              handleQuantityChange(product.title, parseInt(e.target.value))
             }
             min={1}
           />
@@ -92,7 +132,7 @@ const CartItems = ({ products }: P) => {
           <p>
             $
             {productsTotalPrices
-              .find((item) => item.id === product.slug)
+              .find((item) => item.title === product.title)
               ?.totalPrice.toFixed(2)}
           </p>
         </div>

@@ -55,5 +55,9 @@ export const addItemToCartFromCollection = (
     cart.push(product);
   }
   localStorage.setItem("cart", JSON.stringify(cart));
-  console.log(cart);
+};
+
+export const updateCart = (cart: CartProductType[]) => {
+  console.log('cart', cart);
+  localStorage.setItem("cart", JSON.stringify(cart));
 };

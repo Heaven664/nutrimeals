@@ -10,7 +10,6 @@ const UserToolsList = (): JSX.Element => {
   const [cartItemsNumber, setCartItemsNumber] = useState(0);
   useEffect(() => {
     const amount = cartItems;
-    console.log("got");
     setCartItemsNumber(amount.length);
   }, [cartItems]);
   return (

@@ -41,6 +41,7 @@ const MealsContextProvider = ({ children }: P) => {
   const [cartItems, setCartItems] = useState<CartProductType[]>([]);
 
   const changeCartItems = (items: CartProductType[]) => {
+    console.log("new items", items);
     setCartItems(items);
   };
 
