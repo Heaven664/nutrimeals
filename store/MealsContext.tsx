@@ -1,5 +1,6 @@
 import React, { createContext, useState } from "react";
 import { CartProductType, MealData, MealsContextType } from "@/lib/interfaces";
+import { updateCart } from "@/helpers/helpers";
 
 interface P {
   children: React.ReactNode;
@@ -41,8 +42,9 @@ const MealsContextProvider = ({ children }: P) => {
   const [cartItems, setCartItems] = useState<CartProductType[]>([]);
 
   const changeCartItems = (items: CartProductType[]) => {
-    console.log("new items", items);
+    // console.log("new items", items);
     setCartItems(items);
+    updateCart(items);
   };
 
   const changeActiveDinnerLunchMeals = (meals: MealData[]) => {

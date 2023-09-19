@@ -4,7 +4,6 @@ import { useRouter } from "next/router";
 import MealsContext from "@/store/MealsContext";
 import { CartProductType } from "@/lib/interfaces";
 import styles from "./CartItems.module.css";
-import { updateCart } from "@/helpers/helpers";
 
 interface P {
   products: CartProductType[];
@@ -57,24 +56,34 @@ const CartItems = ({ products }: P) => {
         : item
     );
     changeCartItems(newCartItems);
-    updateCart(newCartItems);
-    setProductQuantities((prev) =>
-      prev.map((item) =>
-        item.title === productTitle ? { ...item, quantity: newQuantity } : item
-      )
-    );
-    setProductsTotalPrices((prev) =>
-      prev.map((item) =>
-        item.title === productTitle
-          ? { ...item, totalPrice: newQuantity * item.price }
-          : item
-      )
-    );
+    // updateCart(newCartItems);
+    // setProductQuantities((prev) =>
+    //   prev.map((item) =>
+    //     item.title === productTitle ? { ...item, quantity: newQuantity } : item
+    //   )
+    // );
+    // setProductsTotalPrices((prev) =>
+    //   prev.map((item) =>
+    //     item.title === productTitle
+    //       ? { ...item, totalPrice: newQuantity * item.price }
+    //       : item
+    //   )
+    // );
   };
 
   useEffect(() => {
     setSubtotal(
-      productsTotalPrices.reduce((acc, cur) => acc + cur.totalPrice, 0)
+      cartItems.reduce((acc, cur) => acc + cur.price * cur.quantity, 0)
+    );
+    setProductQuantities(
+      cartItems.map((item) => ({ title: item.title, quantity: item.quantity }))
+    );
+    setProductsTotalPrices(
+      cartItems.map((item) => ({
+        title: item.title,
+        price: item.price,
+        totalPrice: item.price * item.quantity,
+      }))
     );
   }, [cartItems]);
 
@@ -101,7 +110,7 @@ const CartItems = ({ products }: P) => {
                 (item) => item.title !== product.title
               );
               changeCartItems(newCart);
-              updateCart(newCart);
+              // updateCart(newCart);
             }}
           >
             Remove

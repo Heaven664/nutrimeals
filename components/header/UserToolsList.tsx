@@ -7,10 +7,10 @@ import MealsContext from "@/store/MealsContext";
 const UserToolsList = (): JSX.Element => {
   const itemsCtx = useContext(MealsContext);
   const { cartItems } = itemsCtx;
-  const [cartItemsNumber, setCartItemsNumber] = useState(0);
+  const [cartItemsNumber, setCartItemsNumber] = useState(cartItems.length);
   useEffect(() => {
-    const amount = cartItems;
-    setCartItemsNumber(amount.length);
+    console.log("header", cartItems);
+    setCartItemsNumber(cartItems.length);
   }, [cartItems]);
   return (
     <ul>
