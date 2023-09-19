@@ -16,6 +16,16 @@ export interface MealData {
   date: string;
 }
 
+export interface CollectionItem {
+  id: string;
+  title: string;
+  image: string;
+  price: number;
+  refString?: string;
+  isBeverage?: boolean;
+  suggestedMeals?: boolean;
+}
+
 export interface ProductData {
   _id: string;
   mealData: {

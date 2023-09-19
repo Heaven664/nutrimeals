@@ -1,19 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import { ChangeEvent, useState } from "react";
+import { CollectionItem } from "@/lib/interfaces";
+import { addItemToCartFromCollection } from "@/helpers/helpers";
 
 import styles from "./CollectionsListItem.module.css";
 
-interface CollectionItem {
-  title: string;
-  image: string;
-  price: number;
-  refString: string;
-  isBeverage?: boolean;
-  suggestedMeals?: boolean;
-}
-
 const CollectionListItem = ({
+  id,
   title,
   image,
   price,
@@ -25,6 +19,16 @@ const CollectionListItem = ({
 
   const amountChangeHandler = (e: ChangeEvent<HTMLInputElement>) => {
     setItemNumber(parseInt(e.target.value));
+  };
+
+  let beverageContainer = isBeverage ? true : false;
+
+  const item = {
+    id: id,
+    title: title,
+    image: image,
+    price: price,
+    isBeverage: beverageContainer,
   };
 
   return (
@@ -51,7 +55,9 @@ const CollectionListItem = ({
           <h2>${price}</h2>
         </Link>
         <div className={styles.controllerContainer}>
-          <button>Add to cart</button>
+          <button onClick={() => addItemToCartFromCollection(item, itemNumber)}>
+            Add to cart
+          </button>
           <input
             type="number"
             min={1}

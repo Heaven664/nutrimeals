@@ -3,6 +3,7 @@ import CollectionListItem from "./CollectionsListItem";
 import styles from "./CollectionsList.module.css";
 
 interface CollectionItem {
+  id: string;
   title: string;
   image: string;
   price: number;
@@ -19,6 +20,7 @@ const CollectionsList = ({ collections, isBeverage, suggestedMeals }: P) => {
     const refString = collection.title.toLocaleLowerCase().replace(/ /g, "-");
     return (
       <CollectionListItem
+        id={collection.id}
         title={collection.title}
         price={collection.price}
         image={collection.image}

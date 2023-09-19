@@ -1,4 +1,4 @@
-import { CartProductType, MealData } from "@/lib/interfaces";
+import { CartProductType, CollectionItem } from "@/lib/interfaces";
 export const collectionToURL = (collectionName: string): string => {
   const collectionURLName = collectionName
     .toLocaleLowerCase()
@@ -24,13 +24,13 @@ export const getCart = () => {
 };
 
 export const addItemToCartFromCollection = (
-  item: MealData,
+  item: CollectionItem,
   quantity: number
 ) => {
-  const cart: CartProductType[] = getCart();
+  let cart: CartProductType[] = getCart();
   let itemInTheCart = false;
   const updatedCart = cart.map((product) => {
-    if (product.slug === item.id) {
+    if (product.title === item.title) {
       itemInTheCart = true;
       return { ...product, quantity: product.quantity + quantity };
     } else {
@@ -38,9 +38,9 @@ export const addItemToCartFromCollection = (
     }
   });
   if (itemInTheCart) {
-    return updatedCart;
+    cart = updatedCart;
   } else {
-    let beverageContainer = item.beverageImageContainer;
+    let beverageContainer = item.isBeverage;
     if (!beverageContainer) {
       beverageContainer = false;
     }
@@ -54,4 +54,6 @@ export const addItemToCartFromCollection = (
     };
     cart.push(product);
   }
+  localStorage.setItem("cart", JSON.stringify(cart));
+  console.log(cart);
 };
