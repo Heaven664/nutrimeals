@@ -3,15 +3,25 @@ import Link from "next/link";
 import styles from "./UserToolsList.module.css";
 import { useContext } from "react";
 import MealsContext from "@/store/MealsContext";
+import { getCart } from "@/helpers/helpers";
 
 const UserToolsList = (): JSX.Element => {
   const itemsCtx = useContext(MealsContext);
+
   const { cartItems } = itemsCtx;
-  const [cartItemsNumber, setCartItemsNumber] = useState(cartItems.length);
+  const [cartItemsNumber, setCartItemsNumber] = useState(
+    cartItems.reduce((acc, cur) => acc + cur.quantity, 0)
+  );
+
   useEffect(() => {
-    console.log("header", cartItems);
-    setCartItemsNumber(cartItems.length);
+    setCartItemsNumber(cartItems.reduce((acc, cur) => acc + cur.quantity, 0));
   }, [cartItems]);
+
+  useEffect(() => {
+    const cartItems = getCart();
+    setCartItemsNumber(cartItems.reduce((acc, cur) => acc + cur.quantity, 0));
+  }, []);
+
   return (
     <ul>
       {" "}

@@ -78,3 +78,11 @@ export interface CartProductType {
   quantity: number;
   beverageContainer: boolean;
 }
+
+export interface cartItemInterface {
+  id: string;
+  title: string;
+  image: string;
+  price: number;
+  isBeverage: boolean;
+}
