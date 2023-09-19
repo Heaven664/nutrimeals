@@ -1,5 +1,5 @@
 import React, { createContext, useState } from "react";
-import { MealData, MealsContextType } from "@/lib/interfaces";
+import { CartProductType, MealData, MealsContextType } from "@/lib/interfaces";
 
 interface P {
   children: React.ReactNode;
@@ -25,6 +25,8 @@ const MealsContext = createContext<MealsContextType>({
   sortDinnerLunchByPriceDesc() {},
   sortDinnerLunchByDateAsc() {},
   sortDinnerLunchByDateDesc() {},
+  cartItems: [],
+  changeCartItems() {},
 });
 
 const MealsContextProvider = ({ children }: P) => {
@@ -35,6 +37,12 @@ const MealsContextProvider = ({ children }: P) => {
   const [activeDinnerLunchMeals, setActiveDinnerLunchMeals] = useState<
     MealData[]
   >([]);
+
+  const [cartItems, setCartItems] = useState<CartProductType[]>([]);
+
+  const changeCartItems = (items: CartProductType[]) => {
+    setCartItems(items);
+  };
 
   const changeActiveDinnerLunchMeals = (meals: MealData[]) => {
     setActiveDinnerLunchMeals(meals);
@@ -152,6 +160,8 @@ const MealsContextProvider = ({ children }: P) => {
     sortDinnerLunchByPriceDesc,
     sortDinnerLunchByDateAsc,
     sortDinnerLunchByDateDesc,
+    cartItems,
+    changeCartItems,
   };
 
   return (

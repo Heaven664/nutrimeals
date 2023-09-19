@@ -1,8 +1,12 @@
 import EmptyCart from "@/components/cart/EmptyCart";
 import FullCart from "@/components/cart/FullCart";
+import { useContext, useEffect } from "react";
+import MealsContext from "@/store/MealsContext";
 
 const Cart = () => {
-  let emptyCart = false;
+  const itemsCtx = useContext(MealsContext);
+  const { changeCartItems } = itemsCtx;
+
   const products = [
     {
       title: "Breakfast Bowl",
@@ -29,7 +33,17 @@ const Cart = () => {
       beverageContainer: true,
     },
   ];
-  return <>{emptyCart ? <EmptyCart /> : <FullCart products={products} />}</>;
+
+  useEffect(() => {
+    changeCartItems(products);
+    console.log('set')
+  }, []);
+
+  return (
+    <>
+      {products.length === 0 ? <EmptyCart /> : <FullCart products={products} />}
+    </>
+  );
 };
 
 export default Cart;
