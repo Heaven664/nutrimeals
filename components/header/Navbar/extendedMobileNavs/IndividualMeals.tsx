@@ -53,7 +53,9 @@ const IndividualMeals = ({
       </li>
       <li>
         <button onClick={hideNavbar}>
-          <span>Build Your Own Meal</span>
+          <Link href="/products/breakfast-&-lunch-box">
+            <span>Build Your Own Meal</span>
+          </Link>
         </button>
       </li>
       <li>
