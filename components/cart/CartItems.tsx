@@ -14,7 +14,13 @@ const CartItems = ({ products }: P) => {
   const { changeCartItems, cartItems } = cartCtx;
   const router = useRouter();
   const [subtotal, setSubtotal] = useState(
-    products.reduce((acc, cur) => acc + cur.price * cur.quantity, 0)
+    products.reduce((acc, cur) => {
+      if (!cur.quantity) {
+        return acc + cur.price * 1;
+      } else {
+        return acc + cur.price * cur.quantity;
+      }
+    }, 0)
   );
   const [productQuantities, setProductQuantities] = useState(
     products.map((product) => ({
@@ -26,7 +32,6 @@ const CartItems = ({ products }: P) => {
     products.map((product) => ({
       price: product.price,
       title: product.title,
-      // quantity: product.quantity ? product.quantity : 1,
       totalPrice: product.price * product.quantity,
     }))
   );
@@ -46,7 +51,7 @@ const CartItems = ({ products }: P) => {
   useEffect(() => {
     setSubtotal(
       cartItems.reduce((acc, cur) => {
-        if (!Number.isNaN(cur.quantity)) {
+        if (cur.quantity) {
           return acc + cur.price * cur.quantity;
         } else {
           return acc + cur.price * 1;
@@ -56,7 +61,6 @@ const CartItems = ({ products }: P) => {
     setProductQuantities(
       cartItems.map((item) => ({ title: item.title, quantity: item.quantity }))
     );
-    console.log(cartItems);
     setProductsTotalPrices(
       cartItems.map((item) => ({
         title: item.title,
