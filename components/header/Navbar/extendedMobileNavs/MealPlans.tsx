@@ -46,7 +46,7 @@ const MealPlans = ({
       </li>
       <li>
         <button onClick={hideNavbar}>
-          <Link href="/products/dietician-consultation">
+          <Link href="/products/dietitian-consultation">
             <span>Dietitian consultation</span>
           </Link>
         </button>

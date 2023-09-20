@@ -143,7 +143,7 @@ const DesktopTools: React.FC = () => {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/products/dietician-consultation">
+                  <Link href="/products/dietitian-consultation">
                     <p>Dietitian consultation </p>
                   </Link>
                 </li>
