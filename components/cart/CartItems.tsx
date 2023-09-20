@@ -26,6 +26,7 @@ const CartItems = ({ products }: P) => {
     products.map((product) => ({
       price: product.price,
       title: product.title,
+      // quantity: product.quantity ? product.quantity : 1,
       totalPrice: product.price * product.quantity,
     }))
   );
@@ -55,12 +56,12 @@ const CartItems = ({ products }: P) => {
     setProductQuantities(
       cartItems.map((item) => ({ title: item.title, quantity: item.quantity }))
     );
+    console.log(cartItems);
     setProductsTotalPrices(
       cartItems.map((item) => ({
         title: item.title,
         price: item.price,
-        totalPrice:
-          item.price * (Number.isNaN(item.quantity) ? 1 : item.quantity),
+        totalPrice: item.price * (item.quantity ? item.quantity : 1),
       }))
     );
   }, [cartItems]);
