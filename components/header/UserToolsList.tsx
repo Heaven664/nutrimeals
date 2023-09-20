@@ -1,4 +1,5 @@
 import { JSX, useEffect, useState } from "react";
+import { getCart } from "@/helpers/helpers";
 import Link from "next/link";
 import styles from "./UserToolsList.module.css";
 import { useContext } from "react";
@@ -19,9 +20,10 @@ const UserToolsList = (): JSX.Element => {
   );
 
   useEffect(() => {
+    // console.log('sfdsds')
     setCartItemsNumber(
       cartItems.reduce((acc, cur) => {
-        if (!Number.isNaN(cur.quantity)) {
+        if (cur.quantity) {
           return acc + cur.quantity;
         } else {
           return acc + 1;
@@ -29,6 +31,20 @@ const UserToolsList = (): JSX.Element => {
       }, 0)
     );
   }, [cartItems]);
+
+  useEffect(() => {
+    const cartItems = getCart();
+    console.log(cartItems);
+    // console.log("sfdsds");
+    setCartItemsNumber(
+      cartItems.reduce((acc, cur) => {
+        if (cur.quantity) {
+          return acc + cur.quantity;
+        }
+        return acc + 1;
+      }, 0)
+    );
+  }, []);
 
   return (
     <ul>
