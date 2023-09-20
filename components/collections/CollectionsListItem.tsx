@@ -17,6 +17,7 @@ const CollectionListItem = ({
   suggestedMeals,
 }: CollectionItem) => {
   const [itemNumber, setItemNumber] = useState(1);
+  const [addingToCart, setAddingToCart] = useState(false);
   const itemsCtx = useContext(MealsContext);
   const { changeCartItems } = itemsCtx;
 
@@ -34,10 +35,19 @@ const CollectionListItem = ({
     isBeverage: beverageContainer,
   };
 
-  const addToCartHandler = (item: cartItemInterface, itemNumber: number) => {
-    const updatedCartItems = addItemToCartFromCollection(item, itemNumber);
-    changeCartItems(updatedCartItems);
+  const addToCartHandler = async (
+    item: cartItemInterface,
+    itemNumber: number
+  ) => {
+    setAddingToCart(true);
+    setTimeout(() => {
+      const updatedCartItems = addItemToCartFromCollection(item, itemNumber);
+      changeCartItems(updatedCartItems);
+      setAddingToCart(false);
+    }, 700);
   };
+
+  const spinner = <div className={styles.spinner}></div>;
 
   return (
     <li className={styles.itemContainer}>
@@ -64,7 +74,7 @@ const CollectionListItem = ({
         </Link>
         <div className={styles.controllerContainer}>
           <button onClick={() => addToCartHandler(item, itemNumber)}>
-            Add to cart
+            {addingToCart ? spinner : "Add to cart"}
           </button>
           <input
             type="number"

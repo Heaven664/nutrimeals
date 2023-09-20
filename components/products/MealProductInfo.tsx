@@ -14,6 +14,7 @@ const MealProductInfo = ({ productData }: P) => {
   const { changeCartItems } = itemCtx;
   const [quantity, setQuantity] = useState(1);
   const [mainImage, setMainImage] = useState(productData.mealData.imagePath);
+  const [addingToCart, setAddingToCart] = useState(false);
   const [recipeContainer, setRecipeContainer] = useState(
     productData.mealData.beverageImageContainer
   );
@@ -37,8 +38,12 @@ const MealProductInfo = ({ productData }: P) => {
 
   const formSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    const updatedCart = addItemToCartFromProductPage(productData, quantity);
-    changeCartItems(updatedCart);
+    setAddingToCart(true);
+    setTimeout(() => {
+      const updatedCart = addItemToCartFromProductPage(productData, quantity);
+      changeCartItems(updatedCart);
+      setAddingToCart(false);
+    }, 700);
   };
 
   const allImages = productData.images.map((image, index) => {
@@ -62,6 +67,8 @@ const MealProductInfo = ({ productData }: P) => {
     e.preventDefault();
     setQuantity(parseInt(e.target.value));
   };
+
+  const spinner = <div className={styles.spinner}></div>;
 
   return (
     <div className={styles.productLayout}>
@@ -102,7 +109,7 @@ const MealProductInfo = ({ productData }: P) => {
               value={quantity}
               onChange={inputHandler}
             />
-            <button>Add to card</button>
+            <button>{addingToCart ? spinner : "Add to Cart"}</button>
           </form>
           <div className={styles.productDescriptionContainer}>
             <p>{productData.mealData.description}</p>
