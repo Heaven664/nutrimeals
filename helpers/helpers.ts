@@ -2,13 +2,14 @@ import { CartProductType, CollectionItem, ProductData } from "@/lib/interfaces";
 export const collectionToURL = (collectionName: string): string => {
   const collectionURLName = collectionName
     .toLocaleLowerCase()
-    .replace(/ /g, "-");
+    .replace(/ /g, "-")
+    .replace(/,/g, "");
 
   return `/collections/${collectionURLName}`;
 };
 
 export const titleToSlug = (title: string) => {
-  return title.toLocaleLowerCase().replace(/ /g, "-");
+  return title.toLocaleLowerCase().replace(/ /g, "-").replace(/,/g, "");
 };
 
 export const getCart = () => {
