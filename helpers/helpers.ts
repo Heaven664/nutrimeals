@@ -1,4 +1,4 @@
-import { CartProductType, CollectionItem } from "@/lib/interfaces";
+import { CartProductType, CollectionItem, ProductData } from "@/lib/interfaces";
 export const collectionToURL = (collectionName: string): string => {
   const collectionURLName = collectionName
     .toLocaleLowerCase()
@@ -49,6 +49,38 @@ export const addItemToCartFromCollection = (
       slug: titleToSlug(item.title),
       image: item.image,
       price: item.price,
+      quantity: quantity,
+      beverageContainer: beverageContainer,
+    };
+    cart.push(product);
+  }
+  updateCart(cart);
+  return cart;
+};
+
+export const addItemToCartFromProductPage = (
+  item: ProductData,
+  quantity: number
+) => {
+  let cart: CartProductType[] = getCart();
+  let itemInTheCart = false;
+  const updatedCart = cart.map((product) => {
+    if (product.title === item.mealData.title) {
+      itemInTheCart = true;
+      return { ...product, quantity: product.quantity + quantity };
+    } else {
+      return product;
+    }
+  });
+  if (itemInTheCart) {
+    cart = updatedCart;
+  } else {
+    let beverageContainer = item.mealData.beverageImageContainer;
+    let product: CartProductType = {
+      title: item.mealData.title,
+      slug: titleToSlug(item.mealData.title),
+      image: item.mealData.imagePath,
+      price: item.mealData.price,
       quantity: quantity,
       beverageContainer: beverageContainer,
     };
