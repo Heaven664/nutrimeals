@@ -62,7 +62,7 @@
 
 .imageContainer {
   padding-right: 24px;
-  max-width: 144px;
+  max-width: 80px;
   cursor: pointer;
 }
 
@@ -74,13 +74,13 @@
 
 .imageBeverageContainer {
   padding-right: 24px;
-  max-width: 144px;
+  max-width: 80px;
   width: 100%;
   cursor: pointer;
   display: flex;
   justify-content: center;
   align-items: center;
-  max-width: 119px;
+  /* max-width: 119px; */
 }
 
 .imageBeverageContainer img {
@@ -252,6 +252,14 @@
 
   .productQuantity {
     display: none;
+  }
+
+  .imageContainer {
+    max-width: 144px;
+  }
+  
+  .imageBeverageContainer {
+    max-width: 119px;
   }
 
   .imageContainer:hover,
