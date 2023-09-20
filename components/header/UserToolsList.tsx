@@ -3,24 +3,32 @@ import Link from "next/link";
 import styles from "./UserToolsList.module.css";
 import { useContext } from "react";
 import MealsContext from "@/store/MealsContext";
-import { getCart } from "@/helpers/helpers";
 
 const UserToolsList = (): JSX.Element => {
   const itemsCtx = useContext(MealsContext);
 
   const { cartItems } = itemsCtx;
   const [cartItemsNumber, setCartItemsNumber] = useState(
-    cartItems.reduce((acc, cur) => acc + cur.quantity, 0)
+    cartItems.reduce((acc, cur) => {
+      if (!Number.isNaN(cur.quantity)) {
+        return acc + cur.quantity;
+      } else {
+        return acc + 1;
+      }
+    }, 0)
   );
 
   useEffect(() => {
-    setCartItemsNumber(cartItems.reduce((acc, cur) => acc + cur.quantity, 0));
+    setCartItemsNumber(
+      cartItems.reduce((acc, cur) => {
+        if (!Number.isNaN(cur.quantity)) {
+          return acc + cur.quantity;
+        } else {
+          return acc + 1;
+        }
+      }, 0)
+    );
   }, [cartItems]);
-
-  useEffect(() => {
-    const cartItems = getCart();
-    setCartItemsNumber(cartItems.reduce((acc, cur) => acc + cur.quantity, 0));
-  }, []);
 
   return (
     <ul>

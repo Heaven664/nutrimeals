@@ -29,22 +29,6 @@ const CartItems = ({ products }: P) => {
       totalPrice: product.price * product.quantity,
     }))
   );
-
-  // const handleQuantityChange = (productId: string, newQuantity: number) => {
-  //   setProductQuantities((prev) =>
-  //     prev.map((item) =>
-  //       item.id === productId ? { ...item, quantity: newQuantity } : item
-  //     )
-  //   );
-  //   setProductsTotalPrices((prev) =>
-  //     prev.map((item) =>
-  //       item.id === productId
-  //         ? { ...item, totalPrice: newQuantity * item.price }
-  //         : item
-  //     )
-  //   );
-  // };
-
   const handleQuantityChange = (productTitle: string, newQuantity: number) => {
     const newCartItems = cartItems.map((item) =>
       item.title === productTitle
@@ -56,24 +40,17 @@ const CartItems = ({ products }: P) => {
         : item
     );
     changeCartItems(newCartItems);
-    // updateCart(newCartItems);
-    // setProductQuantities((prev) =>
-    //   prev.map((item) =>
-    //     item.title === productTitle ? { ...item, quantity: newQuantity } : item
-    //   )
-    // );
-    // setProductsTotalPrices((prev) =>
-    //   prev.map((item) =>
-    //     item.title === productTitle
-    //       ? { ...item, totalPrice: newQuantity * item.price }
-    //       : item
-    //   )
-    // );
   };
 
   useEffect(() => {
     setSubtotal(
-      cartItems.reduce((acc, cur) => acc + cur.price * cur.quantity, 0)
+      cartItems.reduce((acc, cur) => {
+        if (!Number.isNaN(cur.quantity)) {
+          return acc + cur.price * cur.quantity;
+        } else {
+          return acc + cur.price * 1;
+        }
+      }, 0)
     );
     setProductQuantities(
       cartItems.map((item) => ({ title: item.title, quantity: item.quantity }))

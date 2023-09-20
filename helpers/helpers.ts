@@ -91,6 +91,5 @@ export const addItemToCartFromProductPage = (
 };
 
 export const updateCart = (cart: CartProductType[]) => {
-  console.log("cart", cart);
   localStorage.setItem("cart", JSON.stringify(cart));
 };
