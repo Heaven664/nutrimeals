@@ -19,7 +19,7 @@ const CartItems = ({ products }: P) => {
   const [productQuantities, setProductQuantities] = useState(
     products.map((product) => ({
       title: product.title,
-      quantity: product.quantity,
+      quantity: product.quantity ? product.quantity : 1,
     }))
   );
   const [productsTotalPrices, setProductsTotalPrices] = useState(

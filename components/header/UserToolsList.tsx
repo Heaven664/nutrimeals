@@ -20,7 +20,6 @@ const UserToolsList = (): JSX.Element => {
   );
 
   useEffect(() => {
-    // console.log('sfdsds')
     setCartItemsNumber(
       cartItems.reduce((acc, cur) => {
         if (cur.quantity) {
@@ -34,8 +33,6 @@ const UserToolsList = (): JSX.Element => {
 
   useEffect(() => {
     const cartItems = getCart();
-    console.log(cartItems);
-    // console.log("sfdsds");
     setCartItemsNumber(
       cartItems.reduce((acc, cur) => {
         if (cur.quantity) {
