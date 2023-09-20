@@ -110,7 +110,6 @@ const CartItems = ({ products }: P) => {
                 (item) => item.title !== product.title
               );
               changeCartItems(newCart);
-              // updateCart(newCart);
             }}
           >
             Remove

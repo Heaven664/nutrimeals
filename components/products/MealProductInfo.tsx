@@ -1,13 +1,17 @@
 import Image from "next/image";
-import React, { useState, useEffect, useMemo } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import MealsContext from "@/store/MealsContext";
 import styles from "./MealProductInfo.module.css";
 import { ProductData } from "@/lib/interfaces";
+import { addItemToCartFromProductPage } from "@/helpers/helpers";
 
 interface P {
   productData: ProductData;
 }
 
 const MealProductInfo = ({ productData }: P) => {
+  const itemCtx = useContext(MealsContext);
+  const { changeCartItems } = itemCtx;
   const [quantity, setQuantity] = useState(1);
   const [mainImage, setMainImage] = useState(productData.mealData.imagePath);
   const [recipeContainer, setRecipeContainer] = useState(
@@ -29,6 +33,12 @@ const MealProductInfo = ({ productData }: P) => {
     setMainImage(path);
     setRecipeContainer(isRecipe);
     setSelectedPreview(index);
+  };
+
+  const formSubmitHandler = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    const updatedCart = addItemToCartFromProductPage(productData, quantity);
+    changeCartItems(updatedCart);
   };
 
   const allImages = productData.images.map((image, index) => {
@@ -80,7 +90,10 @@ const MealProductInfo = ({ productData }: P) => {
             <h1>{productData.mealData.title}</h1>
             <h2>${productData.mealData.price}</h2>
           </div>
-          <form className={styles.productForm} action="">
+          <form
+            className={styles.productForm}
+            onSubmit={(e) => formSubmitHandler(e)}
+          >
             <label htmlFor="quantity-input">Quantity</label>
             <input
               id="quantity-input"
