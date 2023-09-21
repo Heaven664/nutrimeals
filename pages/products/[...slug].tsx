@@ -1,6 +1,7 @@
 import { GetStaticPropsContext } from "next";
 import MealProductInfo from "@/components/products/MealProductInfo";
 import SuggestedMeals from "@/components/products/SuggestedMeals";
+import Error404 from "@/components/errors/Error404";
 import { MealData, ProductData } from "@/lib/interfaces";
 import { getRandomMeals, findProductBySlug } from "@/lib/mongoDB";
 
@@ -12,7 +13,7 @@ interface P {
 
 const Meal = ({ meals, product }: P) => {
   if (!product) {
-    return <div>No Product</div>;
+    return <Error404 />;
   }
 
   return (

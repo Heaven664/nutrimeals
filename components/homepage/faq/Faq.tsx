@@ -190,7 +190,7 @@ const Faq: React.FC = () => {
           <div className={styles.faqFooter}>
             <p>Have a question?</p>
             <button
-              onClick={() => router.push("/products/dietician-consultation")}
+              onClick={() => router.push("/products/dietitian-consultation")}
             >
               View FAQ
             </button>
