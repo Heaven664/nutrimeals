@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import MealsContext from "@/store/MealsContext";
 import { CartProductType } from "@/lib/interfaces";
 import styles from "./CartItems.module.css";
+import { faL } from "@fortawesome/free-solid-svg-icons";
 
 interface P {
   products: CartProductType[];
@@ -22,6 +23,7 @@ const CartItems = ({ products }: P) => {
       }
     }, 0)
   );
+  const [checkingOut, setCheckingOut] = useState(false);
   const [productQuantities, setProductQuantities] = useState(
     products.map((product) => ({
       title: product.title,
@@ -46,6 +48,14 @@ const CartItems = ({ products }: P) => {
         : item
     );
     changeCartItems(newCartItems);
+  };
+
+  const clearCartItems = () => {
+    setCheckingOut(true);
+    setTimeout(() => {
+      changeCartItems([]);
+      setCheckingOut(false);
+    }, 1000);
   };
 
   useEffect(() => {
@@ -131,6 +141,8 @@ const CartItems = ({ products }: P) => {
     </li>
   ));
 
+  const spinner = <div className={styles.spinner}></div>;
+
   return (
     <div className={styles.CartItemsBody}>
       <div className={styles.cartHeader}>
@@ -162,7 +174,9 @@ const CartItems = ({ products }: P) => {
             Subtotal: <span>{`$${subtotal.toFixed(2)} CAD`}</span>
           </p>
         </div>
-        <button>Check out</button>
+        <button onClick={clearCartItems}>
+          {checkingOut ? spinner : "Check out"}
+        </button>
       </div>
     </div>
   );
